@@ -1,0 +1,235 @@
+--EXERCÍCIO 2
+--TABELAS
+--Tabela da relação membro()
+CREATE TABLE membro
+(Nome VARCHAR(50) NOT NULL,
+IdMemb INT UNIQUE CONSTRAINT IdMembKey PRIMARY KEY,
+Pais VARCHAR(50) NOT NULL,
+DataNasc DATE NOT NULL);
+--Tabela da relação doce()
+CREATE TABLE doce
+(Nome VARCHAR(50) UNIQUE CONSTRAINT NomeDoceKey PRIMARY KEY,
+Descricao TEXT NOT NULL,
+Genero VARCHAR(50) NOT NULL);
+--Tabela da relação amigo()
+CREATE TABLE amigo
+(Membro1 INT NOT NULL,
+Membro2 INT NOT NULL,
+CONSTRAINT amigoKey PRIMARY KEY (Membro1, Membro2),
+CONSTRAINT Membro1Key FOREIGN KEY (Membro1) REFERENCES membro(IdMemb),
+CONSTRAINT Membro2Key FOREIGN KEY (Membro2) REFERENCES membro(IdMemb));
+--Tabela da relação criou()
+CREATE TABLE criou
+(Membro INT NOT NULL,
+Doce VARCHAR(50) NOT NULL,
+CONSTRAINT criouKey PRIMARY KEY (Membro, Doce),
+CONSTRAINT criouMembroKey FOREIGN KEY (Membro) REFERENCES membro(IdMemb),
+CONSTRAINT criouDoceKey FOREIGN KEY (Doce) REFERENCES doce(Nome));
+--Tabela da relação fez()
+CREATE TABLE fez
+(Membro INT NOT NULL,
+Doce VARCHAR(50) NOT NULL,
+Tempo INT NOT NULL CHECK (Tempo BETWEEN 1 AND 5),
+Aspeto INT NOT NULL CHECK (Aspeto BETWEEN 1 AND 5),
+Sabor INT NOT NULL CHECK (Sabor BETWEEN 1 AND 5),
+CONSTRAINT fezKey PRIMARY KEY (Membro, Doce),
+CONSTRAINT fezMembroKey FOREIGN KEY (Membro) REFERENCES membro(IdMemb),
+CONSTRAINT fezDoceKey FOREIGN KEY (Doce) REFERENCES doce(Nome));
+--Tabela da relação ingrediente()
+CREATE TABLE ingrediente
+(Nome VARCHAR(50) CONSTRAINT ingredienteKey PRIMARY KEY,
+Custo DECIMAL CHECK (Custo > 0));
+--Tabela da relação temIngrediente()
+CREATE TABLE temIngrediente
+(Doce VARCHAR(50) NOT NULL,
+Ingrediente VARCHAR(50) NOT NULL,
+Quantidade INT NOT NULL CHECK (Quantidade > 0),
+CONSTRAINT temIngredienteKey PRIMARY KEY (Doce, Ingrediente),
+CONSTRAINT temIngredienteDoceKey FOREIGN KEY (Doce) REFERENCES doce(Nome),
+CONSTRAINT temIngredienteIngredienteKey FOREIGN KEY (Ingrediente) REFERENCES ingrediente(Nome));
+
+
+
+--EXERCÍCIO 3
+--VALORES
+--Alínea a)
+INSERT INTO membro VALUES ('Miguel', 1, 'Portugal', '2004-11-07');
+INSERT INTO membro VALUES ('Leonor', 2, 'Portugal', '2006-03-01');
+INSERT INTO membro VALUES ('Catarina', 3, 'Portugal', '1998-12-12');
+INSERT INTO membro VALUES ('Louis', 4, 'França', '2000-07-06');
+INSERT INTO membro VALUES ('Melissa', 5, 'Itália', '2005-10-18');
+INSERT INTO membro VALUES ('Maria', 6, 'Portugal', '1977-07-21');
+INSERT INTO membro VALUES ('Lamine', 7, 'Espanha', '2003-05-03');
+INSERT INTO membro VALUES ('Thomas', 8, 'Alemanha', '1990-01-13');
+INSERT INTO membro VALUES ('Jasmine', 9, 'Inglaterra', '2002-02-08');
+INSERT INTO membro VALUES ('João', 10, 'Portugal', '2004-11-17');
+--Alínea b)
+INSERT INTO ingrediente VALUES ('Açúcar', 0.01);	--PREÇO POR GRAMA
+INSERT INTO ingrediente VALUES ('Farinha', 0.01);	--PREÇO POR GRAMA
+INSERT INTO ingrediente VALUES ('Chocolate', 0.01);	--PREÇO POR GRAMA
+INSERT INTO ingrediente VALUES ('Ovos', 0.23);		--PREÇO POR UNIDADE
+INSERT INTO ingrediente VALUES ('Natas', 0.01);		--PREÇO POR GRAMA/MILILITRO
+INSERT INTO ingrediente VALUES ('Leite', 0.01);		--PREÇO POR GRAMA/MILILITRO
+INSERT INTO ingrediente VALUES ('Água', 0.01);		--PREÇO POR GRAMA/MILILITRO
+INSERT INTO ingrediente VALUES ('Maçã', 0.36);		--PREÇO POR UNIDADE
+INSERT INTO ingrediente VALUES ('Manteiga', 0.09);	--PREÇO POR GRAMA
+INSERT INTO ingrediente VALUES ('Alfarroba', 0.01);	--PREÇO POR GRAMA
+INSERT INTO ingrediente VALUES ('Baunilha', 6.99);	--PREÇO POR COLHERES DE CAFÉ
+INSERT INTO ingrediente VALUES ('Canela', 0.01);	--PREÇO POR COLHERES DE CAFÉ
+INSERT INTO ingrediente VALUES ('Pimenta', 0.02);	--PREÇO POR COLHERES DE CAFÉ
+--Alínea c)
+INSERT INTO doce VALUES ('Bolo de Chocolate', 'Bolo rico, feito com chocolate derretido.', 'Tradicional');
+INSERT INTO doce VALUES ('Bolo de Maçã', 'Bolo macio, com pedaços de maçã e canela.', 'Tradicional');
+INSERT INTO doce VALUES ('Pudim de Leite', 'Pudim cremoso, sabor suave de leite', 'Tradicional');
+INSERT INTO doce VALUES ('Tarte de Natas', 'Tarte crocante, recheio cremoso de natas.', 'Tradicional');
+INSERT INTO doce VALUES ('Pudim Flan de Chocolate', 'Pudim de chocolate, textura suave e cremosa', 'Tradicional');
+INSERT INTO doce VALUES ('Biscoitos de Canela', 'Biscoitos crocantes, sabor intenso de canela.', 'Regional');
+INSERT INTO doce VALUES ('Bolo de Alfarroba', 'Bolo úmido, sabor adocicado de alfarroba.', 'Tradicional');
+INSERT INTO doce VALUES ('Torta de Maçã', 'Torta recheada, maçã com cobertura crocante.', 'Tradicional');
+INSERT INTO doce VALUES ('Pudim de Pimenta', 'Pudim levemente picante, toque de pimenta.', 'Experimental');	
+INSERT INTO doce VALUES ('Pavê de Maçã', 'Camadas de maçã e creme saboroso.', 'Regional');
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Açúcar', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Farinha', 150);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Chocolate', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Ovos', 3);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Manteiga', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Natas', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Chocolate', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Açúcar', 150);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Farinha', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Ovos', 2);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Manteiga', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Maçã', 2);
+INSERT INTO temIngrediente VALUES ('Bolo de Maçã', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Pudim de Leite', 'Açúcar', 200);
+INSERT INTO temIngrediente VALUES ('Pudim de Leite', 'Leite', 500);
+INSERT INTO temIngrediente VALUES ('Pudim de Leite', 'Ovos', 3);
+INSERT INTO temIngrediente VALUES ('Pudim de Leite', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Tarte de Natas', 'Açúcar', 150);
+INSERT INTO temIngrediente VALUES ('Tarte de Natas', 'Natas', 500);
+INSERT INTO temIngrediente VALUES ('Tarte de Natas', 'Farinha', 200);
+INSERT INTO temIngrediente VALUES ('Tarte de Natas', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Pudim Flan de Chocolate', 'Açúcar', 150);
+INSERT INTO temIngrediente VALUES ('Pudim Flan de Chocolate', 'Natas', 300);
+INSERT INTO temIngrediente VALUES ('Pudim Flan de Chocolate', 'Leite', 200);
+INSERT INTO temIngrediente VALUES ('Pudim Flan de Chocolate', 'Chocolate', 100);
+INSERT INTO temIngrediente VALUES ('Pudim Flan de Chocolate', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Açúcar', 100);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Farinha', 250);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Manteiga', 125);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Biscoitos de Canela', 'Ovos', 1);
+INSERT INTO temIngrediente VALUES ('Bolo de Alfarroba', 'Açúcar', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Alfarroba', 'Farinha', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Alfarroba', 'Ovos', 3);
+INSERT INTO temIngrediente VALUES ('Bolo de Alfarroba', 'Manteiga', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Alfarroba', 'Alfarroba', 100);
+INSERT INTO temIngrediente VALUES ('Torta de Maçã', 'Açúcar', 100);
+INSERT INTO temIngrediente VALUES ('Torta de Maçã', 'Farinha', 200);
+INSERT INTO temIngrediente VALUES ('Torta de Maçã', 'Maçã', 3);
+INSERT INTO temIngrediente VALUES ('Torta de Maçã', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Torta de Maçã', 'Manteiga', 100);
+INSERT INTO temIngrediente VALUES ('Pavê de Maçã', 'Açúcar', 150);
+INSERT INTO temIngrediente VALUES ('Pavê de Maçã', 'Natas', 300);
+INSERT INTO temIngrediente VALUES ('Pavê de Maçã', 'Maçã', 2);
+INSERT INTO temIngrediente VALUES ('Pavê de Maçã', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Pudim de Pimenta', 'Açúcar', 150);
+INSERT INTO temIngrediente VALUES ('Pudim de Pimenta', 'Ovos', 3);
+INSERT INTO temIngrediente VALUES ('Pudim de Pimenta', 'Leite', 500);
+INSERT INTO temIngrediente VALUES ('Pudim de Pimenta', 'Pimenta', 1);
+INSERT INTO criou VALUES (1, 'Bolo de Chocolate');
+INSERT INTO criou VALUES (1, 'Bolo de Maçã');
+INSERT INTO criou VALUES (2, 'Pudim de Leite');
+INSERT INTO criou VALUES (2, 'Tarte de Natas');
+INSERT INTO criou VALUES (3, 'Pudim Flan de Chocolate');
+INSERT INTO criou VALUES (3, 'Biscoitos de Canela');
+INSERT INTO criou VALUES (4, 'Bolo de Alfarroba');
+INSERT INTO criou VALUES (4, 'Torta de Maçã');
+INSERT INTO criou VALUES (5, 'Pudim de Pimenta');
+INSERT INTO criou VALUES (5, 'Pavê de Maçã');
+INSERT INTO fez VALUES (1, 'Bolo de Chocolate', 1, 5, 4);
+INSERT INTO fez VALUES (6, 'Bolo de Chocolate', 1, 4, 4);
+INSERT INTO fez VALUES (7, 'Bolo de Chocolate', 1, 3, 4);
+INSERT INTO fez VALUES (5, 'Bolo de Maçã', 3, 4, 3);
+INSERT INTO fez VALUES (6, 'Bolo de Maçã', 4, 4, 4);
+INSERT INTO fez VALUES (6, 'Pudim de Leite', 5, 5, 5);
+INSERT INTO fez VALUES (7, 'Pudim de Leite', 2, 2, 2);
+INSERT INTO fez VALUES (7, 'Tarte de Natas', 1, 1, 1);
+INSERT INTO fez VALUES (8, 'Tarte de Natas', 2, 3, 4);
+INSERT INTO fez VALUES (8, 'Pudim Flan de Chocolate', 3, 2, 5);
+INSERT INTO fez VALUES (9, 'Pudim Flan de Chocolate', 3, 2, 3);
+INSERT INTO fez VALUES (9, 'Biscoitos de Canela', 4, 5, 5);
+INSERT INTO fez VALUES (10, 'Biscoitos de Canela', 4, 5, 4);
+INSERT INTO fez VALUES (1, 'Bolo de Alfarroba', 2, 4, 2);
+INSERT INTO fez VALUES (2, 'Bolo de Alfarroba', 4, 3, 4);
+INSERT INTO fez VALUES (2, 'Torta de Maçã', 4, 1, 3);
+INSERT INTO fez VALUES (3, 'Torta de Maçã', 3, 4, 4);
+INSERT INTO fez VALUES (3, 'Pudim de Pimenta', 4, 3, 1);
+INSERT INTO fez VALUES (4, 'Pudim de Pimenta', 4, 3, 4);
+INSERT INTO fez VALUES (4, 'Pavê de Maçã', 4, 5, 4);
+INSERT INTO fez VALUES (5, 'Pavê de Maçã', 3, 4, 5);
+--Alínea d)
+INSERT INTO amigo VALUES (1, 2); 
+INSERT INTO amigo VALUES (2, 1); 
+INSERT INTO amigo VALUES (1, 3); 
+INSERT INTO amigo VALUES (3, 1); 
+INSERT INTO amigo VALUES (1, 4); 
+INSERT INTO amigo VALUES (4, 1); 
+INSERT INTO amigo VALUES (1, 5); 
+INSERT INTO amigo VALUES (5, 1); 
+INSERT INTO amigo VALUES (1, 6); 
+INSERT INTO amigo VALUES (6, 1); 
+INSERT INTO amigo VALUES (1, 7); 
+INSERT INTO amigo VALUES (7, 1); 
+INSERT INTO amigo VALUES (1, 8); 
+INSERT INTO amigo VALUES (8, 1); 
+INSERT INTO amigo VALUES (1, 9); 
+INSERT INTO amigo VALUES (9, 1); 
+INSERT INTO amigo VALUES (1, 10); 
+INSERT INTO amigo VALUES (10, 1); 
+INSERT INTO amigo VALUES (2, 3); 
+INSERT INTO amigo VALUES (3, 2); 
+INSERT INTO amigo VALUES (2, 4); 
+INSERT INTO amigo VALUES (4, 2); 
+INSERT INTO amigo VALUES (4, 5); 
+INSERT INTO amigo VALUES (5, 4); 
+INSERT INTO amigo VALUES (5, 6); 
+INSERT INTO amigo VALUES (6, 5); 
+INSERT INTO amigo VALUES (6, 7); 
+INSERT INTO amigo VALUES (7, 6); 
+--Alínea e)
+--4a)
+INSERT INTO doce VALUES ('Bolo de Canela e Chocolate', 'Combinação do sabor intenso do chocolate com o toque aromático da canela.', 'Regional');
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Açúcar', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Farinha', 200);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Chocolate', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Ovos', 3);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Manteiga', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Natas', 100);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Baunilha', 1);
+INSERT INTO temIngrediente VALUES ('Bolo de Canela e Chocolate', 'Leite', 50);
+INSERT INTO criou VALUES (7, 'Bolo de Canela e Chocolate');
+--4b)
+INSERT INTO membro VALUES ('Joaquim José', 11, 'Portugal', '1980-06-01');
+INSERT INTO amigo VALUES (1, 11);
+INSERT INTO amigo VALUES (11, 1);
+INSERT INTO amigo VALUES (2, 11);
+INSERT INTO amigo VALUES (11, 2);
+--4g)
+INSERT INTO doce VALUES ('Arroz Doce', 'Arroz doce cremoso com canela.', 'Tradicional');
+INSERT INTO ingrediente VALUES ('Arroz', 0.01);
+INSERT INTO ingrediente VALUES ('Limão', 0.99);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Arroz', 200);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Leite', 1000);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Açúcar', 200);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Ovos', 2);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Canela', 1);
+INSERT INTO temIngrediente VALUES ('Arroz Doce', 'Limão', 1);
+--4j)
+INSERT INTO criou VALUES (1, 'Arroz Doce');
+--4k)
+INSERT INTO fez VALUES (1, 'Bolo de Canela e Chocolate', 5, 5, 5);
+INSERT INTO fez VALUES (10, 'Bolo de Canela e Chocolate', 5, 5, 5);
+--4l)

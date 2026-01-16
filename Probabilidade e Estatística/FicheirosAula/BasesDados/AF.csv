@@ -1,0 +1,364 @@
+﻿id;praticacaminhadas;numvezesporsemana;conheceequipamentoscme;utilizaecopista;sexo;idade;instrucao;situacaoperantetrabalho;zonaresidencia;Modalidades;tempodepratica;Nmodalidadespraticadas;orcamento
+1;Não;3;Sim;Não;Feminino;42;3.º ciclo;Outra;Rural;Outra;(30, 60];2;20
+5;Não;4;Sim;Não;Masculino;58;3.º ciclo;Reformado;Urbana;Outra;(60, +);2;0
+11;Não;2;Sim;Sim;Feminino;46;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;50
+12;Não;3;Sim;Sim;Feminino;51;3.º ciclo;Desempregado;Urbana;BTT_Ciclismo;(30, 60];2;200
+13;Não;3;Sim;Sim;Masculino;18;Secundário;Estudante;Urbana;Fitness;(60, +);2;45
+15;Não;1;Sim;Sim;Feminino;17;Secundário;Estudante;Rural;Outra;(0, 30];1;0
+18;Não;2;Sim;Sim;Masculino;35;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;25
+19;Não;2;Sim;Não;Feminino;65;3.º ciclo;Reformado;Urbana;Outra;(30, 60];1;30
+23;Não;2;Sim;Sim;Masculino;69;Superior;Reformado;Urbana;Outra;(60, +);2;0
+32;Não;2;Sim;Sim;Masculino;35;3.º ciclo;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);2;0
+40;Não;3;Sim;Não;Feminino;30;Secundário;Trabalhador por conta própria;Rural;BTT_Ciclismo;(60, +);1;0
+47;Não;3;Sim;Sim;Feminino;55;Superior;Trabalhador por conta própria;Urbana;Outra;(30, 60];1;40
+49;Não;3;Sim;Sim;Feminino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);2;0
+53;Não;1;Sim;Sim;Feminino;30;2.º ciclo;Desempregado;Rural;Outra;(30, 60];1;0
+57;Não;2;Sim;Não;Feminino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+59;Não;5;Sim;Sim;Feminino;56;3.º ciclo;Reformado;Urbana;Fitness;(30, 60];2;0
+69;Não;2;Sim;Sim;Feminino;39;Superior;Trabalhador por conta própria;Urbana;Fitness;(30, 60];2;50
+83;Não;3;Sim;Não;Feminino;68;1.º ciclo;Outra;Urbana;Fitness;(0, 30];1;39
+85;Não;2;Sim;Não;Feminino;70;Superior;Reformado;Urbana;Outra;(30, 60];2;40
+86;Não;2;Sim;Sim;Feminino;71;3.º ciclo;Reformado;Urbana;Outra;(30, 60];1;10
+87;Não;2;Sim;Sim;Feminino;23;3.º ciclo;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];1;0
+90;Não;3;Sim;Não;Feminino;71;Superior;Reformado;Urbana;Outra;(30, 60];1;40
+92;Não;5;Sim;Não;Feminino;48;3.º ciclo;Trabalhador por conta própria;Urbana;Fitness;(60, +);1;40
+95;Não;2;Sim;Não;Feminino;60;Superior;Reformado;Rural;Outra;(60, +);1;10
+96;Não;2;Sim;Não;Masculino;32;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;16
+97;Não;2;Sim;Não;Feminino;30;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;60
+98;Não;1;Sim;Sim;Masculino;47;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(0, 30];1;0
+102;Não;3;Sim;Sim;Feminino;23;Superior;Estudante;Urbana;Outra;(30, 60];1;49
+107;Não;1;Sim;Sim;Masculino;38;Secundário;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(60, +);1;0
+109;Não;2;Sim;Não;Masculino;34;Secundário;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(60, +);2;0
+110;Não;6;Sim;Não;Masculino;51;Secundário;Trabalhador por conta própria;Urbana;Outra;(0, 30];1;0
+111;Não;7;Sim;Não;Feminino;33;Secundário;Trabalhador por conta de outrem;Rural;Fitness;(30, 60];2;10
+115;Não;2;Sim;Não;Feminino;21;Superior;Estudante;Rural;Fitness;(30, 60];1;0
+117;Não;3;Sim;Sim;Masculino;18;Secundário;Estudante;Urbana;Outra;(60, +);2;30
+123;Não;7;Sim;Sim;Masculino;56;2.º ciclo;Reformado;Urbana;BTT_Ciclismo;(60, +);2;20
+125;Não;2;Sim;Não;Feminino;70;1.º ciclo;Reformado;Urbana;Outra;(30, 60];1;25
+127;Não;7;Sim;NA;Feminino;54;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(0, 30];1;0
+128;Não;1;Sim;Sim;Feminino;83;1.º ciclo;Reformado;Urbana;Fitness;(30, 60];1;0
+133;Não;2;Sim;Não;Feminino;73;1.º ciclo;Reformado;Urbana;Outra;(30, 60];1;18
+134;Não;4;Sim;Não;Masculino;21;Secundário;Desempregado;Urbana;Outra;(60, +);2;35
+135;Não;2;Sim;Sim;Masculino;29;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+137;Não;5;Sim;Não;Masculino;57;1.º ciclo;Reformado;Rural;BTT_Ciclismo;(60, +);2;0
+138;Não;5;Sim;Sim;Masculino;50;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);2;0
+140;Não;2;Sim;Sim;Masculino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+141;Não;1;Sim;Sim;Feminino;32;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(0, 30];2;0
+146;Não;2;Sim;Não;Masculino;21;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+149;Não;2;Sim;Sim;Feminino;19;3.º ciclo;Estudante;Rural;Outra;(30, 60];2;35
+151;Não;1;Sim;Sim;Masculino;39;2.º ciclo;Trabalhador por conta própria;Urbana;Outra;(60, +);2;30
+154;Não;2;Sim;Não;Feminino;42;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;27
+155;Não;7;Sim;Sim;Masculino;47;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);2;10
+160;Não;5;Sim;Sim;Feminino;54;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;20
+166;Não;2;Sim;Não;Feminino;44;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;40
+171;Não;2;Sim;Não;Masculino;51;Superior;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;0
+172;Não;1;Sim;Sim;Masculino;57;1.º ciclo;Reformado;Urbana;BTT_Ciclismo;(60, +);1;0
+176;Não;4;Sim;Sim;Feminino;55;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+177;Não;2;Sim;Sim;Feminino;42;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;62
+178;Não;2;Sim;Não;Masculino;32;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;15
+182;Não;2;Sim;Não;Feminino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+183;Não;5;Sim;Sim;Masculino;66;Superior;Reformado;Urbana;Fitness;(60, +);2;200
+184;Não;3;Sim;Não;Masculino;75;1.º ciclo;Reformado;Rural;Outra;(0, 30];2;0
+190;Não;2;Sim;Não;Feminino;17;Secundário;Estudante;Urbana;Outra;(60, +);2;30
+192;Não;1;Sim;Não;Masculino;23;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);2;5
+197;Não;1;Sim;Não;Masculino;38;Secundário;Trabalhador por conta de outrem;Rural;Outra;(60, +);1;0
+199;Não;3;Sim;Não;Masculino;70;Superior;Trabalhador por conta própria;Urbana;Outra;(30, 60];1;46
+201;Não;2;Sim;Sim;Feminino;15;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+202;Não;2;Sim;Sim;Masculino;51;Secundário;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;NA
+203;Não;2;Sim;Não;Feminino;33;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(0, 30];1;10
+205;Não;2;Sim;Sim;Feminino;19;Superior;Estudante;Urbana;Outra;(30, 60];1;0
+207;Não;1;Sim;Sim;Feminino;19;Secundário;Estudante;Urbana;Outra;(60, +);2;0
+210;Não;2;Sim;Não;Masculino;35;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;30
+212;Não;3;Sim;Não;Masculino;18;Secundário;Estudante;Urbana;Fitness;(60, +);2;30
+217;Não;3;Sim;Não;Masculino;30;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);2;60
+218;Não;3;Sim;Não;Feminino;38;Secundário;Trabalhador por conta própria;Urbana;Outra;(30, 60];1;45
+219;Não;1;Sim;Não;Masculino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+221;Não;2;Sim;Não;Feminino;43;Superior;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;50
+223;Não;4;Sim;Sim;Masculino;24;Secundário;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;0
+224;Não;2;Sim;Sim;Masculino;56;1.º ciclo;Desempregado;Urbana;BTT_Ciclismo;(30, 60];1;0
+228;Não;2;Sim;Sim;Masculino;25;Superior;Trabalhador por conta de outrem;Urbana;Outra;(60, +);2;40
+230;Não;1;Sim;Sim;Masculino;38;3.º ciclo;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];2;0
+236;Não;3;Sim;Sim;Masculino;57;1.º ciclo;Reformado;Urbana;BTT_Ciclismo;(60, +);1;0
+239;Não;7;Sim;Sim;Masculino;29;Superior;Estudante;Urbana;Outra;(60, +);1;NA
+243;Não;2;Sim;Sim;Masculino;63;1.º ciclo;Reformado;Urbana;Outra;(30, 60];1;20
+244;Não;5;Sim;Sim;Masculino;40;3.º ciclo;Trabalhador por conta própria;Urbana;Fitness;(60, +);1;70
+246;Não;2;Sim;Sim;Masculino;42;2.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;0
+250;Não;3;Sim;Sim;Feminino;22;Superior;Estudante;Urbana;Fitness;(60, +);1;30
+251;Não;1;Sim;Sim;Feminino;35;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];2;35
+255;Não;2;Sim;Sim;Masculino;15;Secundário;Estudante;Urbana;Outra;(60, +);1;20
+259;Não;1;Sim;Não;Masculino;35;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+260;Não;4;Sim;Sim;Masculino;18;Secundário;Estudante;Urbana;BTT_Ciclismo;(30, 60];1;0
+261;Não;2;Sim;Sim;Feminino;23;Superior;Estudante;Urbana;Outra;(30, 60];1;30
+263;Não;4;Sim;Sim;Masculino;27;Secundário;Trabalhador por conta própria;Urbana;Outra;(60, +);1;0
+266;Não;2;Sim;Sim;Feminino;23;Superior;Estudante;Urbana;BTT_Ciclismo;(30, 60];2;0
+268;Não;1;Sim;Sim;Feminino;39;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;55
+269;Não;7;Sim;Sim;Masculino;19;Secundário;Estudante;Urbana;Fitness;(60, +);1;40
+275;Não;5;Sim;Sim;Feminino;21;Superior;Estudante;Urbana;Fitness;(60, +);1;30
+276;Não;1;Sim;Sim;Feminino;31;3.º ciclo;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];1;0
+277;Não;2;Sim;Sim;Feminino;28;Superior;Desempregado;Urbana;BTT_Ciclismo;(30, 60];2;0
+281;Não;1;Sim;Sim;Masculino;33;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+283;Não;3;Sim;Sim;Masculino;23;Superior;Estudante;Urbana;Fitness;(30, 60];1;0
+284;Não;2;Sim;Sim;Feminino;30;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];2;0
+288;Não;6;Sim;Sim;Feminino;17;3.º ciclo;Estudante;Rural;Fitness;(0, 30];2;0
+293;Não;3;Sim;Sim;Masculino;30;3.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;0
+295;Não;3;Sim;Sim;Masculino;45;3.º ciclo;Trabalhador por conta própria;Rural;BTT_Ciclismo;(60, +);1;30
+298;Não;2;Não;Sim;Feminino;42;Superior;Desempregado;Rural;Outra;(30, 60];1;31
+299;Não;2;Não;Sim;Feminino;16;Secundário;Estudante;Rural;Outra;(30, 60];1;31
+300;Não;3;Sim;Sim;Masculino;64;Secundário;Reformado;Urbana;BTT_Ciclismo;(60, +);1;0
+301;Não;4;Sim;Sim;Masculino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+302;Não;1;Não;Sim;Feminino;23;Superior;Trabalhador por conta própria;Urbana;Fitness;(60, +);2;NA
+304;Não;3;Sim;Sim;Masculino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;NA
+306;Não;5;Não;Não;Feminino;22;Secundário;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;32
+307;Não;2;Não;Sim;Feminino;19;Superior;Estudante;Urbana;Outra;(30, 60];1;40
+308;Não;2;Sim;Sim;Masculino;32;Secundário;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);2;NA
+309;Não;4;Sim;Sim;Feminino;17;Secundário;Estudante;Urbana;Outra;(60, +);2;NA
+310;Não;2;Sim;Sim;Feminino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;NA
+312;Não;4;Sim;Sim;Feminino;32;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;60
+314;Não;2;Sim;Sim;Feminino;15;3.º ciclo;Estudante;Urbana;Outra;(30, 60];1;NA
+315;Não;3;Sim;Sim;Masculino;18;Secundário;Estudante;Urbana;Outra;(60, +);2;NA
+318;Não;6;Não;Sim;Feminino;21;Superior;Estudante;Urbana;Fitness;(0, 30];1;NA
+320;Não;2;Sim;Sim;Feminino;20;Secundário;Estudante;Urbana;Outra;(60, +);1;NA
+321;Não;2;Sim;Sim;Masculino;17;Secundário;Estudante;Urbana;Outra;(60, +);2;NA
+324;Não;1;Não;Não;Feminino;27;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;42
+327;Não;2;Não;Não;Feminino;37;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;35
+329;Não;2;Sim;Sim;Masculino;61;Superior;Reformado;Urbana;Outra;(30, 60];1;150
+333;Não;3;Sim;Não;Masculino;29;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);2;30
+336;Não;1;Sim;Não;Feminino;81;1.º ciclo;Reformado;Urbana;Outra;(30, 60];1;18
+337;Não;2;Sim;Sim;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;55
+340;Não;1;Sim;Sim;Feminino;54;Secundário;Trabalhador por conta própria;Urbana;BTT_Ciclismo;(60, +);1;0
+341;Não;3;Sim;Sim;Masculino;15;2.º ciclo;Estudante;Urbana;Outra;(60, +);1;50
+350;Não;5;Sim;Não;Masculino;19;Superior;Estudante;Urbana;Outra;(60, +);1;0
+352;Não;1;Sim;Sim;Feminino;32;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+353;Não;1;Sim;Não;Masculino;43;2.º ciclo;Trabalhador por conta de outrem;Rural;Outra;(60, +);1;50
+354;Não;3;Sim;NA;Masculino;36;Superior;Trabalhador por conta de outrem;Rural;Outra;(30, 60];1;60
+356;Não;2;Sim;Não;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;35
+357;Não;2;Sim;Não;Feminino;32;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;35
+359;Não;1;Sim;Sim;Masculino;29;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+361;Não;2;Sim;Sim;Feminino;52;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;35
+363;Não;7;Sim;Não;Feminino;34;Secundário;Desempregado;Rural;BTT_Ciclismo;(30, 60];2;0
+364;Não;3;Sim;Sim;Masculino;46;Secundário;Trabalhador por conta própria;Urbana;Outra;(60, +);2;25
+365;Não;3;Sim;Não;Masculino;75;1.º ciclo;Reformado;Urbana;Outra;(30, 60];2;0
+369;Não;2;Sim;Sim;Masculino;50;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+372;Não;3;Sim;Sim;Masculino;20;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+378;Não;1;Sim;Sim;Feminino;31;Superior;Trabalhador por conta própria;Urbana;Fitness;(30, 60];2;NA
+380;Não;3;Sim;Sim;Feminino;33;Superior;Trabalhador por conta própria;Urbana;Fitness;(30, 60];1;50
+382;Não;2;Não;Sim;Masculino;31;Superior;Trabalhador por conta própria;Urbana;Outra;(60, +);2;30
+383;Não;3;Sim;Sim;Masculino;22;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;0
+386;Não;1;Sim;Não;Masculino;37;Superior;Trabalhador por conta de outrem;Rural;Outra;(30, 60];1;NA
+388;Não;7;Não;Não;Feminino;35;Secundário;Desempregado;Urbana;Outra;(30, 60];1;0
+389;Não;1;Não;Sim;Masculino;34;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;8
+390;Não;4;Sim;Sim;Masculino;23;Secundário;Estudante;Urbana;Outra;(60, +);2;NA
+393;Não;1;Sim;Não;Masculino;30;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;NA
+394;Não;2;Não;Não;Masculino;28;Secundário;Trabalhador por conta própria;Urbana;Outra;(30, 60];2;35
+397;Não;7;Não;Sim;Feminino;40;Secundário;Trabalhador por conta própria;Urbana;Outra;(30, 60];2;NA
+401;Não;3;Não;Sim;Masculino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+403;Não;2;Não;Não;Masculino;38;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;0
+404;Não;3;Sim;Sim;Masculino;17;3.º ciclo;Estudante;Rural;Outra;(60, +);2;10
+405;Não;2;Sim;Sim;Feminino;30;Superior;Trabalhador por conta própria;Urbana;Outra;(30, 60];2;NA
+407;Não;2;Não;Sim;Masculino;30;3.º ciclo;Trabalhador por conta própria;Urbana;Outra;(0, 30];2;10
+408;Não;3;Não;Sim;Feminino;16;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+413;Não;2;Não;Sim;Feminino;16;3.º ciclo;Estudante;Urbana;Outra;(60, +);2;32
+417;Não;2;Sim;Sim;Feminino;16;Secundário;Estudante;Urbana;Outra;(60, +);1;30
+426;Não;3;Sim;Não;Masculino;60;Secundário;Reformado;Urbana;Outra;(30, 60];1;17
+434;Não;3;Sim;Não;Masculino;52;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];1;0
+437;Não;2;Sim;Sim;Feminino;62;3.º ciclo;Trabalhador por conta própria;Urbana;BTT_Ciclismo;(60, +);1;0
+439;Não;1;Sim;NA;Feminino;72;1.º ciclo;Reformado;Rural;Fitness;(60, +);1;0
+443;Não;2;Sim;Não;Feminino;48;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;40
+444;Não;3;Sim;Sim;Feminino;50;Secundário;Desempregado;Urbana;Fitness;(60, +);1;150
+447;Não;3;Sim;Não;Feminino;79;1.º ciclo;Outra;Urbana;Outra;(30, 60];1;45
+448;Não;4;Sim;Sim;Feminino;56;Superior;Reformado;Urbana;Fitness;(0, 30];1;35
+453;Não;1;Sim;Sim;Masculino;46;3.º ciclo;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(0, 30];1;0
+460;Não;5;Sim;Não;Masculino;53;1.º ciclo;Reformado;Urbana;BTT_Ciclismo;(60, +);1;0
+461;Não;2;Sim;Sim;Masculino;47;3.º ciclo;Trabalhador por conta própria;Urbana;Outra;(60, +);1;150
+475;Não;2;Sim;Sim;Masculino;54;Secundário;Reformado;Urbana;BTT_Ciclismo;(60, +);2;0
+477;Não;2;Sim;Não;Feminino;56;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];2;15
+481;Não;3;Sim;Sim;Feminino;59;1.º ciclo;Reformado;Urbana;Fitness;(30, 60];1;0
+486;Não;2;Sim;Sim;Masculino;38;Superior;Trabalhador por conta própria;Urbana;Outra;(60, +);1;0
+497;Não;2;Sim;Não;Feminino;73;1.º ciclo;Reformado;Urbana;Fitness;(30, 60];1;0
+501;Não;3;Sim;Sim;Feminino;79;3.º ciclo;Reformado;Urbana;Outra;(30, 60];2;20
+502;Não;7;Sim;Sim;Masculino;23;2.º ciclo;Desempregado;Urbana;BTT_Ciclismo;(60, +);1;0
+504;Não;2;Sim;Sim;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;28
+509;Não;5;Sim;Não;Masculino;23;Secundário;Estudante;Urbana;Fitness;(60, +);1;35
+511;Não;5;Sim;Sim;Masculino;79;1.º ciclo;Reformado;Urbana;BTT_Ciclismo;(0, 30];1;NA
+513;Não;3;Sim;Sim;Masculino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;NA
+514;Não;3;Sim;Sim;Masculino;56;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+515;Não;3;Sim;Sim;Feminino;27;3.º ciclo;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(60, +);1;0
+517;Não;1;Sim;Sim;Masculino;41;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;0
+520;Não;5;Sim;Não;Feminino;54;3.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+521;Não;3;Não;NA;Masculino;30;3.º ciclo;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(60, +);1;0
+522;Não;2;Sim;Não;Feminino;17;Secundário;Estudante;Urbana;Outra;(60, +);1;0
+526;Não;4;Sim;Sim;Masculino;23;Secundário;Estudante;Urbana;Outra;(30, 60];1;0
+528;Não;3;Sim;Não;Feminino;26;Superior;Trabalhador por conta própria;Urbana;Outra;(30, 60];1;0
+534;Não;3;Sim;Sim;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];2;0
+537;Não;7;Sim;Sim;Masculino;15;Secundário;Estudante;Urbana;BTT_Ciclismo;(60, +);1;0
+538;Não;2;Sim;Não;Masculino;20;Secundário;Estudante;Urbana;Fitness;(60, +);2;0
+539;Não;3;Sim;Não;Feminino;30;NA;Trabalhador por conta de outrem;Rural;Fitness;(30, 60];1;50
+545;Não;2;Sim;Não;Feminino;63;3.º ciclo;Reformado;Urbana;Fitness;(30, 60];2;17
+548;Não;3;Sim;Sim;Masculino;61;3.º ciclo;Reformado;Urbana;Outra;(0, 30];2;0
+551;Não;3;Sim;Sim;Masculino;52;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+556;Não;2;Sim;Sim;Feminino;15;3.º ciclo;Estudante;Urbana;Outra;(60, +);1;0
+557;Não;3;Sim;Sim;Masculino;43;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+560;Não;3;Sim;Sim;Masculino;61;Superior;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;0
+561;Não;4;Sim;Sim;Masculino;39;3.º ciclo;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(30, 60];1;0
+562;Não;3;Sim;Sim;Masculino;51;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+564;Não;7;Sim;Sim;Masculino;40;3.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+565;Não;2;Sim;Sim;Masculino;60;1.º ciclo;Trabalhador por conta própria;Urbana;BTT_Ciclismo;(60, +);1;0
+567;Não;5;Sim;Sim;Masculino;23;Secundário;Estudante;Urbana;BTT_Ciclismo;(60, +);2;0
+569;Não;2;Sim;Sim;Masculino;28;Secundário;Estudante;Urbana;Outra;(30, 60];1;30
+571;Não;3;Sim;Não;Masculino;20;3.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;0
+572;Não;2;Sim;Sim;Masculino;25;Superior;Estudante;Urbana;Fitness;(60, +);1;45
+573;Não;5;Sim;Sim;Masculino;36;1.º ciclo;Trabalhador por conta de outrem;Urbana;Fitness;(30, 60];1;36
+578;Não;2;Sim;Sim;Masculino;19;Secundário;Desempregado;Urbana;BTT_Ciclismo;(60, +);1;0
+583;Não;3;Sim;Sim;Feminino;20;Superior;Estudante;Urbana;Outra;(60, +);1;0
+585;Não;1;Sim;Não;Masculino;86;1.º ciclo;Reformado;Urbana;Fitness;(30, 60];1;0
+589;Não;4;Sim;Não;Masculino;40;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];1;0
+590;Não;6;Sim;Sim;Masculino;20;Secundário;Estudante;Urbana;BTT_Ciclismo;(60, +);1;0
+592;Não;6;Sim;Sim;Feminino;36;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(30, 60];2;0
+593;Não;1;Sim;Não;Masculino;43;Secundário;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;25
+598;Não;2;Sim;Sim;Masculino;44;Superior;Trabalhador por conta de outrem;Urbana;BTT_Ciclismo;(60, +);1;0
+601;Não;3;Sim;Sim;Masculino;22;Secundário;Estudante;Urbana;Outra;(60, +);2;0
+603;Não;5;Sim;Sim;Feminino;36;Secundário;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;60
+606;Não;4;Sim;Sim;Masculino;29;3.º ciclo;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;200
+607;Não;4;Sim;Não;Masculino;39;Superior;Trabalhador por conta de outrem;Urbana;Fitness;(60, +);1;45
+608;Não;6;Sim;Sim;Masculino;18;Secundário;Estudante;Urbana;Outra;(60, +);1;100
+612;Não;5;Sim;Sim;Feminino;16;Secundário;Estudante;Urbana;Outra;(60, +);1;50
+614;Não;2;Sim;Sim;Masculino;37;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(30, 60];2;0
+616;Não;2;Sim;Não;Masculino;15;Secundário;Estudante;Urbana;Outra;(60, +);1;30
+622;Não;2;Sim;Sim;Masculino;30;Secundário;Trabalhador por conta de outrem;Urbana;Outra;(60, +);1;15
+624;Não;3;Sim;Não;Feminino;36;Superior;Desempregado;Urbana;Fitness;(60, +);1;41
+626;Não;2;Sim;Não;Masculino;37;Superior;Desempregado;Urbana;Fitness;(30, 60];2;100
+628;Não;3;Não;NA;Feminino;39;Superior;Trabalhador por conta de outrem;Rural;BTT_Ciclismo;(60, +);1;0
+636;Não;1;Sim;NA;Masculino;77;1.º ciclo;Reformado;Rural;Fitness;(30, 60];1;0
+637;Não;1;Sim;Não;Masculino;43;Secundário;Trabalhador por conta de outrem;Rural;Outra;(30, 60];2;8
+638;Não;2;Sim;Não;Masculino;16;3.º ciclo;Estudante;Rural;Outra;(60, +);1;0
+639;Não;2;Sim;Não;Masculino;19;Secundário;Estudante;Rural;Outra;(30, 60];2;2
+640;Não;2;Sim;Não;Masculino;57;Secundário;Reformado;Rural;Fitness;(30, 60];1;20
+641;Não;2;Sim;Não;Masculino;54;1.º ciclo;Reformado;Rural;BTT_Ciclismo;(60, +);2;0
+642;Não;2;Sim;Não;Masculino;64;1.º ciclo;Reformado;Rural;Fitness;(30, 60];1;20
+644;Não;2;Sim;Sim;Masculino;42;Secundário;Trabalhador por conta própria;Urbana;BTT_Ciclismo;(60, +);1;0
+645;Não;2;Sim;Não;Masculino;44;2.º ciclo;Trabalhador por conta de outrem;Rural;Outra;(60, +);1;0
+646;Não;2;Sim;Não;Masculino;16;Secundário;Estudante;Rural;Outra;(60, +);1;0
+648;Não;4;Sim;Sim;Feminino;23;Superior;Estudante;Rural;Fitness;(60, +);1;40
+650;Não;2;Sim;Sim;Masculino;25;3.º ciclo;Trabalhador por conta de outrem;Rural;Outra;(60, +);1;0
+653;Não;3;Sim;Sim;Masculino;31;Secundário;Trabalhador por conta de outrem;Rural;Fitness;(60, +);1;50
+2;Sim;7;Sim;Sim;Feminino;71;1.º ciclo;Reformado;Urbana;Caminhadas;(60, +);1;0
+3;Sim;4;Sim;Sim;Feminino;75;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+4;Sim;2;Sim;Sim;Masculino;50;3.º ciclo;Trabalhador por conta própria;Urbana;Caminhadas;(30, 60];1;0
+6;Sim;4;Sim;Sim;Feminino;48;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+8;Sim;6;Sim;Não;Feminino;52;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+14;Sim;2;Sim;Sim;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+21;Sim;3;Sim;Sim;Feminino;54;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+25;Sim;1;Sim;Não;Feminino;17;Secundário;Estudante;Urbana;Caminhadas;(60, +);1;0
+29;Sim;7;Sim;Sim;Feminino;66;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+33;Sim;5;Sim;Sim;Feminino;63;2.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+38;Sim;5;Sim;Não;Feminino;33;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+43;Sim;5;Sim;Não;Masculino;22;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+45;Sim;3;Sim;NA;Feminino;74;Secundário;Reformado;Urbana;Caminhadas;(0, 30];1;0
+52;Sim;3;Sim;Não;Feminino;62;1.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+54;Sim;2;Sim;Sim;Feminino;49;1.º ciclo;Desempregado;Rural;Caminhadas;(30, 60];1;0
+58;Sim;5;Sim;Não;Feminino;57;2.º ciclo;Desempregado;Urbana;Caminhadas;(0, 30];1;0
+62;Sim;1;Sim;Sim;Feminino;49;Secundário;Reformado;Urbana;Caminhadas;(0, 30];1;0
+63;Sim;7;Sim;Sim;Feminino;49;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+73;Sim;5;Sim;Sim;Feminino;40;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+79;Sim;2;Sim;Sim;Feminino;57;Secundário;Reformado;Urbana;Caminhadas;(60, +);1;2
+84;Sim;5;Sim;Sim;Feminino;66;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+89;Sim;2;Sim;Sim;Feminino;31;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+91;Sim;2;Sim;Não;Feminino;51;Superior;Desempregado;Urbana;Caminhadas;(30, 60];1;0
+93;Sim;7;Sim;NA;Feminino;75;1.º ciclo;Reformado;Urbana;Caminhadas;(0, 30];1;0
+105;Sim;1;Sim;Sim;Feminino;54;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+114;Sim;5;Sim;Sim;Masculino;74;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+119;Sim;7;Sim;Sim;Masculino;62;2.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+121;Sim;2;Sim;Sim;Masculino;64;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+126;Sim;2;Sim;Sim;Masculino;78;1.º ciclo;Reformado;Urbana;Caminhadas;(0, 30];1;0
+139;Sim;7;Sim;Não;Masculino;69;1.º ciclo;Reformado;Urbana;Caminhadas;(0, 30];1;0
+142;Sim;2;Sim;Sim;Feminino;47;2.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+143;Sim;4;Sim;Não;Feminino;79;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+145;Sim;3;Sim;Sim;Feminino;66;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+148;Sim;2;Sim;Não;Feminino;24;Secundário;Desempregado;Urbana;Caminhadas;(30, 60];1;0
+156;Sim;2;Sim;Sim;Feminino;47;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+159;Sim;5;Sim;Não;Feminino;48;2.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+164;Sim;6;Sim;Sim;Masculino;83;Secundário;Reformado;Urbana;Caminhadas;(0, 30];1;0
+165;Sim;3;Sim;Sim;Feminino;65;1.º ciclo;Desempregado;Urbana;Caminhadas;(30, 60];1;0
+167;Sim;7;Sim;Sim;Feminino;49;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+174;Sim;3;Sim;Sim;Feminino;69;2.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+175;Sim;7;Sim;NA;Feminino;74;2.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+179;Sim;2;Sim;Sim;Masculino;73;3.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+181;Sim;3;Sim;Não;Feminino;61;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+185;Sim;3;Sim;Sim;Masculino;57;1.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+211;Sim;4;Sim;Sim;Feminino;34;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+225;Sim;1;Sim;Sim;Masculino;53;2.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+231;Sim;7;Sim;Não;Masculino;79;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+234;Sim;1;Sim;Sim;Masculino;60;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+238;Sim;4;Sim;Sim;Feminino;19;Superior;Estudante;Urbana;Caminhadas;(30, 60];1;0
+240;Sim;4;Sim;Não;Feminino;36;3.º ciclo;Trabalhador por conta de outrem;Rural;Caminhadas;(30, 60];1;0
+242;Sim;2;Sim;Sim;Masculino;52;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+248;Sim;2;Sim;Não;Feminino;30;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+257;Sim;2;Sim;Sim;Feminino;36;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+262;Sim;4;Sim;Sim;Masculino;28;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+264;Sim;4;Sim;Não;Feminino;29;Secundário;Desempregado;Urbana;Caminhadas;(60, +);1;0
+265;Sim;3;Sim;Sim;Feminino;28;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+287;Sim;3;Sim;Não;Masculino;44;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+296;Sim;3;Sim;Sim;Masculino;56;Secundário;Reformado;Urbana;Caminhadas;(30, 60];1;0
+297;Sim;7;Não;Sim;Masculino;42;Superior;Trabalhador por conta própria;Urbana;Caminhadas;(30, 60];1;0
+323;Sim;7;Não;Não;Feminino;28;Superior;Desempregado;Urbana;Caminhadas;(30, 60];1;NA
+331;Sim;3;Sim;Sim;Feminino;64;2.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+344;Sim;5;Sim;Não;Masculino;67;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+358;Sim;2;Sim;Sim;Masculino;40;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+360;Sim;1;Sim;Sim;Feminino;56;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+362;Sim;5;Sim;Não;Masculino;80;1.º ciclo;Reformado;Urbana;Caminhadas;(0, 30];1;0
+414;Sim;2;Sim;Sim;Feminino;65;1.º ciclo;Reformado;Urbana;Caminhadas;(0, 30];1;0
+418;Sim;3;Sim;Sim;Feminino;67;Secundário;Reformado;Urbana;Caminhadas;(30, 60];1;0
+422;Sim;3;Sim;Sim;Feminino;49;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+423;Sim;7;Sim;Sim;Feminino;65;Secundário;Reformado;Urbana;Caminhadas;(30, 60];1;0
+427;Sim;1;Sim;Sim;Feminino;50;3.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+430;Sim;3;Sim;Sim;Feminino;47;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+438;Sim;7;Sim;Não;Feminino;62;1.º ciclo;Outra;Urbana;Caminhadas;(30, 60];1;0
+440;Sim;1;Sim;Sim;Masculino;50;2.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+441;Sim;3;Sim;Não;Feminino;43;Secundário;Trabalhador por conta de outrem;Rural;Caminhadas;(30, 60];1;0
+442;Sim;4;Sim;Sim;Feminino;63;1.º ciclo;Trabalhador por conta própria;Urbana;Caminhadas;(0, 30];1;0
+446;Sim;2;Sim;NA;Feminino;65;1.º ciclo;Reformado;Rural;Caminhadas;(0, 30];1;0
+449;Sim;2;Sim;Sim;Feminino;47;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+454;Sim;4;Sim;Sim;Feminino;55;Secundário;Desempregado;Urbana;Caminhadas;(60, +);1;0
+455;Sim;7;Sim;Não;Masculino;61;3.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+457;Sim;3;Sim;Não;Feminino;77;1.º ciclo;Reformado;Urbana;Caminhadas;(60, +);1;0
+463;Sim;3;Sim;Sim;Feminino;67;3.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+464;Sim;3;Sim;Sim;Feminino;78;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+466;Sim;4;Não;NA;Feminino;67;1.º ciclo;Reformado;Rural;Caminhadas;(0, 30];1;0
+468;Sim;5;Não;NA;Feminino;73;1.º ciclo;Reformado;Rural;Caminhadas;(30, 60];1;0
+476;Sim;3;Sim;Sim;Masculino;41;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+482;Sim;5;Sim;Sim;Feminino;63;3.º ciclo;Reformado;Rural;Caminhadas;(30, 60];1;0
+487;Sim;5;Não;NA;Masculino;57;1.º ciclo;Reformado;Rural;Caminhadas;(60, +);1;0
+490;Sim;6;Sim;Sim;Feminino;56;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+491;Sim;5;Sim;Sim;Feminino;61;1.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+493;Sim;7;Sim;Sim;Feminino;49;1.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+499;Sim;4;Sim;Não;Feminino;25;Secundário;Desempregado;Urbana;Caminhadas;(60, +);1;0
+503;Sim;2;Sim;Não;Feminino;69;Superior;Reformado;Urbana;Caminhadas;(0, 30];1;0
+505;Sim;7;Sim;Sim;Masculino;63;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+508;Sim;7;Sim;Não;Feminino;51;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+510;Sim;4;Sim;Não;Masculino;69;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+516;Sim;7;Sim;Não;Feminino;60;1.º ciclo;Trabalhador por conta de outrem;Rural;Caminhadas;(30, 60];1;0
+527;Sim;5;Sim;Não;Feminino;52;1.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+530;Sim;7;Sim;Sim;Feminino;64;3.º ciclo;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+532;Sim;5;Sim;Sim;Feminino;59;3.º ciclo;Trabalhador por conta própria;Urbana;Caminhadas;(0, 30];1;0
+536;Sim;2;Sim;Sim;Feminino;48;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+540;Sim;5;Sim;Sim;Feminino;56;Secundário;Desempregado;Urbana;Caminhadas;(0, 30];1;0
+541;Sim;7;Sim;Sim;Masculino;54;3.º ciclo;Reformado;Urbana;Caminhadas;(60, +);1;0
+543;Sim;3;Não;NA;Feminino;41;1.º ciclo;Trabalhador por conta de outrem;Rural;Caminhadas;(0, 30];1;0
+544;Sim;3;Sim;Sim;Masculino;51;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+546;Sim;4;Sim;Sim;Masculino;59;1.º ciclo;Reformado;Urbana;Caminhadas;(60, +);1;0
+549;Sim;7;Sim;Não;Masculino;73;Superior;Reformado;Urbana;Caminhadas;(30, 60];1;0
+550;Sim;5;Sim;Sim;Feminino;47;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+552;Sim;6;Sim;Sim;Masculino;31;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+555;Sim;6;Sim;Sim;Masculino;62;1.º ciclo;Trabalhador por conta própria;Urbana;Caminhadas;(30, 60];1;0
+584;Sim;2;Sim;NA;Masculino;80;2.º ciclo;Reformado;Urbana;Caminhadas;(60, +);1;0
+587;Sim;4;Não;NA;Feminino;40;Secundário;Trabalhador por conta de outrem;Rural;Caminhadas;(60, +);1;0
+594;Sim;3;Sim;NA;Masculino;64;3.º ciclo;Reformado;Urbana;Caminhadas;(30, 60];1;0
+595;Sim;7;Sim;Não;Masculino;58;3.º ciclo;Trabalhador por conta própria;Urbana;Caminhadas;(30, 60];1;0
+596;Sim;3;Sim;Sim;Feminino;39;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(30, 60];1;0
+600;Sim;6;Sim;Não;Masculino;61;Secundário;Reformado;Urbana;Caminhadas;(60, +);1;0
+605;Sim;5;Sim;Não;Feminino;39;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(60, +);1;0
+615;Sim;6;Sim;Sim;Masculino;35;Secundário;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+627;Sim;2;Sim;Não;Feminino;37;Superior;Trabalhador por conta de outrem;Urbana;Caminhadas;(0, 30];1;0
+643;Sim;2;Sim;Sim;Masculino;60;3.º ciclo;Reformado;Rural;Caminhadas;(30, 60];1;0
+649;Sim;3;Sim;Não;Masculino;45;2.º ciclo;Trabalhador por conta de outrem;Rural;Caminhadas;(30, 60];1;0
+652;Sim;2;Sim;Não;Masculino;60;1.º ciclo;Reformado;Rural;Caminhadas;(60, +);1;0

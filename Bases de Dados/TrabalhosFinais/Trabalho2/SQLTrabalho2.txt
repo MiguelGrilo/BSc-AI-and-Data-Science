@@ -1,0 +1,706 @@
+--TABELAS
+CREATE TABLE Leitor
+(NomeL VARCHAR(30) NOT NULL,
+NifL INT PRIMARY KEY,
+EmailL VARCHAR(25),
+NacionalidadeL VARCHAR(20));
+CREATE TABLE Regular
+(NifL INT PRIMARY KEY,
+FOREIGN KEY (NifL) REFERENCES Leitor(NifL));
+CREATE TABLE Frequente
+(NifL INT PRIMARY KEY,
+FOREIGN KEY (NifL) REFERENCES Leitor(NifL));
+CREATE TABLE Livro
+(ISBN INT PRIMARY KEY,
+Titulo VARCHAR(30));
+CREATE TABLE Genero
+(ISBN INT,
+NomeG VARCHAR(30),
+PRIMARY KEY (ISBN, NomeG),
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN));
+CREATE TABLE Exemplares
+(IdExemplares INT PRIMARY KEY,
+LinkE VARCHAR(50),
+ISBNE INT,
+FOREIGN KEY (ISBNE) REFERENCES Livro(ISBN));
+CREATE TABLE Editora
+(NifE INT PRIMARY KEY,
+NomeE VARCHAR(30) NOT NULL,
+EmailE VARCHAR(25));
+CREATE TABLE Autor
+(NomeA VARCHAR(30),
+CodA INT PRIMARY KEY,
+NacionalidadeA VARCHAR(30));
+CREATE TABLE Faturacao
+(NifL INT,
+Valor INT,
+Mes INT CHECK (Mes >= 1 AND Mes <= 12),
+Ano INT,
+PRIMARY KEY (NifL, Mes, Ano),
+Foreign key (NifL) references Leitor(NifL));
+CREATE TABLE Amigo
+(NifL1 INT,
+NifL2 INT,
+PRIMARY KEY (NifL1, NifL2),
+FOREIGN KEY (NifL1) REFERENCES Leitor(NifL),
+FOREIGN KEY (NifL2) REFERENCES Leitor(NifL),
+CONSTRAINT amigoDif CHECK (NifL1 <> NifL2)); -- Não permitir que alguém seja amigo de si próprio
+CREATE TABLE Autoria
+(ISBN INT,
+CodA INT,
+PRIMARY KEY (ISBN, CodA),
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (CodA) REFERENCES Autor(CodA));
+CREATE TABLE Avaliacao
+(ISBN INT,
+NifL INT,
+Estrelas INT CHECK (Estrelas >= 0 AND Estrelas <= 5),
+Comentarios VARCHAR(100),
+PRIMARY KEY (ISBN, NifL),
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (NifL) REFERENCES Leitor(NifL));
+CREATE TABLE Aluguer
+(ISBN INT,
+NifL INT,
+Semana INT,
+Ano INT,
+Valor_Pagar INT,
+PRIMARY KEY (ISBN, NifL, Semana, Ano),
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (NifL) REFERENCES Leitor(NifL));
+CREATE TABLE Obra
+(ISBN INT,
+IdExemplares INT PRIMARY KEY,
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (IdExemplares) REFERENCES Exemplares(IdExemplares));
+CREATE TABLE Editado
+(NifE INT,
+ISBN INT PRIMARY KEY,
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (NifE) REFERENCES Editora(NifE));
+CREATE TABLE Encomenda
+(DataE DATE, -- Formato AAAA-MM-DDValor INT,
+NifE INT,
+ISBN INT,
+IdExemplares INT,
+Valor INT,
+PRIMARY KEY (IdExemplares, ISBN, DataE),
+FOREIGN KEY (ISBN) REFERENCES Livro(ISBN),
+FOREIGN KEY (IdExemplares) REFERENCES Exemplares(IdExemplares),
+FOREIGN KEY (NifE) REFERENCES Editora(NifE));
+
+
+
+--VALORES
+-- Leitores
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('João Pereira', 123456789, 'joao.pereira@mail.com', 'Portugal');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Maria Oliveira', 987654321, 'maria.oliveira@mail.com', 'Brasil');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Carlos Pereira', 234567890, 'carlos.pereira@mail.com', 'Angola');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Ana Santos', 345678901, 'ana.santos@mail.com', 'Espanha');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Pedro Costa', 456789012, 'pedro.costa@mail.com', 'França');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Rita Ferreira', 567890123, 'rita.ferreira@mail.com', 'Portugal');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Luís Rocha', 678901234, 'luis.rocha@mail.com', 'Brasil');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Beatriz Almeida', 789012345, 'beatriz.almeida@mail.com', 'Angola');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Tiago Moreira', 890123456, 'tiago.moreira@mail.com', 'Espanha');
+INSERT INTO Leitor (NomeL, NifL, EmailL, NacionalidadeL) VALUES ('Sofia Martins', 901234567, 'sofia.martins@mail.com', 'França');
+-- Leitores regulares
+INSERT INTO Regular (NifL) VALUES (123456789);
+INSERT INTO Regular (NifL) VALUES (987654321);
+INSERT INTO Regular (NifL) VALUES (234567890);
+INSERT INTO Regular (NifL) VALUES (345678901);
+INSERT INTO Regular (NifL) VALUES (456789012);
+-- Leitores frequentes
+INSERT INTO Frequente (NifL) VALUES (567890123);
+INSERT INTO Frequente (NifL) VALUES (678901234);
+INSERT INTO Frequente (NifL) VALUES (789012345);
+INSERT INTO Frequente (NifL) VALUES (890123456);
+INSERT INTO Frequente (NifL) VALUES (901234567);
+-- Autores
+INSERT INTO Autor (NomeA, CodA, NacionalidadeA) VALUES ('José Saramago', 201, 'Portugal');
+INSERT INTO Autor (NomeA, CodA, NacionalidadeA) VALUES ('Autor2', 202, 'Brasil');
+INSERT INTO Autor (NomeA, CodA, NacionalidadeA) VALUES ('Autor3', 203, 'Espanha');
+-- Livros
+INSERT INTO Livro (ISBN, Titulo) VALUES (1, 'Memorial do Convento');
+INSERT INTO Livro (ISBN, Titulo) VALUES (2, 'Livro2');
+INSERT INTO Livro (ISBN, Titulo) VALUES (3, 'Livro3');
+INSERT INTO Livro (ISBN, Titulo) VALUES (4, 'Livro4');
+INSERT INTO Livro (ISBN, Titulo) VALUES (5, 'Livro5');
+INSERT INTO Livro (ISBN, Titulo) VALUES (6, 'Livro6');
+INSERT INTO Livro (ISBN, Titulo) VALUES (7, 'Livro7');
+INSERT INTO Livro (ISBN, Titulo) VALUES (8, 'Livro8');
+INSERT INTO Livro (ISBN, Titulo) VALUES (9, 'Livro9');
+INSERT INTO Livro (ISBN, Titulo) VALUES (10, 'Livro10');
+-- Generos
+INSERT INTO Genero (ISBN, NomeG) VALUES (1, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (1, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (1, 'Ficção');
+INSERT INTO Genero (ISBN, NomeG) VALUES (2, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (2, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (2, 'Fantasia');
+INSERT INTO Genero (ISBN, NomeG) VALUES (3, 'Ficção');
+INSERT INTO Genero (ISBN, NomeG) VALUES (3, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (3, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (4, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (4, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (4, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (5, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (5, 'Mistério');
+INSERT INTO Genero (ISBN, NomeG) VALUES (5, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (6, 'Ficção');
+INSERT INTO Genero (ISBN, NomeG) VALUES (6, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (6, 'Mistério');
+INSERT INTO Genero (ISBN, NomeG) VALUES (7, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (7, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (7, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (8, 'Ficção');
+INSERT INTO Genero (ISBN, NomeG) VALUES (8, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (8, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (9, 'Romance');
+INSERT INTO Genero (ISBN, NomeG) VALUES (9, 'Terror');
+INSERT INTO Genero (ISBN, NomeG) VALUES (9, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (10, 'História');
+INSERT INTO Genero (ISBN, NomeG) VALUES (10, 'Ficção');
+INSERT INTO Genero (ISBN, NomeG) VALUES (10, 'Terror');
+-- Autoria
+INSERT INTO Autoria (ISBN, CodA) VALUES (1, 201); 
+INSERT INTO Autoria (ISBN, CodA) VALUES (2, 202);
+INSERT INTO Autoria (ISBN, CodA) VALUES (2, 203); -- Dois autores para 'Livro2'
+INSERT INTO Autoria (ISBN, CodA) VALUES (3, 201);
+INSERT INTO Autoria (ISBN, CodA) VALUES (3, 202); -- Dois autores para 'Livro3'
+INSERT INTO Autoria (ISBN, CodA) VALUES (4, 202);
+INSERT INTO Autoria (ISBN, CodA) VALUES (5, 203);
+INSERT INTO Autoria (ISBN, CodA) VALUES (6, 201);
+INSERT INTO Autoria (ISBN, CodA) VALUES (7, 202);
+INSERT INTO Autoria (ISBN, CodA) VALUES (8, 203);
+INSERT INTO Autoria (ISBN, CodA) VALUES (9, 201);
+INSERT INTO Autoria (ISBN, CodA) VALUES (10, 202);
+-- Exemplares
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (101, 'link1.com', 1);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (102, 'link2.com', 1);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (103, 'link3.com', 1);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (104, 'link4.com', 2);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (105, 'link5.com', 2);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (106, 'link6.com', 2);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (107, 'link7.com', 3);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (108, 'link8.com', 3);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (109, 'link9.com', 3);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (110, 'link10.com', 4);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (111, 'link11.com', 4);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (112, 'link12.com', 4);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (113, 'link13.com', 5);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (114, 'link14.com', 5);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (115, 'link15.com', 5);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (116, 'link16.com', 6);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (117, 'link17.com', 6);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (118, 'link18.com', 6);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (119, 'link19.com', 7);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (120, 'link20.com', 7);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (121, 'link21.com', 7);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (122, 'link22.com', 8);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (123, 'link23.com', 8);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (124, 'link24.com', 8);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (125, 'link25.com', 9);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (126, 'link26.com', 9);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (127, 'link27.com', 9);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (128, 'link28.com', 10);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (129, 'link29.com', 10);
+INSERT INTO Exemplares (IdExemplares, LinkE, ISBNE) VALUES (130, 'link30.com', 10);
+-- Alugueres para leitores regulares (exceto 123456789: Nao fez nenhum aluguer nas 8 semanas)
+-- Semana 1 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 987654321, 1, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 234567890, 1, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 345678901, 1, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 456789012, 1, 2024, 2);
+-- Semana 1 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 567890123, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 567890123, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 567890123, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 901234567, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 901234567, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (1, 890123456, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 890123456, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 890123456, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 678901234, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 678901234, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 678901234, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 789012345, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 789012345, 1, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 789012345, 1, 2024, 1);
+-- Semana 2 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 987654321, 2, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 234567890, 2, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 345678901, 2, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 456789012, 2, 2024, 2);
+-- Semana 2 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 567890123, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 567890123, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 567890123, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 678901234, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 678901234, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 678901234, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 789012345, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 789012345, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 789012345, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 901234567, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 901234567, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 890123456, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 890123456, 2, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 890123456, 2, 2024, 1);
+-- Semana 3 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 987654321, 3, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 234567890, 3, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 345678901, 3, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 456789012, 3, 2024, 2);
+-- Semana 3 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 567890123, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 567890123, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 567890123, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 678901234, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 678901234, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 678901234, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 789012345, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 789012345, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 789012345, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 901234567, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 901234567, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 901234567, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 890123456, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 890123456, 3, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 890123456, 3, 2024, 1);
+-- Semana 4 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 987654321, 4, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 234567890, 4, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 345678901, 4, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 456789012, 4, 2024, 2);
+-- Semana 4 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 567890123, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 567890123, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 567890123, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 678901234, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 678901234, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 678901234, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 789012345, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 789012345, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 789012345, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 901234567, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 901234567, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 901234567, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 890123456, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (1, 890123456, 4, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 890123456, 4, 2024, 1);
+-- Semana 5 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 987654321, 5, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 234567890, 5, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 345678901, 5, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 456789012, 5, 2024, 2);
+-- Semana 5 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 567890123, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 567890123, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 567890123, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 678901234, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 678901234, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 678901234, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 789012345, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 789012345, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 789012345, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 901234567, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 901234567, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (1, 890123456, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 890123456, 5, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 890123456, 5, 2024, 1);
+-- Semana 6 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 987654321, 6, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 234567890, 6, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 345678901, 6, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 456789012, 6, 2024, 2);
+-- Semana 6 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 567890123, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 567890123, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 567890123, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 678901234, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (1, 678901234, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 678901234, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 789012345, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 789012345, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 789012345, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 901234567, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 901234567, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 890123456, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 890123456, 6, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 890123456, 6, 2024, 1);
+-- Semana 7 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 987654321, 7, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 234567890, 7, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 345678901, 7, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 456789012, 7, 2024, 2);
+-- Semana 7 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 567890123, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 567890123, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 567890123, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 678901234, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 678901234, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 678901234, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 789012345, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 789012345, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 789012345, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 901234567, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 901234567, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (1, 890123456, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 890123456, 7, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 890123456, 7, 2024, 1);
+-- Semana 8 (Leitores Regulares)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 987654321, 8, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 234567890, 8, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 345678901, 8, 2024, 2);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 456789012, 8, 2024, 2);
+-- Semana 8 (Leitores Frequentes)
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 567890123, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (2, 567890123, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 567890123, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 678901234, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 678901234, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 678901234, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 789012345, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (8, 789012345, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (9, 789012345, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (3, 901234567, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (5, 901234567, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (4, 901234567, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (6, 890123456, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (7, 890123456, 8, 2024, 1);
+INSERT INTO Aluguer (ISBN, NifL, Semana, Ano, Valor_Pagar) VALUES (10, 890123456, 8, 2024, 1);
+-- Pagamentos mensais para leitores regulares (2 euros por mês + 2* Livros alugadas)
+-- Mês 1 (semanas 1 a 4)
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (123456789, 2, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (987654321, 10, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (234567890, 10, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (345678901, 10, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (456789012, 10, 1, 2024);
+-- Mês 2 (semanas 5 a 8)
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (123456789, 2, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (987654321, 10, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (234567890, 10, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (345678901, 10, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (456789012, 10, 2, 2024);
+-- Pagamentos mensais para leitores regulares (1 euros por mês + 1* Livros alugadas(3 livros * 4 semanas = 12))
+-- Mês 1 (semanas 1 a 4)
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (567890123, 13, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (678901234, 13, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (789012345, 13, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (901234567, 13, 1, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (890123456, 10, 1, 2024);
+-- Mês 2 (semanas 5 a 8)
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (567890123, 13, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (678901234, 13, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (789012345, 13, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (901234567, 13, 2, 2024);
+INSERT INTO Faturacao (NifL, Valor, Mes, Ano) VALUES (890123456, 10, 2, 2024);
+--Avaliaçoes (O Livro 10 não tem nenhuma avaliação)
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (1, 123456789, 4, 'Bom livro, gostei muito.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (4, 123456789, 1, 'Não gostei do conteúdo.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (7, 123456789, 3, 'Livro interessante, mas poderia ser melhor.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (1, 987654321, 5, 'Adorei.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (4, 987654321, 3, 'É razoável, mas poderia ser mais envolvente.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (7, 987654321, 4, 'Gostei bastante, recomendo.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (1, 234567890, 4, 'Boa história.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (5, 234567890, 4, 'Muito bom, gostei do desenvolvimento das personagens.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (6, 234567890, 0, 'Não consegui terminar o livro.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (4, 345678901, 2, 'Esperava mais da história, achei previsível.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 345678901, 5, 'Excelente livro, muito bem escrito.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (8, 345678901, 4, 'Bom livro, mas o final poderia ser melhor.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (4, 456789012, 4, 'Gostei do tema, muito interessante.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 456789012, 2, 'A história não me prendeu.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (8, 456789012, 3, 'Bom livro, mas faltou mais profundidade.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 567890123, 3, 'Poderia ser mais emocionante.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (7, 567890123, 3, 'Bom, mas um pouco previsível.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (9, 567890123, 5, 'Excelente! Um dos melhores livros que já li.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 678901234, 5, 'Adorei! Muito bem escrito.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (8, 678901234, 0, 'Não consegui terminar o livro.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (9, 678901234, 4, 'Muito bom, mas achei o final um pouco corrido.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 789012345, 4, 'Boa história, mas poderia ser mais detalhada.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (2, 789012345, 1, 'Não gostei, a história não faz sentido.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (9, 789012345, 0, 'Não gostei.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (3, 890123456, 3, 'A história é boa, mas faltou mais ação.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (7, 890123456, 5, 'Excelente livro, super recomendo.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (9, 890123456, 4, 'Bom livro, mas o desenvolvimento poderia ser mais profundo.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (4, 901234567, 5, 'Um dos melhores livros que já li.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (7, 901234567, 3, 'A história é interessante.');
+INSERT INTO Avaliacao (ISBN, NifL, Estrelas, Comentarios) VALUES (9, 901234567, 3, 'Gostei, mas achei o final um pouco apressado.');
+-- Amigos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (987654321, 234567890);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (987654321, 345678901);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (234567890, 987654321);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (234567890, 456789012);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (345678901, 234567890);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (345678901, 567890123);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (456789012, 345678901);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (456789012, 567890123);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (567890123, 456789012);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (567890123, 678901234);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (678901234, 567890123);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (678901234, 789012345);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (789012345, 678901234);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (789012345, 890123456);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (890123456, 789012345);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (890123456, 901234567);
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 987654321); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 234567890); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 345678901); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 456789012); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 567890123); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 678901234); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 789012345); --amigo em comum com todos
+INSERT INTO Amigo (NifL1, NifL2) VALUES (901234567, 890123456); --amigo em comum com todos
+-- Leitor 123456789 (sem amigos)
+-- Editora
+INSERT INTO Editora (NifE, NomeE, EmailE) values (113485784, 'Editora1', 'Editora1@gmail.com');
+INSERT INTO Editora (NifE, NomeE, EmailE) values (986426732, 'Editora2', 'Editora2@gmail.com');
+INSERT INTO Editora (NifE, NomeE, EmailE) values (875216783, 'Editora3', 'Editora3@gmail.com');
+--Encomenda
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 113485784, 1, 101, 15);
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 113485784, 1, 102, 15);
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 113485784, 10, 128, 10);
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 113485784, 10, 129, 10);
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 113485784, 10, 130, 10);
+INSERT INTO Encomenda (DataE, NifE, ISBN, IdExemplares, Valor) VALUES ('2024-01-17', 986426732, 3, 109, 7);
+-- Editado
+Insert into Editado(ISBN, NIFE) values (1, 113485784);
+Insert into Editado(ISBN, NIFE) values (2, 113485784);
+Insert into Editado(ISBN, NIFE) values (3, 986426732);
+Insert into Editado(ISBN, NIFE) values (4, 113485784);
+Insert into Editado(ISBN, NIFE) values (10, 113485784);
+Insert into Editado(ISBN, NIFE) values (5, 875216783);
+Insert into Editado(ISBN, NIFE) values (6, 875216783);
+Insert into Editado(ISBN, NIFE) values (7, 875216783);
+Insert into Editado(ISBN, NIFE) values (8, 875216783);
+Insert into Editado(ISBN, NIFE) values (9, 875216783);
+-- Obra
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (101, 1);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (102, 1);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (103, 1);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (104, 2);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (105, 2);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (106, 2);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (107, 3);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (108, 3);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (109, 3);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (110, 4);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (111, 4);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (112, 4);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (113, 5);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (114, 5);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (115, 5);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (116, 6);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (117, 6);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (118, 6);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (119, 7);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (120, 7);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (121, 7);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (122, 8);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (123, 8);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (124, 8);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (125, 9);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (126, 9);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (127, 9);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (128, 10);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (129, 10);
+INSERT INTO Obra (IdExemplares, ISBN) VALUES (130, 10);
+
+
+
+--EXERCÍCIOS
+--10.a)
+SELECT NomeL
+FROM Regular, Leitor
+WHERE Regular.NifL = Leitor.NifL
+
+--10.b)
+SELECT NomeG, Titulo, NomeA 
+FROM Genero, Livro, Autoria, Autor
+WHERE Autor.CodA = Autoria.CodA
+    AND Autoria.ISBN = Livro.ISBN
+    AND Genero.ISBN = Livro.ISBN
+ORDER BY NomeG, Titulo
+
+--10.c)
+SELECT NomeG, COUNT(Livro.ISBN)
+FROM Genero, Livro
+WHERE Genero.ISBN = Livro.ISBN
+GROUP BY NomeG
+
+--10.d)
+SELECT NomeL, COUNT(NifL2)
+FROM Frequente, Leitor, Amigo
+WHERE Frequente.NifL = Leitor.NifL
+    AND Leitor.NifL = Amigo.nifL1
+GROUP BY NomeL
+
+--10.e)
+SELECT Titulo, COUNT(Encomenda.IdExemplares)
+FROM Livro, Editora, Exemplares, Encomenda
+WHERE Livro.ISBN = Encomenda.ISBN
+    AND Editora.NifE = Encomenda.NifE
+    AND Exemplares.IdExemplares = Encomenda.IdExemplares
+    AND Encomenda.DataE BETWEEN '2024-01-14' AND '2024-01-21'
+GROUP BY Titulo
+
+--10.f)
+SELECT NomeL, Titulo, Semana, Ano, Valor_Pagar
+FROM Leitor, Aluguer, Livro
+WHERE Leitor.NifL = Aluguer.Nifl
+    AND Livro.ISBN = Aluguer.ISBN
+ORDER BY NomeL, Semana, Ano
+
+--10.g)
+SELECT Titulo, NomeL, Semana, Ano, Valor_Pagar
+FROM Livro, Aluguer, Leitor
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Livro.ISBN = Aluguer.ISBN
+ORDER BY Titulo, Semana, NomeL
+
+--10.h)
+SELECT NomeL, SUM(Aluguer.Valor_Pagar)  + 1 - Valor AS Valor_Divida, Valor AS Valor_Pago
+FROM Leitor, Aluguer, Frequente, Faturacao
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Leitor.NifL = Frequente.NifL 
+    AND Faturacao.NifL = Leitor.NifL
+    AND Faturacao.Ano = Aluguer.Ano
+    AND Semana <= 4
+    AND Faturacao.Mes = 1
+GROUP BY NomeL, Valor
+UNION
+SELECT NomeL, SUM(Aluguer.Valor_Pagar) + 2 - Valor AS Valor_Divida, Valor AS Valor_Pago
+FROM Leitor, Aluguer, Regular, Faturacao
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Leitor.NifL = Regular.NifL 
+    AND Faturacao.NifL = Leitor.NifL
+    AND Faturacao.Ano = Aluguer.Ano
+    AND Semana <= 4
+    AND Faturacao.Mes = 1
+GROUP BY NomeL, Valor
+
+--10.i)
+SELECT NomeL, Titulo, Estrelas, Comentarios
+FROM Leitor, Avaliacao, Livro
+WHERE Leitor.NifL = Avaliacao.NifL
+    AND Livro.ISBN = Avaliacao.ISBN
+    AND Titulo = 'Memorial do Convento'
+
+--10.j)
+SELECT NomeL
+FROM Leitor, Amigo, Avaliacao, Livro, Genero
+WHERE Leitor.NifL = Amigo.NifL1
+    AND Avaliacao.NifL = Amigo.NifL2
+    AND Livro.ISBN = Avaliacao.ISBN
+    AND Livro.ISBN = Genero.ISBN
+    AND NomeG = 'Fantasia'
+UNION 
+SELECT DISTINCT NomeL
+FROM Leitor, Amigo, Avaliacao, Livro, Genero
+WHERE Leitor.NifL = Amigo.NifL1
+    AND Avaliacao.NifL = Amigo.NifL2
+    AND Livro.ISBN = Avaliacao.ISBN
+    AND Livro.ISBN = Genero.ISBN
+    AND NomeG = 'Mistério'
+    
+--10.k)
+SELECT NomeL, COUNT(Aluguer.ISBN) AS Livros_Alugados
+FROM Leitor, Aluguer, Livro
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Livro.ISBN = Aluguer.ISBN
+    AND Semana <= 4
+    AND Ano = 2024
+GROUP BY NomeL
+HAVING COUNT(Aluguer.ISBN) > 10
+
+--10.l)
+SELECT Titulo, ROUND(AVG(Estrelas), 1) AS Media_Estrelas
+FROM Livro, Avaliacao
+WHERE Livro.ISBN = Avaliacao.ISBN
+GROUP BY Titulo
+HAVING AVG(Estrelas) > 3
+
+--10.m)
+SELECT NomeL
+FROM Leitor, Frequente, Aluguer, livro
+WHERE Leitor.NifL = Frequente.NifL
+    AND Leitor.NifL = Aluguer.NifL
+    AND Livro.ISBN = Aluguer.ISBN  
+EXCEPT
+SELECT NomeL
+FROM Livro, Leitor, Aluguer
+WHERE Livro.ISBN = Aluguer.ISBN
+    AND Leitor.NifL = Aluguer.NifL
+    AND Livro.Titulo = 'Memorial do Convento'
+
+--10.n)
+SELECT NomeL, COUNT(Aluguer.ISBN) AS Livros_Alugados
+FROM Leitor, Aluguer, Livro
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Livro.ISBN = Aluguer.ISBN 
+    AND Aluguer.Semana = 4
+GROUP BY NomeL
+ORDER BY Livros_Alugados DESC
+LIMIT 1
+
+--10.o)
+SELECT Titulo, COUNT(Aluguer.ISBN) AS N_Alugueres
+FROM Livro, Aluguer
+WHERE Livro.ISBN = Aluguer.ISBN
+    AND Semana <= 8
+    AND Ano = 2024
+GROUP BY Titulo
+ORDER BY N_Alugueres DESC
+LIMIT 1
+
+--10.p)
+
+--10.q)
+SELECT NomeL
+FROM Leitor
+EXCEPT
+SELECT NomeL
+FROM Leitor, Amigo
+WHERE Leitor.NifL = Amigo.NifL1
+GROUP BY NomeL
+HAVING COUNT(Amigo.NifL2) > 0
+
+--10.r)
+SELECT NomeL
+FROM Leitor, Aluguer, Frequente, Faturacao
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Leitor.NifL = Frequente.NifL 
+    AND Faturacao.NifL = Leitor.NifL
+    AND Faturacao.Ano = Aluguer.Ano
+    AND Semana <= 8
+    AND Faturacao.Mes <= 2
+GROUP BY NomeL, Valor
+HAVING (SUM(Aluguer.Valor_Pagar)  + 1 - Valor) = 0
+UNION
+SELECT NomeL
+FROM Leitor, Aluguer, Regular, Faturacao
+WHERE Leitor.NifL = Aluguer.NifL
+    AND Leitor.NifL = Regular.NifL 
+    AND Faturacao.NifL = Leitor.NifL
+    AND Faturacao.Ano = Aluguer.Ano
+    AND Semana <= 8
+    AND Faturacao.Mes <= 2
+GROUP BY NomeL, Valor
+HAVING (SUM(Aluguer.Valor_Pagar)  + 2 - Valor) = 0
+
+--10.s)
+SELECT Titulo, COUNT(Livro.ISBN) AS Exemplares_Encomendados
+FROM Livro, Encomenda, Obra, Exemplares
+WHERE Livro.ISBN = Obra.ISBN
+    AND Exemplares.ISBNE = Obra.ISBN
+    AND Livro.ISBN = Encomenda.ISBN
+    AND Encomenda.IdExemplares = Exemplares.IdExemplares
+    AND Exemplares.IdExemplares = Obra.IdExemplares
+GROUP BY Titulo
+
+--10.t)
