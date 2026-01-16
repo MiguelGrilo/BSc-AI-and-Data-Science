@@ -1,0 +1,477 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "aHjBGiTwG2bY"
+   },
+   "source": [
+    "<h1><center> Lab 5: Statistics and Machine Learning II: Unstructured Data and Classification </center></h1>\n",
+    "\n",
+    "**Goal:** In this notebook we continue applying machine learning methods to train statistical models and explore new methods of inference and prediction. We will focus on unstructured data and classification (learn discrete labels). In particular, we will introduce the Python library Scikit-learn and play with:\n",
+    "- Naive Bayes\n",
+    "- Logistic Regression\n",
+    "\n",
+    "The goals of this notebook are to test the application of Classification methods to unstructured datasets; to apply model validation methods; and to perform feature engineering on unstructured text. \n",
+    "\n",
+    "The practical aspects of this Lab will be based on the **Chapter 5** (up to section *In Depth: Naive Bayes Classification*) of the [*Python Data Science Handbook*](https://jakevdp.github.io/PythonDataScienceHandbook/). To gain a better insight on the theoretical aspects of the algorithms we are going to use, we recommend **Chapter 4** (Sections 4.1 to 4.4) of the book [*An Introduction to Statistical Learning*](https://www.statlearning.com).\n",
+    "\n",
+    "In Part II we are going to apply a classification algorithm to the [Newsgroup](http://qwone.com/~jason/20Newsgroups/) dataset, which is a well-known dataset to study ML applied to unstructured text.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "NzYQrUjGG2bm"
+   },
+   "source": [
+    "<h1><center> Part II: Classification (Naive Bayes) with Scikit-learn </center></h1>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ZeL4Kd11G2bm"
+   },
+   "source": [
+    "In the previous lab, we applied Regression methods given a structured dataset. We will now apply classification methods to an unstructured (text) dataset. Notice that instead of having continuous targets we will have discrete categorical targets. \n",
+    "\n",
+    "We will use as example the (quite famous) [Newsgroup](http://qwone.com/~jason/20Newsgroups/) dataset. The [20 Newsgroups collection](http://qwone.com/~jason/20Newsgroups/) has become a popular data set for experiments in text applications of machine learning techniques, such as text classification and text clustering. This example will be based on the [Scikit documentation](https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html). \n",
+    "\n",
+    "The main goals of the following section are to have you experiment your skills with unstructured data (text), play with feature engineering in text and apply a classifcation algorithm (Naive Bayes). \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "H999zGL1G2bm"
+   },
+   "outputs": [],
+   "source": [
+    "# import newsgroup dataset from sklearn datasets\n",
+    "from sklearn.datasets import fetch_20newsgroups\n",
+    "\n",
+    "# select the categories of interest\n",
+    "categories = ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med']\n",
+    "\n",
+    "# sample a training set\n",
+    "twenty_train = fetch_20newsgroups(subset='train', categories=categories, shuffle=True, random_state=42)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "QpbGgQz2G2bn"
+   },
+   "outputs": [],
+   "source": [
+    "# twenty_train.data stores the text of each post; as an example, check the example in position [3]\n",
+    "twenty_train.data[3].split('\\n')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "J1ujPYFMG2bn"
+   },
+   "outputs": [],
+   "source": [
+    "# twenty_train.target stores the class of each post; note that for efficiency reasons (e.g., compare int or string) \n",
+    "# classes are stored as integer\n",
+    "twenty_train.target"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "h3EaUlsgG2bn"
+   },
+   "outputs": [],
+   "source": [
+    "# we can check the target name; clearly the previous post belongs to category religion\n",
+    "twenty_train.target_names[twenty_train.target[3]]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "X0bk7QWKG2bn"
+   },
+   "source": [
+    "<h3>Feature Engineering</h3>\n",
+    "\n",
+    "To create a feature vector from unstructured text, we will encode *text* as *numbers* by performing simple word counting. We will assign each word to a numerical *id* and count the occurrence of each word. We can easily perform such task by using the *CountVectorizer* class included in Scikit learn:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "JeiOmKeVG2bn"
+   },
+   "outputs": [],
+   "source": [
+    "# Feature Engineering:\n",
+    "from sklearn.feature_extraction.text import CountVectorizer\n",
+    "count_vect = CountVectorizer()\n",
+    "X_train_counts = count_vect.fit_transform(twenty_train.data)\n",
+    "X_train_counts"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "-Rp9LcjuG2bo"
+   },
+   "source": [
+    "**Q1: The result above is a sparse matrix: why is it efficient to represent the number of times each word appears as a sparse matrix? (Sparse matrix: matrix which contains very few non-zero elements)**\n",
+    "\n",
+    "Expected outcome: Two sentences explaining or point to relevant documentation. Understand your answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "4tb3Wmx_G2bo"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "17-8B3zHG2bo"
+   },
+   "outputs": [],
+   "source": [
+    "# let us check the contents of the word matrix:\n",
+    "import pandas as pd\n",
+    "pd.DataFrame(X_train_counts.toarray(), columns=count_vect.get_feature_names())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "T-JjslizG2bo"
+   },
+   "outputs": [],
+   "source": [
+    "# we now apply the (Multinomial) Naive Bayes; \n",
+    "\n",
+    "# Remember the 5 steps we need to apply...\n",
+    "\n",
+    "# 1. Select model and import it\n",
+    "from sklearn.naive_bayes import MultinomialNB\n",
+    "\n",
+    "# 2. Select model hyperparameters; alpha is a smoothing parameter\n",
+    "model = MultinomialNB(alpha=10)\n",
+    "\n",
+    "# 3. Arrange data in feature matrix / perform feature engineering\n",
+    "count_vect = CountVectorizer()\n",
+    "X_train_counts = count_vect.fit_transform(twenty_train.data)\n",
+    "Y = twenty_train.target\n",
+    "\n",
+    "# 4. Fit model to data\n",
+    "clf = model.fit(X_train_counts, Y)\n",
+    "\n",
+    "# 5. Apply model to new examples\n",
+    "docs_new = ['God is love', 'OpenGL on the GPU is fast','Help with printer','My knee hurts']\n",
+    "\n",
+    "X_new_counts = count_vect.transform(docs_new)\n",
+    "\n",
+    "predicted = clf.predict(X_new_counts)\n",
+    "\n",
+    "for doc, category in zip(docs_new, predicted):\n",
+    "    print('%r => %s' % (doc, twenty_train.target_names[category]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "WMkPdh0uG2bo"
+   },
+   "source": [
+    "<h3>Model validation</h3>\n",
+    "\n",
+    "We created a model trained on previous examples of text and categories and applied it to new example. \n",
+    "\n",
+    "In general, how *good* is our model? Here we will validate the model we created and understand how to tune it to perform better.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "H1BudYQ8G2bp"
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "from sklearn.pipeline import Pipeline\n",
+    "\n",
+    "text_clf = Pipeline([\n",
+    "    ('vect', CountVectorizer()),\n",
+    "    ('clf', MultinomialNB(alpha=1))])\n",
+    "\n",
+    "text_clf.fit(twenty_train.data, twenty_train.target)\n",
+    "\n",
+    "# create a test set -> this is a set different than the train set\n",
+    "twenty_test = fetch_20newsgroups(subset='test', categories=categories, shuffle=True, random_state=42)\n",
+    "docs_test = twenty_test.data\n",
+    "predicted = text_clf.predict(docs_test)\n",
+    "\n",
+    "#The following code line finds the percentage of news predicted correctly.\n",
+    "np.mean(predicted == twenty_test.target)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "yG7XOc3CG2bp"
+   },
+   "source": [
+    "In the example above we are computing model accuracy, as the fraction of correctly predicted text classes.\n",
+    "\n",
+    "In general, we can distinguish between the number of examples belonging to each class that that are correctly or incorrectly classified; this leads to the so-called *confusion matrix* (see section 4.4.3 of ISLR or chapter [Introducing Scikit-learn](https://jakevdp.github.io/PythonDataScienceHandbook/05.02-introducing-scikit-learn.html) of PDSH):"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "zJf0ZkqCG2bp"
+   },
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "from sklearn.metrics import confusion_matrix\n",
+    "\n",
+    "mat = confusion_matrix(twenty_test.target, predicted)\n",
+    "\n",
+    "print(mat)\n",
+    "\n",
+    "fig, ax = plt.subplots()\n",
+    "ax.imshow(mat, cmap='viridis', interpolation='nearest')\n",
+    "ax.set_xlabel('predicted value')\n",
+    "ax.set_ylabel('true value');\n",
+    "ax.set_xticks([0,1,2,3])\n",
+    "ax.set_yticks([0,1,2,3])\n",
+    "ax.set_xticklabels(categories, rotation='vertical')\n",
+    "ax.set_yticklabels(categories)\n",
+    "\n",
+    "# Loop over data to create text annotations.\n",
+    "for i in range(len(mat)):\n",
+    "    for j in range(len(mat)):\n",
+    "        text = ax.text(j, i, mat[i, j],\n",
+    "                       ha=\"center\", va=\"center\", color=\"w\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "RRGn6AIFG2bp"
+   },
+   "source": [
+    "**Q2.1: How many times are texts classified as med?**\n",
+    "\n",
+    "**Q2.2: How many times are texts not classified as med?**\n",
+    "\n",
+    "**Q2.3: How many times are texts belonging to category med correctly classified? (True Positives - TP)**\n",
+    "\n",
+    "**Q2.4: How many times are texts belonging to category med wrongly classified? (False Negative - FN)**\n",
+    "\n",
+    "**Q2.5: How many times are texts not belonging to category med correctly classified as not being med? (True Negatives - TN)**\n",
+    "\n",
+    "**Q2.6: What is the sensitivity of this model associated with class med? (Sensitivity = TP/(TP+FN))** \n",
+    "\n",
+    "**Q2.7: What is the specificity of this model associated with class christian? (Specificity = TN/(TN+FP))**\n",
+    "\n",
+    "Expected output: one numerical value for each question.\n",
+    "\n",
+    "Tips: You can perform indexing and slicing over mat, then you can use np.sum() function to sum all elements in a list/array, e.g., np.sum(mat[:,0:3]) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "k5Vbc9s0G2br"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "k6TvElORG2br"
+   },
+   "source": [
+    "**Q3: Which parameters would maximize the accuracy of our model? Remember GridSearchCV introduced in the previous lab (Lab4)**\n",
+    "\n",
+    "Expected outcome: 2 values, one for each of the following parameters:\n",
+    "\n",
+    "- vect__ngram_range\n",
+    " - Suggested values [(1, 1), (1, 2), (1, 3)]\n",
+    "    \n",
+    "- clf__alpha\n",
+    " - Suggested values: [1, 1e-1, 1e-2, 1e-3]\n",
+    "\n",
+    "Please check the documentation of [MultinomialNB](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html) to get familiar with each of those parameters."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "UtNoqXfrG2br"
+   },
+   "outputs": [],
+   "source": [
+    "# Solution Q10\n",
+    "# which parameters would maximize the accuracy of our model?\n",
+    "from sklearn.model_selection import GridSearchCV\n",
+    "## MISSING LINES, PLEASE COMPLETE\n",
+    "\n",
+    "gs_clf = GridSearchCV(text_clf, parameters, cv=5) #cv -> cross validation\n",
+    "gs_clf = gs_clf.fit(twenty_train.data[:400], twenty_train.target[:400])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "i6g9nXi7G2bs"
+   },
+   "outputs": [],
+   "source": [
+    "for param_name in sorted(parameters.keys()):\n",
+    "    print(\"%s: %r\" % (param_name, gs_clf.best_params_[param_name]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "ESQdwAL2G2bs"
+   },
+   "outputs": [],
+   "source": [
+    "gs_clf.best_score_"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q4: Using the same data, try the Logistic Regression model. Complete the missing line in the code below.**\n",
+    "\n",
+    "Please check the documentation of [LogisticRegression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) to get familiar with the model and parameters (e.g., max_iter)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 1. Select model and import it\n",
+    "from sklearn.linear_model import LogisticRegression\n",
+    "\n",
+    "from sklearn.metrics import classification_report\n",
+    "\n",
+    "# 2. Select model hyperparameters;\n",
+    "\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "# To fix the message \"ConvergenceWarning: lbfgs failed to converge (status=1)\",\n",
+    "# set the LogisticRegression max_iter parameter to 500 - max_iter=500\n",
+    "\n",
+    "# 3. Arrange data in feature matrix / perform feature engineering\n",
+    "count_vect = CountVectorizer()\n",
+    "X_train_counts = count_vect.fit_transform(twenty_train.data)\n",
+    "Y = twenty_train.target\n",
+    "\n",
+    "# 4. Fit model to data\n",
+    "clf = model.fit(X_train_counts, Y)\n",
+    "\n",
+    "# 5. Apply model to new examples\n",
+    "docs_new = ['God is love', 'OpenGL on the GPU is fast','Help with printer','My knee hurts']\n",
+    "\n",
+    "X_new_counts = count_vect.transform(docs_new)\n",
+    "\n",
+    "predicted = clf.predict(X_new_counts)\n",
+    "\n",
+    "for doc, category in zip(docs_new, predicted):\n",
+    "    print('%r => %s' % (doc, twenty_train.target_names[category]))\n",
+    "    \n",
+    "\n",
+    "# create a test set -> this is a set different than the train set\n",
+    "twenty_test = fetch_20newsgroups(subset='test', categories=categories, shuffle=True, random_state=42)\n",
+    "docs_test = twenty_test.data\n",
+    "docs_test_transformed = count_vect.transform(docs_test)\n",
+    "predicted = clf.predict(docs_test_transformed)\n",
+    "    \n",
+    "print(classification_report(twenty_test.target, predicted, target_names=categories))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "V6p6AGNTG2bs"
+   },
+   "source": [
+    "**Q11: Re-apply the best model to the examples above (docs_new); Create 4 more examples (related with categories 'alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med') re-apply the best model to the 4 examples you have created.** \n",
+    "\n",
+    "Feel free to play with other examples of text you find fun!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "ILc0RANSG2bs"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "collapsed_sections": [],
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

@@ -1,0 +1,265 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "DnDhddjohpdo"
+   },
+   "source": [
+    "### <h1><center> Lab 2: Matplotlib </center></h1>\n",
+    "\n",
+    "**Goals:** In this notebook we are going to experiment with practical aspects of data science, in particular the application of the *Matplotlib* library. We will use a structured dataset (*Iris Dataset*). \n",
+    "\n",
+    "This notebook will follow contents in Chapter 4 of the [*Python Data Science Handbook*](https://jakevdp.github.io/PythonDataScienceHandbook/). Please check the book to gain some insight on how to solve the exercises and participate with questions/comments in your lab session.\n",
+    "\n",
+    "Using the Pandas library we will:\n",
+    "- Read a file and load it to a DataFrame\n",
+    "\n",
+    "Using the Matplotlib library we will:\n",
+    "- Plot data (Line plot, Scatter plot, Histogram, Box plot)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "4_bjVCIOhpeA"
+   },
+   "source": [
+    "<h2><center> Matplotlib </center></h2>\n",
+    "\n",
+    "Matplotlib is the package for visualization in Python. We will now use the previous dataset and produce some visualizations. Just as we use the <code>pd</code> shorthand for Pandas, we will use mpl and <code>plt</code> as standard shorthands for Matplotlib imports.\n",
+    "\n",
+    "A potentially confusing feature of Matplotlib is its dual interfaces: a MATLAB-style state-based interface, and a more powerful object-oriented interface.\n",
+    "\n",
+    "In our Labs we will mainly use the object-oriented interface as it provides greater flexibility. In practice, we will always call methods over an object Axes.\n",
+    "\n",
+    "We will first see some plot types and then plot quantities of interest related with the Happiness Report 2022 dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "CHwQjxkphpeA"
+   },
+   "outputs": [],
+   "source": [
+    "import matplotlib\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "import numpy as np # Used only to create some examples based on known functions like sin and cos\n",
+    "\n",
+    "# First create a grid of plots\n",
+    "# ax will be an array of two Axes objects\n",
+    "fig, ax = plt.subplots(2)\n",
+    "\n",
+    "x = np.arange(0,10,0.1)\n",
+    "\n",
+    "# Call plot() method on the appropriate object\n",
+    "ax[0].plot(x, np.sin(x))\n",
+    "ax[1].plot(x, np.cos(x));"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "g0jzCwkuhpeA"
+   },
+   "outputs": [],
+   "source": [
+    "fig, ax = plt.subplots()\n",
+    "\n",
+    "x = np.linspace(0, 10, 30)\n",
+    "y = np.sin(x)\n",
+    "\n",
+    "ax.plot(x, y, 'o', color='black');"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7_uq9MyrhpeB"
+   },
+   "outputs": [],
+   "source": [
+    "fig, ax = plt.subplots()\n",
+    "\n",
+    "x = np.linspace(0, 10, 50)\n",
+    "dy = 0.8\n",
+    "y = np.sin(x) + dy\n",
+    "\n",
+    "ax.boxplot([x,y], labels=[\"x\",\"y\"])\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "TQ1eXVwjhpeB"
+   },
+   "outputs": [],
+   "source": [
+    "ax = plt.subplot()\n",
+    "\n",
+    "data = np.random.randn(1000)\n",
+    "\n",
+    "ax.hist(data)\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "o5AcidpqhpeB"
+   },
+   "source": [
+    "<h2><center> Working with a real dataset </center></h2>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "5I6lYAhrjMdR"
+   },
+   "source": [
+    "The code below loads a CSV file into a pandas dataframe. Today we use the Iris datase, you can find more information about this dataset here: https://archive.ics.uci.edu/dataset/53/iris "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "#If No such file or directory error, make sure that the iris.csv file is in the same folder as this notebook \n",
+    "# Alternativelly use the full path for iris.csv e.g., C:\\Users\\<CurrentUserName>\\iris.csv\n",
+    "iris_data_frame = pd.read_csv('iris.csv') \n",
+    "\n",
+    "iris_data_frame"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The code below reports the distribution of sepal length using an histogram."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "B0OH4CUGhpeB"
+   },
+   "outputs": [],
+   "source": [
+    "# using matplotlib explicitly\n",
+    "x = iris_data_frame['sepallength']\n",
+    "fig, ax = plt.subplots()\n",
+    "ax.hist(x)\n",
+    "\n",
+    "ax.set_xlabel(\"Sepal Length\")\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "HERL73Z2jMdR"
+   },
+   "source": [
+    "The code below creates a scatter plot to visualize the distribution in terms of sepal length and sepal width."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "jXPXObvjhpeC"
+   },
+   "outputs": [],
+   "source": [
+    "x = iris_data_frame['sepallength']\n",
+    "y = iris_data_frame['sepalwidth']\n",
+    "\n",
+    "fig, ax = plt.subplots()\n",
+    "ax.scatter(x, y,c='black')\n",
+    "\n",
+    "ax.set_xlabel(\"Length\")\n",
+    "ax.set_ylabel(\"Width\")\n",
+    "ax.set_title(\"Sepal Lenght vs Width\")\n",
+    "\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q1 Create the same two plots as above but use petal instead of sepal.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q2 Create a box plot of two or more variables (e.g., Sepal Length and Width). Tip: Try for just one variable first.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7GKGNqPOhpeD"
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "collapsed_sections": [],
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

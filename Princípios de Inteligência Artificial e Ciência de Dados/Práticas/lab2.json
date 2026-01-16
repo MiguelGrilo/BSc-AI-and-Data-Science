@@ -1,0 +1,1419 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "DnDhddjohpdo"
+   },
+   "source": [
+    "### <h1><center> Lab 2: Pandas </center></h1>\n",
+    "\n",
+    "**Goals:** In this notebook we are going to experiment with practical aspects of data science, in particular the application of the (*Pandas*) (Part I) library.\n",
+    "\n",
+    "This notebook will follow contents in Chapter 3 of the [*Python Data Science Handbook*](https://jakevdp.github.io/PythonDataScienceHandbook/). Please check the book to gain some insight on how to solve the exercises and participate with questions/comments in your lab.\n",
+    "\n",
+    "Using the Pandas library we will:\n",
+    "- Read a file and load it to a DataFrame\n",
+    "- Filter out the required columns in the DataFrame\n",
+    "- Summarize data based on the fields. Ex: Summing up all the rows corresponding to a certain entry in the dataset\n",
+    "- String operations in Pandas\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "bp_eIGbchpds"
+   },
+   "source": [
+    "Often in data science projects we need the flexibility to work with labeled data , heterogeneous data, and with missing data. **Pandas**, and in particular its *Series* and *DataFrame* objects, builds on the NumPy array structure and provides efficient tools to deal with labeled, unstructured and non-numerical data.\n",
+    "\n",
+    "Pandas is well suited for many different kinds of data:\n",
+    "\n",
+    "- Tabular data with heterogeneously-typed columns, as in an SQL table or Excel spreadsheets\n",
+    "- Ordered and unordered time series data.\n",
+    "- Arbitrary matrix data (homogeneously typed or heterogeneous) with row and column labels\n",
+    "- Any other form of observational / statistical data sets. The data actually need not be labeled at all to be placed into a pandas data structure\n",
+    "\n",
+    "The two primary data structures of pandas are Series (1-dimensional) and DataFrame (multi-dimensional). They handle the vast majority of typical use cases in finance, statistics, social science, and many areas of engineering."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "-kDKgrichpds"
+   },
+   "source": [
+    "<h2><center> Series </center></h2>\n",
+    "\n",
+    "The *Series* object provided by Pandas can be seen as a generalization of the NumPy (*ndarray*). \n",
+    "While in *ndarrays* the indexes are allways consecutive integers, in Series indexes can consist of values of any desired type -- think about time-series where indexes are month names instead of consecutive integers. *Series* can also be seen as a particular Python dictionary with keys that you can iterate."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "5VtJXwlohpdt"
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "integer_list = list(range(20,25))\n",
+    "pandas_series = pd.Series(integer_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 8,
+     "status": "ok",
+     "timestamp": 1663265985764,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "npLxBEvOhpdt",
+    "outputId": "13feea7a-af1a-42f4-9a48-28bffacb1ed0"
+   },
+   "outputs": [],
+   "source": [
+    "pandas_series.values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 5,
+     "status": "ok",
+     "timestamp": 1663265985764,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "XQ9IRdCmhpdu",
+    "outputId": "d7ee9cc6-e8f9-4708-8308-0a3a3a5ac149"
+   },
+   "outputs": [],
+   "source": [
+    "pandas_series.index"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "FoZM0S_UjMdK"
+   },
+   "source": [
+    "Series as a generalized NumPy array, where indexes can be any list:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "hFvsJRfVjMdL"
+   },
+   "outputs": [],
+   "source": [
+    "data = pd.Series([0.25, 0.5, 0.75, 1.0], index=[20, 40, 80, 160])\n",
+    "\n",
+    "data[160]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "oCFclKkajMdL"
+   },
+   "source": [
+    "Series as a specific Python dictionary, where indexes are dictionary keys that you can iterate. Contrarily to typical dictionary keys, indexes in Series are ordered structures."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 586,
+     "status": "ok",
+     "timestamp": 1663265998150,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "bwYXKX0FjMdL",
+    "outputId": "64811198-6449-45d6-88a6-a854560cc7a3"
+   },
+   "outputs": [],
+   "source": [
+    "population_dict = {'California': 38332521,\n",
+    "                   'Texas': 26448193,\n",
+    "                   'New York': 19651127,\n",
+    "                   'Florida': 19552860,\n",
+    "                   'Illinois': 12882135}\n",
+    "\n",
+    "population = pd.Series(population_dict)\n",
+    "population"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "0uRSp3acjMdM"
+   },
+   "source": [
+    "Series can be seen as a dictionary, where values can be accessed by key:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 220,
+     "status": "ok",
+     "timestamp": 1663266004146,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "OtDU_QqjjMdM",
+    "outputId": "0664b73e-6178-4143-cb08-de076ead0218"
+   },
+   "outputs": [],
+   "source": [
+    "population['New York']"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ONw1_I7VjMdM"
+   },
+   "source": [
+    "Or as a NumPy array with an arbirary index, where you can apply, as before, indexing, slicing, boolean masks..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 329,
+     "status": "ok",
+     "timestamp": 1663266008110,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "XQjpT5WVhpdv",
+    "outputId": "c0e8d759-a191-4578-be07-0c5a4e74b50d"
+   },
+   "outputs": [],
+   "source": [
+    "population[2] #indexing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 225,
+     "status": "ok",
+     "timestamp": 1663266014029,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "_CWKLVqCjMdM",
+    "outputId": "5d287e5b-4f17-4df7-b3e1-ff5a2904145f"
+   },
+   "outputs": [],
+   "source": [
+    "population[1::2] #slicing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 224,
+     "status": "ok",
+     "timestamp": 1663266060062,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "pbRZtvsljMdM",
+    "outputId": "e372bb29-2d97-483a-f391-99ad04373bb4"
+   },
+   "outputs": [],
+   "source": [
+    "population[population > 20000000] #boolean masking"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "0viTTi0wjMdM"
+   },
+   "source": [
+    "This way, note that to perform indexing and slicing you can use: \n",
+    "1. explicit indexes (in this case, state names)\n",
+    "2. implicit indexes (integers corresponding to positions in the series)\n",
+    "\n",
+    "Please note, in the examples below, that slicing with explicit indexes includes the element in the upper limit of the slice; when using implicit indexes, it excludes the element in the upper limit."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 197,
+     "status": "ok",
+     "timestamp": 1663266071670,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "L_-8xJb-hpdv",
+    "outputId": "2d02e85c-5e1c-4519-8674-e00e9d6de78d"
+   },
+   "outputs": [],
+   "source": [
+    "# explicit indexes \n",
+    "\n",
+    "population['Texas':'Florida'] #slicing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 6,
+     "status": "ok",
+     "timestamp": 1663266072780,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "VlZ530Q2jMdN",
+    "outputId": "5cb8503e-b7f9-405a-b2fb-3088c22f82ca"
+   },
+   "outputs": [],
+   "source": [
+    "# implicit indexes \n",
+    "\n",
+    "population[1:3] #slicing: element in position 3 is not included"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "YNK96o1rjMdN"
+   },
+   "source": [
+    "As implicit and explicit indexing can be a source of confusion, you can explicitly use keywords to specify whether you want to use implicit or explicit indexing. \n",
+    "\n",
+    "These keywords are :\n",
+    "- .loc -> explicit indexing (i.e., the labels provided as indexes)\n",
+    "- .iloc -> implicit indexing (i.e., the integers corresponding to positions in the Series)\n",
+    "\n",
+    "It is recommended that you always specify whether you are using implicit or explicit indexes, using the loc and iloc keywords.\n",
+    "\n",
+    "**Can you understand the differences in output between the 3 examples below?**\\\n",
+    "**By default, when indexes are integers, is slicing done through implicit or explicit indexes?**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "4T_SJLR4jMdN"
+   },
+   "outputs": [],
+   "source": [
+    "data = pd.Series([0.25, 0.5, 0.75, 1.0, 0.1, 2.1], index=[3, 2, 1, 0, 5, 4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "HGlryq75jMdN"
+   },
+   "outputs": [],
+   "source": [
+    "#example 1\n",
+    "data.loc[1:5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "kNZq_en-jMdN"
+   },
+   "outputs": [],
+   "source": [
+    "#example 2\n",
+    "data.iloc[1:5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "IoURlgqEjMdN"
+   },
+   "outputs": [],
+   "source": [
+    "#example 3\n",
+    "data[1:5]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "L3wNNTP0hpdy"
+   },
+   "source": [
+    "**Q1: Can you create a Series where indexes are the odd numbers from 0 to 10 and values are the order of such numbers starting in 1**\n",
+    "\n",
+    "Expected output:\n",
+    "\n",
+    "    1    1\n",
+    "    3    2\n",
+    "    5    3\n",
+    "    7    4\n",
+    "    9    5\n",
+    "    dtype: int64"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "gevXe1zAhpdy"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "OthqnRZMjMdN"
+   },
+   "source": [
+    "**Q2: Use index to return value 4 from the created serie in Q1?**\n",
+    "\n",
+    "Try implicit and explicit indexing.\n",
+    "\n",
+    "Expected output:\n",
+    "\n",
+    "4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "3AEj5eYrjMdN"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "FJ8eDByRhpdy"
+   },
+   "source": [
+    "<h2><center> DataFrame </center></h2>\n",
+    "\n",
+    "The *DataFrame* object provided by Pandas can be seen as a generalization of the 2-dimensional NumPy ndarray. \n",
+    "The *DataFrame* can, alternativelly, be seen as a sequence of *Series* objects, all sharing the same index. We will see that *DataFrame* is a convenient data structure to store data and, additionally, offers useful methods to filter, transform, group and plot data."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 214
+    },
+    "executionInfo": {
+     "elapsed": 224,
+     "status": "ok",
+     "timestamp": 1663266083996,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "fSs26bV5hpdz",
+    "outputId": "2fbed550-9a7b-42dd-f732-8fbb94e4b602"
+   },
+   "outputs": [],
+   "source": [
+    "population_dict = {'California': 38332521,\n",
+    "                   'Texas': 26448193,\n",
+    "                   'New York': 19651127,\n",
+    "                   'Florida': 19552860,\n",
+    "                   'Illinois': 12882135}\n",
+    "\n",
+    "area_dict = {'California': 423967, \n",
+    "             'Texas': 695662, \n",
+    "             'New York': 141297,\n",
+    "             'Florida': 170312, \n",
+    "             'Illinois': 149995}\n",
+    "\n",
+    "\n",
+    "states = pd.DataFrame({'pop' : population_dict, 'area' : area_dict})\n",
+    "states"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 219,
+     "status": "ok",
+     "timestamp": 1663266098071,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "V9AyiYc8hpdz",
+    "outputId": "1a64c7bf-158d-4640-be7b-c061c282ae0d"
+   },
+   "outputs": [],
+   "source": [
+    "# indexing (dictionary style)\n",
+    "\n",
+    "states['area']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 209,
+     "status": "ok",
+     "timestamp": 1663266121413,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "qB4ErmMyhpdz",
+    "outputId": "b020f35e-7667-4b34-917a-d03affe0006b"
+   },
+   "outputs": [],
+   "source": [
+    "# indexing\n",
+    "# notice that first we access columns and then rows..\n",
+    "\n",
+    "states['area']['Florida']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 216,
+     "status": "ok",
+     "timestamp": 1663266145608,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "iC4QMA1Fhpd0",
+    "outputId": "029447c3-aa51-4d48-f15c-14d6e5e5dc73"
+   },
+   "outputs": [],
+   "source": [
+    "# indexing through NumPy ndarray of values: Florida=3, area=1\n",
+    "# notice that first we access rows and then columns..\n",
+    "\n",
+    "states.values[3,1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 215,
+     "status": "ok",
+     "timestamp": 1663266148327,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "sDPHsXarhpd0",
+    "outputId": "277841b3-8245-4655-96c6-afdd34c9ac72"
+   },
+   "outputs": [],
+   "source": [
+    "# slicing\n",
+    "\n",
+    "states['area']['Texas':'Florida']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 143
+    },
+    "executionInfo": {
+     "elapsed": 215,
+     "status": "ok",
+     "timestamp": 1663266149977,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "-ozbtZk1hpd0",
+    "outputId": "25032492-1ba2-4d28-d87f-667e74bd6900"
+   },
+   "outputs": [],
+   "source": [
+    "# by default, slicing iterates over rows and the stop element in the slice is included\n",
+    "# (as in the Series examples above)\n",
+    "\n",
+    "states['Texas':'Florida']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 112
+    },
+    "executionInfo": {
+     "elapsed": 209,
+     "status": "ok",
+     "timestamp": 1663266156411,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "iaNqvipghpd1",
+    "outputId": "a286535f-7a4e-45e1-9384-c3675d527efc"
+   },
+   "outputs": [],
+   "source": [
+    "# masking\n",
+    "\n",
+    "states[states['area'] > 180000]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 206
+    },
+    "executionInfo": {
+     "elapsed": 219,
+     "status": "ok",
+     "timestamp": 1663266168196,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "WvGuq9hyhpd1",
+    "outputId": "1152c858-285f-4a26-af32-d7378682b2c9"
+   },
+   "outputs": [],
+   "source": [
+    "# add new column\n",
+    "\n",
+    "states['density'] = states['pop'] / states['area']\n",
+    "states"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "WTKgEn8Fhpd1"
+   },
+   "source": [
+    "As accessing elements by dictionary-style, array-explicit-style or array-implicit-style can be confusing, there are specific keywords you can use to decide the type of indexing. As in the Series examples above, loc and iloc can be used to specify implicit or explicit indexing. These keywords also enforce array-style indexing (e.g., a single index accesses rows instead of columns)\n",
+    "\n",
+    "\n",
+    "- .loc -> array-style indexing, explicit indexing using labels\n",
+    "- .iloc -> array-style indexing, implicit indexing using positions\n",
+    "\n",
+    "**In the next examples: three ways of accessing the area of Florida... can you understand the differences?**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 214,
+     "status": "ok",
+     "timestamp": 1663266172606,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "7T46mVJyhpd1",
+    "outputId": "e427cb39-655f-409b-b1d1-e5a67029725a"
+   },
+   "outputs": [],
+   "source": [
+    "states.loc['Florida','area']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 228,
+     "status": "ok",
+     "timestamp": 1663266177069,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "SOgiLpUHhpd2",
+    "outputId": "1bdf5d93-272a-49ce-da2e-24005206f30a"
+   },
+   "outputs": [],
+   "source": [
+    "states.iloc[3,1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 226,
+     "status": "ok",
+     "timestamp": 1663266190158,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "h4wRoWc5hpd2",
+    "outputId": "a097a064-f7d9-4de0-9f81-1d76cc693783"
+   },
+   "outputs": [],
+   "source": [
+    "states['area']['Florida'] "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "LueD9HQ_hpd2"
+   },
+   "source": [
+    "**Q3: Can you calculate the difference in population size between Texas and New York?**\\\n",
+    "***You can answer using any of the 3 different types of DataFrame indexing introduced above.**\n",
+    "\n",
+    "Expected result in any of the possibilities: 6797066"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/"
+    },
+    "executionInfo": {
+     "elapsed": 266,
+     "status": "ok",
+     "timestamp": 1663266249210,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "o_SHXD_Ohpd2",
+    "outputId": "541715c8-8ba2-400e-974f-2b6a457e5f98"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "ImjOsLKmhpd3"
+   },
+   "source": [
+    "loc and iloc are also convinient to desambiguate indexing when indexes are integers:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "ovTjIvK4hpd3"
+   },
+   "outputs": [],
+   "source": [
+    "data = pd.Series(['d', 'c', 'b', 'a'], index=[3, 2, 1, 0])\n",
+    "\n",
+    "data[0] # will the output be 'a' or 'd'?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "skTgjCDnhpd3"
+   },
+   "outputs": [],
+   "source": [
+    "data[1:3] #-> -> implicit indexing used; the stop element in the slice is not included"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7PDHBkW7jMdO"
+   },
+   "outputs": [],
+   "source": [
+    "data.iloc[1:3] #-> -> same as using iloc"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Loqy-bZ4jMdO"
+   },
+   "outputs": [],
+   "source": [
+    "data.loc[3:1] #-> -> explicit indexing can also be used; to avoid confusion, always use loc or iloc"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7G-pu5XChpd3"
+   },
+   "outputs": [],
+   "source": [
+    "data.iloc[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Vo10S7nshpd3"
+   },
+   "outputs": [],
+   "source": [
+    "data.loc[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Jxpyub4nhpd4"
+   },
+   "outputs": [],
+   "source": [
+    "population_dict = {'California': 38332521,\n",
+    "                   'Texas': 26448193,\n",
+    "                   'New York': 19651127,\n",
+    "                   'Florida': 19552860,\n",
+    "                   'Illinois': 12882135}\n",
+    "\n",
+    "area_dict = {'California': 423967, \n",
+    "             'Texas': 695662, \n",
+    "             'New York': 141297,\n",
+    "             'Florida': 170312, \n",
+    "             'Illinois': 149995}\n",
+    "\n",
+    "\n",
+    "states = pd.DataFrame({'pop' : population_dict, 'area' : area_dict})"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "kkeWSzVNhpd4"
+   },
+   "outputs": [],
+   "source": [
+    "states.loc['Florida']"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "UyncK4pjhpd4"
+   },
+   "source": [
+    "**Q4: Create a new column in the DataFrame *states* that contains a boolean to indicate if population size is higher than 20000000**\n",
+    "\n",
+    "Expected outcome: DataFrame with extra column named \"popSize2000\" with True in indexes California and Texas and False otherwise"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "rouadnQahpd4"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 206
+    },
+    "executionInfo": {
+     "elapsed": 257,
+     "status": "ok",
+     "timestamp": 1663266511900,
+     "user": {
+      "displayName": "Anshul Toshniwal",
+      "userId": "08484138319904513748"
+     },
+     "user_tz": -120
+    },
+    "id": "BKnkVoPBZ38h",
+    "outputId": "909c2ed5-b642-4328-bc83-e0a1258a129e"
+   },
+   "outputs": [],
+   "source": [
+    "states"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "WtoMrPWPjMdP"
+   },
+   "source": [
+    "We can apply most aggregation functions to Pandas DataFrames. We can aggregate along either rows or columns. Below one example of calculating the mean population across states"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Dzu4GIakjMdP"
+   },
+   "outputs": [],
+   "source": [
+    "states['pop'].mean()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "Fm8qv5GZhpd6"
+   },
+   "source": [
+    "**Q5: Select the area of the largest state**\n",
+    "\n",
+    "Tip: check the Secion \"*Simple Aggregation in Pandas*\" of the Python Data Science Handbook\n",
+    "\n",
+    "Can you find the largest area?\n",
+    "\n",
+    "\n",
+    "Expetected output: \n",
+    "\n",
+    "695662"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "(Optional) The question asks for the area of the largest state. To print the name of the largest state the method [idxmax](\"https://pandas.pydata.org/pandas-docs/version/0.17.0/generated/pandas.DataFrame.idxmax.html\") can be handy... **Can you use idxmax to print the name of the largest state?**\n",
+    "\n",
+    "Expetected output: \n",
+    "\n",
+    "Texas"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "gRFWXjrhhpd6"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "0DrQzvzLhpd6"
+   },
+   "outputs": [],
+   "source": [
+    "# applying universal functions: indices are aligned and perserved\n",
+    "import numpy as np # Numpy is only used to help creating the example dataframes content.\n",
+    "#Pls focus on data frame C content\n",
+    "A = pd.DataFrame(np.ones((2, 2)), columns=list('AB'))\n",
+    "print(A)\n",
+    "B = pd.DataFrame(np.arange(9).reshape(3,3), columns=list('BAC'))\n",
+    "C = A + B\n",
+    "C"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "fNUSKY6VjMdP"
+   },
+   "source": [
+    "**Q6: Consider that, for the operatations you would like to perform, NaN is equivalent to considering 1. How can you substitute all NaN by 1 in DataFrame C? Set a new variable D with the new dataframe with no NaN vales.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "V0Y1UeLvjMdP"
+   },
+   "outputs": [],
+   "source": [
+    "\n",
+    "D"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "DB-g4W-9hpd7"
+   },
+   "source": [
+    "**Q7: Can you calculate the sum of COLUMNS A, B and C of dataFrame C ?**\n",
+    "\n",
+    "Expected outcome: \n",
+    "\n",
+    "    A    7.0\n",
+    "    B    5.0\n",
+    "    C    0.0\n",
+    "    dtype: float64"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "b7OioU8fhpd7"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "C5gpLtmahpd7"
+   },
+   "source": [
+    "**Q8: Can you calculate the mean of ROWS indexed by 0, 1 and 2 of DataFrame C ?**\n",
+    "\n",
+    "Expected outcome: \n",
+    "\n",
+    "    0    1.5\n",
+    "    1    4.5\n",
+    "    2    NaN\n",
+    "    dtype: float64"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "NATlApJPhpd7"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q9: Repeat the previous two exercises but now use DataFrame D instead of C. Explain the differences.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Tables of Pandas String Methods\n",
+    "\n",
+    "The examples in the rest of this section use the following series of names:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monte = pd.Series(['Graham Chapman', 'John Cleese', 'Terry Gilliam',\n",
+    "                   'Eric Idle', 'Terry Jones', 'Michael Palin'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Methods similar to Python string methods\n",
+    "Nearly all Python's built-in string methods are mirrored by a Pandas vectorized string method. Here is a list of Pandas ``str`` methods that mirror Python string methods:\n",
+    "\n",
+    "|             |                  |                  |                  |\n",
+    "|-------------|------------------|------------------|------------------|\n",
+    "|``len()``    | ``lower()``      | ``translate()``  | ``islower()``    | \n",
+    "|``ljust()``  | ``upper()``      | ``startswith()`` | ``isupper()``    | \n",
+    "|``rjust()``  | ``find()``       | ``endswith()``   | ``isnumeric()``  | \n",
+    "|``center()`` | ``rfind()``      | ``isalnum()``    | ``isdecimal()``  | \n",
+    "|``zfill()``  | ``index()``      | ``isalpha()``    | ``split()``      | \n",
+    "|``strip()``  | ``rindex()``     | ``isdigit()``    | ``rsplit()``     | \n",
+    "|``rstrip()`` | ``capitalize()`` | ``isspace()``    | ``partition()``  | \n",
+    "|``lstrip()`` |  ``swapcase()``  |  ``istitle()``   | ``rpartition()`` |\n",
+    "\n",
+    "Notice that these have various return values. Some, like ``lower()``, return a series of strings:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monte.str.lower()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "But some others return numbers:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monte.str.len()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Or Boolean values:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monte.str.startswith('T')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Still others return lists or other compound values for each element."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q10: Can you split the names of data frame monte?**\n",
+    "\n",
+    "Expected outcome: \n",
+    "\n",
+    "    0    [Graham, Chapman]\n",
+    "    1       [John, Cleese]\n",
+    "    2     [Terry, Gilliam]\n",
+    "    3         [Eric, Idle]\n",
+    "    4       [Terry, Jones]\n",
+    "    5     [Michael, Palin]\n",
+    "    dtype: object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Methods that search for patterns (text)\n",
+    "\n",
+    "In addition, there are several methods that accept text to evaluate the content of each string element:\n",
+    "\n",
+    "| Method | Description |\n",
+    "|--------|-------------|\n",
+    "| ``replace()`` | Replace occurrences of pattern with some other string|\n",
+    "| ``contains()`` | Finds all elements that contain the pattern, returning a boolean |\n",
+    "| ``count()`` | Count occurrences of pattern|\n",
+    "\n",
+    "They also support regular expressions which will be not covered here."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "With these, you can do a wide range of interesting operations.\n",
+    "For example, we can identify all elements that contain the text \"Terry\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "monte.str.contains('Terry')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q11: Can you count the occurances of \"a\" for each element of data frame monte?**\n",
+    "\n",
+    "Expected outcome: \n",
+    "\n",
+    "    0    4\n",
+    "    1    0\n",
+    "    2    1\n",
+    "    3    0\n",
+    "    4    0\n",
+    "    5    2\n",
+    "    dtype: int64"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Q12: Can you replace the occurances of \"Terry\" by \"T.\" of data frame monte?**\n",
+    "\n",
+    "Note: Check the slides of aula 2.\n",
+    "\n",
+    "Expected outcome:\n",
+    "\n",
+    "    0    Graham Chapman\n",
+    "    1       John Cleese\n",
+    "    2        T. Gilliam\n",
+    "    3         Eric Idle\n",
+    "    4          T. Jones\n",
+    "    5     Michael Palin\n",
+    "    dtype: object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "7GKGNqPOhpeD"
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "collapsed_sections": [],
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.15"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}

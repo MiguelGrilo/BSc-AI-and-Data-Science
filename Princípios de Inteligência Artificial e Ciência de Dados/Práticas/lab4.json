@@ -1,0 +1,679 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "aHjBGiTwG2bY"
+   },
+   "source": [
+    "#### <h1><center> Lab 4: Statistics and Machine Learning I: Supervised Learning and Regression </center></h1>\n",
+    "\n",
+    "**Goal:** In this notebook we are going to start applying machine learning methods to train statistical models and explore new methods of inference and prediction. We will focus on Supervised Learning and regression (learn continuous labels). In particular, we will introduce the Python library Scikit-learn and play with:\n",
+    "- Linear regression\n",
+    "- Polynomial regression\n",
+    "\n",
+    "The goals of this notebook are to test the application of Regression methods to structured datasets; to apply model validation methods.\n",
+    "\n",
+    "The practical aspects of this Lab will be based on the **Chapter 4** (up to section *In Depth: Linear Regression*) of the [*Python Data Science Handbook*](https://jakevdp.github.io/PythonDataScienceHandbook/). To gain a better insight on the theoretical aspects of the algorithms we are going to use, we recommend **Chapters 3**, and **Chapter 4** (Sections 4.1 to 4.4) of the book [*An Introduction to Statistical Learning*](https://www.statlearning.com).\n",
+    "\n",
+    "In Part I, we are going to use the Happiness Report 2022 as a data set. Make sure to have *happiness_report_2022.xls* in the same folder as this Jupyter Notebook. You can find more info about the meaning of each column in the *happiness_report_2022.xls* dataset [here](https://happiness-report.s3.amazonaws.com/2022/Appendix_1_StatiscalAppendix_Ch2.pdf), page 1-3."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "sAuZOA_4G2bc"
+   },
+   "source": [
+    "<h1><center> Part I: Linear regression with Scikit-learn </center></h1>\n",
+    "\n",
+    "Here we will apply Scikit learn to create a Linear Regression model. Similar to other methods that use Estimator API of Scikit learn library, training and applying Linear Regression is a 5-Step process:\n",
+    "\n",
+    "1. Select model (Linear Regression, in this case) and import it\n",
+    "2. Select model hyperparameters\n",
+    "3. Arrange data in feature matrix (or vector if just 1 feature) and Target array\n",
+    "4. Fit model to data\n",
+    "5. Apply model to inference and prediction problems\n",
+    "\n",
+    "We will apply Linear Regression to better **understand 1) the relationship between GDP and Life Expectancy and 2) the relationship between Life expectancy and *happiness* in a specific year (2016)**.\n",
+    "\n",
+    "First, we will load and vizualize the required data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "colab": {
+     "base_uri": "https://localhost:8080/",
+     "height": 375
+    },
+    "executionInfo": {
+     "elapsed": 238,
+     "status": "error",
+     "timestamp": 1663596198370,
+     "user": {
+      "displayName": "LL Rink",
+      "userId": "12944769956392607669"
+     },
+     "user_tz": -120
+    },
+    "id": "iHL7fP47G2bc",
+    "outputId": "5a1daada-7c19-4da7-f488-adcc9f05288d"
+   },
+   "outputs": [],
+   "source": [
+    "!conda install --yes xlrd #installs a required package\n",
+    "\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# Load data\n",
+    "happinessdataframe = pd.read_excel('happiness_report_2022.xls', index_col=[1]).sort_index()\n",
+    "#index_col sets the year column as the index\n",
+    "#sort_index() sorts the index values (i.e., year) so we can perform index slicing later on\n",
+    "\n",
+    "\n",
+    "happinessdataframe.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "kggJQb-2G2be"
+   },
+   "source": [
+    "Below we present some extra examples of how to navigate indexes in Pandas.\n",
+    "\n",
+    "Say you'd like to select data within a specific period (2011-2021)\n",
+    "\n",
+    "It seems convinient to first select the rows (which determine year) and then columns.\n",
+    "\n",
+    "To first select rows we will use .loc to apply array-style indexing."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "4x7aKmEVG2be"
+   },
+   "outputs": [],
+   "source": [
+    "happinessdataframe.loc[2011:2021]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "093hhYAHG2be"
+   },
+   "outputs": [],
+   "source": [
+    "# select specific columns\n",
+    "happinessdataframe.loc[2011:2021, [\"Life Ladder\", \"Generosity\"]]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "-bUyWlovG2bg"
+   },
+   "source": [
+    "And now we are ready to visualize GDP and life expectancy data (GDP as feature vector, life expectancy as target vector), using the previous syntax. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "aFCldYZ6G2bg",
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "x = happinessdataframe.dropna().loc[2016][[\"Log GDP per capita\",\"Healthy life expectancy at birth\"]]\n",
+    "x.plot.scatter(x=\"Log GDP per capita\", y=\"Healthy life expectancy at birth\",c='black')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "I5TPMfBkDkad"
+   },
+   "source": [
+    "**Q: Note that .dropna() is being used to drop rows with NaN values. What are the possible problems of using dropna() in that context? Are we missing any important information? How could we solve the problem differently?** "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "GIuDBCy3Dkad"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "NB6UKJuvG2bh"
+   },
+   "source": [
+    "<h3> Single Variable Linear regression </h3>\n",
+    "\n",
+    "Below you have an example of ordinary least squares Linear Regression (again, please read Chapter 3.1 of the book [ISLR](https://www.statlearning.com) and chapter [In Depth: Linear Regression](https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html) of the book PDSH)\n",
+    "\n",
+    "LinearRegression fits a linear model with coefficients $\\vec{w} = (w_0, w_1,..., w_p)$ to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.\n",
+    "\n",
+    "When $p=1$ (that is, a feature space with 1 dimension), LinearRegression fits a straight line to the data. Such line (as any other straight line) can be defined by two parameters: intercept ($w_0$) and slope ($w_1$)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "WrzSc44XG2bh"
+   },
+   "outputs": [],
+   "source": [
+    "# 5 Steps to use the Scikit-learn Estimator API:\n",
+    "\n",
+    "# 1. Select model and import it\n",
+    "from sklearn.linear_model import LinearRegression\n",
+    "\n",
+    "# 2. Select model hyperparameters\n",
+    "model = LinearRegression(fit_intercept=True) # select model hyperparameters\n",
+    "\n",
+    "# 3. Arrange data in feature matrix (or vector if just 1 feature) and Target array\n",
+    "X = x[\"Log GDP per capita\"].values\n",
+    "Y = x[\"Healthy life expectancy at birth\"].values\n",
+    "\n",
+    "# 4. Fit model to data, [:, np.newaxis] is used to increase a dimension of X making it a column vector,\n",
+    "# which is the expected input for fit function.\n",
+    "model.fit(X[:, np.newaxis], Y)\n",
+    "\n",
+    "# 5. Apply model\n",
+    "# np.linspace works in a similar matter to the range(start,stop,interval) function\n",
+    "xfit = np.linspace(6, 12, 2) # these values (6 and 12) were chosen by inspecting, visually, the datapoints in the plot\n",
+    "xfit = np.linspace(min(X), max(X), 2) # suggestion of a more general alternative\n",
+    "\n",
+    "yfit = model.predict(xfit[:, np.newaxis])\n",
+    "\n",
+    "# Plot\n",
+    "plt.scatter(X, Y, c='black')\n",
+    "plt.plot(xfit, yfit, c='red');"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "fjQ-FigJG2bh"
+   },
+   "source": [
+    "**Q1: What is the slope (or coefficient) and intercept (or bias) of the model created? What is the slope telling us about the relationship between GDP and life expectancy?**\n",
+    "Note: Check model variables .coef_ and .intercept_ \n",
+    "\n",
+    "Expected output: 5.04271244 and 16.203941717888505 (but please show how to reach these values)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "MKr2JmfAG2bi"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "HjhRF6PtG2bi"
+   },
+   "source": [
+    "**Q2: Can you write down an expression for the straight red line in the previous plot, using the values of intercept_ and coef_ that were just printed? To confirm your solution, do a plot where you overlap the red plot in the figure below (red) with another plot with the straight line equation you derived.**\n",
+    "\n",
+    "Note: coef_ returns a list of coeficients but for linear regression only one exists. To access the value you need to access the first value of the list, e.g., .coef_[0]\n",
+    "\n",
+    "Expected output: two lines (e.g., red and blue) perfectly overlaped. To ease visualization, increase the thickness of the line in the back. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "rGSGIhl-G2bi"
+   },
+   "outputs": [],
+   "source": [
+    "# Q2\n",
+    "# Complete the following line, by replacing A and B:\n",
+    "# yy = A + B * xfit \n",
+    "\n",
+    "fig, ax = plt.subplots()\n",
+    "ax.plot(xfit, yfit, c='red', linewidth=6);\n",
+    "ax.plot(xfit, yy, c='blue');\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "7WRqEU8uG2bj"
+   },
+   "source": [
+    "<h3> Single Variable Polynomial regression </h3>\n",
+    "\n",
+    "Linear regression can also be applied after expanding the feature space to include non-linear terms. This is convinient to capture non-linear relationships in data; notice that the number of coefficients will also increase. Check Chapter 3.3.2 of ISLR for extra insights.\n",
+    "\n",
+    "Let us now inspect the relationship between Life expectancy and Happiness. First we plot the data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "rUAACqCJG2bj"
+   },
+   "outputs": [],
+   "source": [
+    "x = happinessdataframe.dropna().loc[2016][[\"Healthy life expectancy at birth\",\"Life Ladder\"]]\n",
+    "x.plot.scatter(x=\"Healthy life expectancy at birth\", y=\"Life Ladder\",c='black')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "MnnDnxckG2bj"
+   },
+   "source": [
+    "Note that now the relationship between the predictor and response of interest doesn't appear to be linear. \n",
+    "\n",
+    "We now intend to expand the feature space to include higher order terms using, as basis function, a polynomial function of degree 2.\n",
+    "\n",
+    "You can notice, below, a pipeline. To gain some insight on what is the meaning of a pipeline, please check the PDSH book, [here](https://jakevdp.github.io/PythonDataScienceHandbook/05.04-feature-engineering.html) (feature pipelines).\n",
+    "\n",
+    "**Q4: Can you fill the missing lines below to fit the model to data and apply the model?**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "IUiRQc0dG2bj"
+   },
+   "outputs": [],
+   "source": [
+    "# 1. Select model and import it\n",
+    "from sklearn.preprocessing import PolynomialFeatures\n",
+    "from sklearn.pipeline import make_pipeline\n",
+    "\n",
+    "# 2. Select model hyperparameters (here, we will use a polynomial basis function, of degree 2)\n",
+    "polymodel = make_pipeline(PolynomialFeatures(2), LinearRegression(fit_intercept=True))\n",
+    "\n",
+    "# 3. Arrange data in feature matrix (or vector if just 1 feature) and Target array\n",
+    "x = happinessdataframe.dropna().loc[2016][[\"Healthy life expectancy at birth\",\"Life Ladder\"]]\n",
+    "\n",
+    "X = x[\"Healthy life expectancy at birth\"].values\n",
+    "Y = x[\"Life Ladder\"].values\n",
+    "\n",
+    "# 4. Fit model to data\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "\n",
+    "# 5. Apply model\n",
+    "xfit = np.linspace(min(X), max(X), 100)\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "\n",
+    "# Plot\n",
+    "fig, ax = plt.subplots()\n",
+    "ax.scatter(X, Y, c='black')\n",
+    "ax.set_xlabel(\"Healthy life expectancy at birth\")\n",
+    "ax.set_ylabel(\"Life Ladder\")\n",
+    "ax.plot(xfit, yfit, c='red');\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "LFP7zMXLG2bk"
+   },
+   "source": [
+    "<h3> Evaluate the model </h3>\n",
+    "\n",
+    "Should we use Linear or Polynomial regression to model the relationship between Life expectancy and Happiness? \n",
+    "\n",
+    "Let us use historic data (2016) to fit a model and use it to predict Happiness (Life Ladder) in 2017. We'll use a Linear or Polynomial regression. To quantify which model predicts better the relationship between Life expectancy and Happiness in 2017 we will compute the mean square error (MSE) and the coefficient of determination (R2) score between the real data in 2017 and our prediction.\n",
+    "\n",
+    "Notice that now we are considering a training (2016 data) and testing set (2017 data) — when doing hyperparameter tuning it is also common to use a validation set (details later or, if you're already curious, check chapter 5.1.1 of [ISLR](https://www.statlearning.com))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "MWJ7VhZdG2bk"
+   },
+   "outputs": [],
+   "source": [
+    "# Calculate MSE and R2\n",
+    "\n",
+    "from sklearn.metrics import mean_squared_error, r2_score\n",
+    "\n",
+    "# Split the data into training/testing sets\n",
+    "\n",
+    "# 2016 will be our train\n",
+    "x = happinessdataframe.dropna().loc[2016][[\"Healthy life expectancy at birth\", \"Life Ladder\"]]\n",
+    "\n",
+    "Xtrain = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytrain = x[\"Life Ladder\"].values\n",
+    "\n",
+    "polymodel = make_pipeline(PolynomialFeatures(1), LinearRegression(fit_intercept=True))\n",
+    "polymodel.fit(Xtrain[:, np.newaxis], Ytrain)\n",
+    "\n",
+    "# 2017 will be our test set\n",
+    "x = happinessdataframe.dropna().loc[2017][[\"Healthy life expectancy at birth\",\"Life Ladder\"]]\n",
+    "\n",
+    "Xtest = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytest = x[\"Life Ladder\"].values\n",
+    "\n",
+    "YPredictionTest = polymodel.predict(Xtest[:, np.newaxis])\n",
+    "\n",
+    "# The mean squared error\n",
+    "print(\"Mean squared error - Test: %.2f\" % mean_squared_error(Ytest, YPredictionTest))\n",
+    "# Explained variance score: 1 is perfect prediction\n",
+    "print('Variance score - Test: %.2f' % r2_score(Ytest, YPredictionTest))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "GaOstLdrG2bk"
+   },
+   "source": [
+    "**Q3: The previous evaluation metrics refer to a Linear regression (note the *PolynomialFeatures(1)*). What are the mean squared error and coefficient of determination (R2) if we apply a polynomial regression of degree 2? Does that mean that we should opt for a linear or polynomial regression, to model the relationship between Life expectancy and Happiness?**\n",
+    "\n",
+    "Expected output: MSE and R2 (aka coefficient of determination or variance score) associated with the polynomial regression with degree 2."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "Pfcqhn2xG2bk"
+   },
+   "outputs": [],
+   "source": [
+    "# Solution Q3\n",
+    "\n",
+    "x = happinessdataframe.dropna().loc[2016][[\"Healthy life expectancy at birth\", \"Life Ladder\"]]\n",
+    "\n",
+    "Xtrain = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytrain = x[\"Life Ladder\"].values\n",
+    "\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "#polymodel = \n",
+    "\n",
+    "x = happinessdataframe.dropna().loc[2017][[\"Healthy life expectancy at birth\",\"Life Ladder\"]]\n",
+    "\n",
+    "Xtest = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytest = x[\"Life Ladder\"].values\n",
+    "\n",
+    "Yprediction = polymodel.predict(Xtest[:, np.newaxis])\n",
+    "\n",
+    "print(\"Mean squared error: %.2f\" % mean_squared_error(Ytest, Yprediction))\n",
+    "print('Variance score: %.2f' % r2_score(Ytest, Yprediction))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "5KRCyUPvDkag"
+   },
+   "source": [
+    "**Q4: Or we could use data before 2016 to train our model. Will that improve test error and variance score? Check that...**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "iPmn-YrODkag"
+   },
+   "outputs": [],
+   "source": [
+    "# Solution Q4\n",
+    "\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "#x = \n",
+    "\n",
+    "Xtrain = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytrain = x[\"Life Ladder\"].values\n",
+    "\n",
+    "polymodel = make_pipeline(PolynomialFeatures(2), LinearRegression(fit_intercept=True))\n",
+    "polymodel.fit(Xtrain[:, np.newaxis], Ytrain)\n",
+    "\n",
+    "x = happinessdataframe.dropna().loc[2017][[\"Healthy life expectancy at birth\",\"Life Ladder\"]]\n",
+    "\n",
+    "Xtest = x[\"Healthy life expectancy at birth\"].values\n",
+    "Ytest = x[\"Life Ladder\"].values\n",
+    "\n",
+    "Yprediction = polymodel.predict(Xtest[:, np.newaxis])\n",
+    "\n",
+    "print(\"Mean squared error: %.2f\" % mean_squared_error(Ytest, Yprediction))\n",
+    "print('Variance score: %.2f' % r2_score(Ytest, Yprediction))\n",
+    "\n",
+    "# slight improvement on mean squared error only...\n",
+    "# the problem seems not to be in lack of data, but in the simplicity of the model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "CYFS3kqDG2bl"
+   },
+   "source": [
+    "**Q5: 1) Create a regression model to capture the relationship between 'Freedom to make life choices' and 'Perception of corruption' in 2017. 2) Do a scatter plot with the corresponding data and regression line. Which order of polynomial basis better capture the relationship between Freedom to make life choices and Perception of corruption in 2017?**\n",
+    "\n",
+    "Expected output: You can check visually which order better captures the relationship in data (try order 1 to, say, 5); alternativelly, calculate the MSE and R2 associated with each order."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "XnqVrxqcDkah"
+   },
+   "outputs": [],
+   "source": [
+    "# Solution Q5\n",
+    "\n",
+    "# 1. Select model and import it\n",
+    "from sklearn.preprocessing import PolynomialFeatures\n",
+    "from sklearn.pipeline import make_pipeline\n",
+    "\n",
+    "# 2. Select model hyperparameters (here, we will use a polynomial, degree 2, basis function)\n",
+    "## MISSING LINE, PLEASE COMPLETE\n",
+    "#polymodel = \n",
+    "\n",
+    "# 3. Arrange data in feature matrix (or vector if just 1 feature) and Target array\n",
+    "x = happinessdataframe.dropna().loc[2017][[\"Freedom to make life choices\",\"Perceptions of corruption\"]]\n",
+    "x.plot.scatter(x=\"Freedom to make life choices\", y=\"Perceptions of corruption\",c='black')\n",
+    "\n",
+    "X = x[\"Freedom to make life choices\"].values\n",
+    "Y = x[\"Perceptions of corruption\"].values\n",
+    "\n",
+    "polymodel.fit(X[:, np.newaxis], Y)\n",
+    "\n",
+    "# 5. Apply model\n",
+    "xfit = np.linspace(min(X), max(X), 1000)\n",
+    "yfit = polymodel.predict(xfit[:, np.newaxis])\n",
+    "\n",
+    "# Plot\n",
+    "plt.scatter(X, Y, c='black')\n",
+    "plt.plot(xfit, yfit, c='red');"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "-Ko30bQzG2bl"
+   },
+   "source": [
+    "It is time-consuming to test many (hyper)parameters by hand and check which of them lead to a better fit with data. \n",
+    "\n",
+    "Fortunatelly, Scikit-learn offers the option to do a grid search over many parameters and select the best one. With [GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html), we can automatically perform a grid search and, through cross-validation, identify the best hyperparameters for our model.\n",
+    "\n",
+    "At this point, it is convinient to distinguish between *training set*, *validation set* and *test set*. The *training set* is used to fit parameters and define a model, as before. The *validation set* can then be used to compare the accuracy of models trained with different hyperparameters. With this knowledge, we can then select the model corresponding to the hyperparameters that minimize validation error. The *test set* is ultimately used to evalute our best model, in an unbised way. In machine learning competitions, the test set is not provided to competitors and it is used to ultimately rank submissions (e.g., see [Kaggle competitions](https://www.kaggle.com/competitions)).\n",
+    "\n",
+    "**Q6: Why do you think we need a test and validation set? Why not using just a single set to do validation and tests?**\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "dbii4mqNDkah"
+   },
+   "source": [
+    "Answer: "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "OTqoFtgMDkai"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "IVqHveIDDkai"
+   },
+   "source": [
+    "Here an example of Grid Search to select the top performing hyperparameters of our model. We'll use all data until 2017 as the training/validation data. 2018 data will serve as test data:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "ZjoUdibZG2bm"
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.model_selection import GridSearchCV\n",
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "# Create a train and validation set\n",
+    "# Lets use all data until 2017 as our train/validation set; we'll use 2018 as the test data\n",
+    "x = happinessdataframe.dropna().loc[:2017][[\"Freedom to make life choices\",\"Perceptions of corruption\"]]\n",
+    "X_train = x[\"Freedom to make life choices\"].values\n",
+    "y_train = x[\"Perceptions of corruption\"].values\n",
+    "\n",
+    "# Create grid of parameters to test through cross-validation\n",
+    "param_grid = {'polynomialfeatures__degree': np.arange(20),\n",
+    "              'linearregression__fit_intercept': [True, False],\n",
+    "              'linearregression__normalize': [True, False]}\n",
+    "\n",
+    "model = make_pipeline(PolynomialFeatures(), LinearRegression())\n",
+    "grid = GridSearchCV(model, param_grid, cv=10)\n",
+    "grid.fit(X_train[:, np.newaxis], y_train);\n",
+    "\n",
+    "#Test data\n",
+    "x = happinessdataframe.dropna().loc[2018][[\"Freedom to make life choices\",\"Perceptions of corruption\"]]\n",
+    "X_test = x[\"Freedom to make life choices\"].values\n",
+    "y_test = x[\"Perceptions of corruption\"].values\n",
+    "\n",
+    "# Let us know check the results with the best estimator after Grid Search\n",
+    "print(\"Best hyperparameters found:\")\n",
+    "print(grid.best_params_)\n",
+    "y_pred = grid.best_estimator_.predict(X_test[:, np.newaxis])\n",
+    "print(\"\")\n",
+    "\n",
+    "# Compute test error and variance score\n",
+    "print(\"Model accuracy:\")\n",
+    "print(\"Mean squared error: %.2f\" % mean_squared_error(y_test, y_pred))\n",
+    "print('Variance score: %.2f' % r2_score(y_test, y_pred))\n",
+    "print(\"\")\n",
+    "\n",
+    "#Plot with test data and fitted model\n",
+    "print(\"Plot:\")\n",
+    "x.plot.scatter(x=\"Freedom to make life choices\", y=\"Perceptions of corruption\",c='black')\n",
+    "xfit = np.linspace(min(X_test), max(X_test), 1000)\n",
+    "yfit = grid.best_estimator_.predict(xfit[:, np.newaxis])\n",
+    "plt.plot(xfit, yfit, c='red');"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "784_CD9XG2bm"
+   },
+   "source": [
+    "**Q7: Can you understand how GridSearchCV operates and the meaning of its output?**\n",
+    "\n",
+    "Expected outcome: Two sentences explaining or point to relevant documentation. Understand your answer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "BMgxPOueG2bm"
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "id": "WHFlRdOmDkaj"
+   },
+   "source": [
+    "When applying GridSearchCV we are using a parameter cv=7. That parameter determines the cross-validation splitting strategy. That means that we are sussessivelly dividing our data in a train and validation set, in order to train the model and evaluate the performance of a specific combination of parameters. The final valitation for the model, however, must be performed a test set — that is, a test that was never using during the training or validation."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "id": "ILc0RANSG2bs"
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "collapsed_sections": [],
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
