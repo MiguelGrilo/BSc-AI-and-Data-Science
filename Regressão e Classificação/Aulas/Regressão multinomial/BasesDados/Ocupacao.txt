@@ -1,0 +1,31 @@
+SitProf	Idade	HabEscol
+Sem ocupação profissional	45	1º ciclo ou inferior
+Sem ocupação profissional	55	1º ciclo ou inferior
+Sem ocupação profissional	60	1º ciclo ou inferior
+Sem ocupação profissional	47	Secundário
+Sem ocupação profissional	47	1º ciclo ou inferior
+Sem ocupação profissional	48	1º ciclo ou inferior
+Sem ocupação profissional	50	1º ciclo ou inferior
+Sem ocupação profissional	55	Superior
+Sem ocupação profissional	35	1º ciclo ou inferior
+Sem ocupação profissional	47	1º ciclo ou inferior
+Sem ocupação profissional	48	1º ciclo ou inferior
+Sem ocupação profissional	45	1º ciclo ou inferior
+Sem ocupação profissional	35	Superior
+Emprego part-time	45	Secundário
+Emprego part-time	35	Secundário
+Emprego part-time	35	1º ciclo ou inferior
+Emprego part-time	48	Superior
+Emprego part-time	50	Secundário
+Emprego part-time	55	1º ciclo ou inferior
+Emprego part-time	35	Superior
+Emprego full-time	35	Superior
+Emprego full-time	45	Superior
+Emprego full-time	35	1º ciclo ou inferior
+Emprego full-time	25	Secundário
+Emprego full-time	35	Secundário
+Emprego full-time	35	Superior
+Emprego full-time	25	Superior
+Emprego full-time	35	Superior
+Emprego full-time	35	Secundário
+Emprego full-time	45	Superior
