@@ -1,0 +1,3 @@
+ID;Nome;Email;Tipo;Valor;Estado Pagamento
+1;Miguel;miguel@gmail.com;Não Estudante;20.00;Pago
+2;Tiago;Tiago@gmail.com;Estudante;28.50;Pendente
