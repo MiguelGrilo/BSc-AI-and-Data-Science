@@ -117,12 +117,12 @@ O planeamento foi realizado através de GitHub Issues, categorizadas com a label
 | **#2** | Entidade | Implementar 'Pagamento, OpcaoAdicional e FaseInscricao' | Closed |
 | **#3** | Entidade | Implementar 'Inscrição, Estado e Evento' | Closed |
 | **#4** | Serviço | UC2: Implementar ‘Gerir Evento’ | Closed |
-| **#5** | Serviço | UC3: Implementar ‘Configurar Preços e Opções’ | Closed |
-| **#6** | Serviço | UC4: Implementar ‘Consultar Detalhes do Evento’ | Closed |
-| **#7** | Serviço | UC5: Implementar ‘Efetuar Inscrição’ | Closed |
-| **#8** | Serviço | UC6: Implementar ‘Efetuar Pagamento’ | Closed |
-| **#9** | Serviço | UC8: Implementar ‘Consultas e Verificações’ | Closed |
-| **#10** | Serviço | UC11: Implementar ‘Imprimir/Exportar Listas’ | Closed |
+| **#8** | Serviço | UC3: Implementar ‘Configurar Preços e Opções’ | Closed |
+| **#11** | Serviço | UC4: Implementar ‘Consultar Detalhes do Evento’ | Closed |
+| **#14** | Serviço | UC5: Implementar ‘Efetuar Inscrição’ | Closed |
+| **#17** | Serviço | UC6: Implementar ‘Efetuar Pagamento’ | Closed |
+| **#20** | Serviço | UC8: Implementar ‘Consultas e Verificações’ | Closed |
+| **#23** | Serviço | UC11: Implementar ‘Imprimir/Exportar Listas’ | Closed |
 
 
 ### Padrão de Commits
