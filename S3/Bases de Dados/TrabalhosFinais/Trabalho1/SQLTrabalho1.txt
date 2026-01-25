@@ -1,0 +1,138 @@
+--EXCERCÍCIO 4
+--Alínea a)
+SELECT DISTINCT membro.Nome
+FROM membro, criou, doce, temIngrediente
+WHERE membro.Pais='Espanha'
+	AND doce.Genero='Regional'
+    AND membro.IdMemb=criou.Membro
+    AND criou.Doce=doce.Nome
+    AND doce.Nome=temIngrediente.Doce
+    AND temIngrediente.Ingrediente='Chocolate'
+INTERSECT
+SELECT DISTINCT membro.Nome
+FROM membro, criou, doce, temIngrediente
+WHERE membro.Pais='Espanha'
+	AND doce.Genero='Regional'
+    AND membro.IdMemb=criou.Membro
+    AND criou.Doce=doce.Nome
+    AND doce.Nome=temIngrediente.Doce
+    AND temIngrediente.Ingrediente='Canela';
+
+--Alínea b)
+SELECT DISTINCT doce.Nome
+FROM membro, amigo, criou, fez, doce
+WHERE membro.Nome='Joaquim José'
+	AND doce.Genero='Tradicional'
+    AND fez.Aspeto>=5
+    AND (membro.IdMemb=amigo.Membro1 OR membro.IdMemb=amigo.Membro2)
+    AND (amigo.Membro1=criou.Membro OR amigo.Membro2=criou.Membro)
+    AND criou.Doce=fez.Doce
+    AND doce.Nome=criou.Doce;
+
+--Alínea c)
+SELECT DISTINCT membro.Nome
+FROM membro
+WHERE NOT EXISTS 
+(SELECT 1
+FROM fez
+WHERE fez.Membro = membro.IdMemb AND fez.Doce NOT IN
+(SELECT criou.Doce
+FROM criou
+WHERE criou.Membro IN 
+(SELECT amigo.Membro2
+FROM amigo
+WHERE amigo.Membro1 = membro.IdMemb)));
+
+--Alínea d)
+SELECT DISTINCT fez.Doce
+FROM fez, temIngrediente
+WHERE temIngrediente.Ingrediente='Natas'
+	AND temIngrediente.Doce=fez.Doce
+EXCEPT
+SELECT DISTINCT fez.Doce
+FROM fez, temIngrediente
+WHERE fez.Sabor=5
+	AND temIngrediente.Doce=fez.Doce;
+
+--Alínea e)
+SELECT DISTINCT membro.Nome
+FROM membro, temIngrediente, criou
+WHERE temIngrediente.Ingrediente='Canela'
+	AND temIngrediente.Doce=criou.Doce
+	AND criou.Membro=membro.IdMemb
+INTERSECT
+SELECT DISTINCT membro.Nome
+FROM membro, temIngrediente, criou
+WHERE temIngrediente.Ingrediente='Leite'
+	AND temIngrediente.Doce=criou.Doce
+	AND criou.Membro=membro.IdMemb;
+
+--Alínea f)
+SELECT DISTINCT doce.Nome
+FROM temIngrediente, doce
+WHERE temIngrediente.Ingrediente='Maçã'
+	AND temIngrediente.Doce=Doce.Nome
+UNION
+SELECT DISTINCT doce.Nome
+FROM temIngrediente, doce
+WHERE temIngrediente.Ingrediente='Baunilha'
+	AND temIngrediente.Doce=Doce.Nome;
+
+--Alínea g)
+SELECT SUM(ingrediente.Custo * temIngrediente.Quantidade)
+FROM temIngrediente, ingrediente
+WHERE temIngrediente.Doce = 'Arroz Doce'
+	AND temIngrediente.Ingrediente=ingrediente.Nome;
+
+--Alínea h)
+SELECT SUM(ingrediente.Custo * temIngrediente.Quantidade)
+FROM temIngrediente, ingrediente, doce
+WHERE temIngrediente.Doce = doce.Nome
+	AND temIngrediente.Ingrediente=ingrediente.Nome
+GROUP BY doce.Nome;
+
+--Alínea i)
+SELECT membro.Nome, COUNT(criou.Doce)
+FROM membro, criou
+WHERE criou.Membro=Membro.IdMemb
+GROUP BY membro.Nome;
+
+--Alínea j)
+SELECT membro.Nome, COUNT(criou.Doce) AS Doces_Criados
+FROM membro, criou
+WHERE membro.IdMemb = criou.Membro
+GROUP BY membro.Nome
+ORDER BY Doces_Criados DESC LIMIT 1;
+
+--Alínea k)
+SELECT doce.Nome, SUM(temIngrediente.Quantidade * ingrediente.Custo)
+FROM doce, temIngrediente, ingrediente
+WHERE temIngrediente.Ingrediente = ingrediente.Nome
+	AND temIngrediente.Doce = doce.Nome
+GROUP BY doce.Nome
+ORDER BY SUM(temIngrediente.Quantidade * ingrediente.Custo) DESC LIMIT 1;
+
+--Alínea l)
+
+--Alínea m)
+SELECT membro.Nome
+FROM membro
+WHERE NOT EXISTS (
+    SELECT Doce
+    FROM temIngrediente
+    WHERE Ingrediente = 'Baunilha'
+    EXCEPT
+    SELECT fez.Doce
+    FROM fez
+    WHERE fez.Membro = membro.idMemb);
+
+--Alínea n)
+SELECT DISTINCT Doce
+FROM fez
+WHERE Tempo=1
+EXCEPT
+SELECT DISTINCT Doce
+FROM fez 
+WHERE Tempo<>1;
+
+--Alínea o)
