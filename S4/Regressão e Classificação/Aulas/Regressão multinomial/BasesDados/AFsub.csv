@@ -1,0 +1,364 @@
+﻿id;sexo;idade;instrucao;modalidade
+1;Masculino;56;1.º ciclo ou inferior;BTT/Ciclismo
+2;Feminino;49;1.º ciclo ou inferior;Caminhada
+3;Feminino;65;1.º ciclo ou inferior;Caminhada
+4;Feminino;57;2.º ciclo;Caminhada
+5;Feminino;30;2.º ciclo;Outra
+6;Masculino;23;2.º ciclo;BTT/Ciclismo
+7;Feminino;51;3.º ciclo;BTT/Ciclismo
+8;Feminino;35;Secundário;Outra
+9;Masculino;21;Secundário;Outra
+10;Feminino;34;Secundário;BTT/Ciclismo
+11;Feminino;24;Secundário;Caminhada
+12;Feminino;29;Secundário;Caminhada
+13;Feminino;25;Secundário;Caminhada
+14;Feminino;50;Secundário;Fitness
+15;Masculino;19;Secundário;BTT/Ciclismo
+16;Feminino;55;Secundário;Caminhada
+17;Feminino;56;Secundário;Caminhada
+18;Feminino;28;Superior;Caminhada
+19;Feminino;36;Superior;Fitness
+20;Masculino;37;Superior;Fitness
+21;Feminino;51;Superior;Caminhada
+22;Feminino;42;Superior;Outra
+23;Feminino;28;Superior;BTT/Ciclismo
+24;Masculino;15;2.º ciclo;Outra
+25;Feminino;15;3.º ciclo;Outra
+26;Masculino;16;3.º ciclo;Outra
+27;Feminino;16;3.º ciclo;Outra
+28;Feminino;16;3.º ciclo;Outra
+29;Feminino;15;3.º ciclo;Outra
+30;Masculino;15;3.º ciclo;Outra
+31;Feminino;19;3.º ciclo;Outra
+32;Feminino;17;3.º ciclo;Fitness
+33;Masculino;15;3.º ciclo;Outra
+34;Masculino;15;3.º ciclo;Outra
+35;Feminino;15;3.º ciclo;Outra
+36;Masculino;29;3.º ciclo;Outra
+37;Masculino;17;3.º ciclo;Outra
+38;Feminino;15;3.º ciclo;Outra
+39;Feminino;17;Secundário;Outra
+40;Feminino;17;Secundário;Outra
+41;Masculino;18;Secundário;Fitness
+42;Masculino;17;Secundário;Outra
+43;Masculino;23;Secundário;Fitness
+44;Feminino;17;Secundário;Outra
+45;Masculino;20;Secundário;Fitness
+46;Masculino;15;Secundário;Outra
+47;Masculino;19;Secundário;Outra
+48;Masculino;16;Secundário;Outra
+49;Feminino;17;Secundário;Caminhada
+50;Feminino;16;Secundário;Outra
+51;Masculino;17;Secundário;Outra
+52;Masculino;18;Secundário;Fitness
+53;Feminino;17;Secundário;Outra
+54;Masculino;18;Secundário;Outra
+55;Feminino;15;Secundário;Outra
+56;Feminino;19;Secundário;Outra
+57;Masculino;15;Secundário;Outra
+58;Masculino;18;Secundário;BTT/Ciclismo
+59;Masculino;19;Secundário;Fitness
+60;Feminino;17;Secundário;Outra
+61;Feminino;17;Secundário;Outra
+62;Masculino;18;Secundário;Outra
+63;Feminino;20;Secundário;Outra
+64;Masculino;17;Secundário;Outra
+65;Masculino;20;Secundário;Outra
+66;Masculino;23;Secundário;Outra
+67;Feminino;16;Secundário;Outra
+68;Masculino;17;Secundário;Outra
+69;Masculino;23;Secundário;Outra
+70;Masculino;15;Secundário;BTT/Ciclismo
+71;Masculino;23;Secundário;BTT/Ciclismo
+72;Masculino;28;Secundário;Outra
+73;Masculino;20;Secundário;BTT/Ciclismo
+74;Masculino;22;Secundário;Outra
+75;Masculino;18;Secundário;Outra
+76;Feminino;16;Secundário;Outra
+77;Feminino;21;Superior;Fitness
+78;Masculino;19;Superior;Outra
+79;Feminino;19;Superior;Outra
+80;Feminino;21;Superior;Fitness
+81;Feminino;23;Superior;Outra
+82;Feminino;19;Superior;Outra
+83;Masculino;29;Superior;Outra
+84;Feminino;22;Superior;Fitness
+85;Feminino;23;Superior;Outra
+86;Feminino;23;Superior;BTT/Ciclismo
+87;Feminino;21;Superior;Fitness
+88;Masculino;23;Superior;Fitness
+89;Masculino;25;Superior;Fitness
+90;Feminino;20;Superior;Outra
+91;Feminino;23;Superior;Fitness
+92;Feminino;19;Superior;Caminhada
+93;Feminino;68;1.º ciclo ou inferior;Fitness
+94;Feminino;79;1.º ciclo ou inferior;Outra
+95;Feminino;62;1.º ciclo ou inferior;Caminhada
+96;Feminino;42;3.º ciclo;Outra
+97;Feminino;70;1.º ciclo ou inferior;Outra
+98;Feminino;73;1.º ciclo ou inferior;Outra
+99;Masculino;57;1.º ciclo ou inferior;BTT/Ciclismo
+100;Masculino;75;1.º ciclo ou inferior;Outra
+101;Feminino;81;1.º ciclo ou inferior;Outra
+102;Masculino;75;1.º ciclo ou inferior;Outra
+103;Masculino;53;1.º ciclo ou inferior;BTT/Ciclismo
+104;Feminino;73;1.º ciclo ou inferior;Fitness
+105;Masculino;86;1.º ciclo ou inferior;Fitness
+106;Masculino;54;1.º ciclo ou inferior;BTT/Ciclismo
+107;Masculino;64;1.º ciclo ou inferior;Fitness
+108;Masculino;69;1.º ciclo ou inferior;Caminhada
+109;Feminino;79;1.º ciclo ou inferior;Caminhada
+110;Masculino;79;1.º ciclo ou inferior;Caminhada
+111;Masculino;80;1.º ciclo ou inferior;Caminhada
+112;Feminino;77;1.º ciclo ou inferior;Caminhada
+113;Masculino;60;1.º ciclo ou inferior;Caminhada
+114;Feminino;67;1.º ciclo ou inferior;Caminhada
+115;Feminino;73;1.º ciclo ou inferior;Caminhada
+116;Masculino;57;1.º ciclo ou inferior;Caminhada
+117;Feminino;72;1.º ciclo ou inferior;Fitness
+118;Masculino;77;1.º ciclo ou inferior;Fitness
+119;Feminino;75;1.º ciclo ou inferior;Caminhada
+120;Feminino;65;1.º ciclo ou inferior;Caminhada
+121;Feminino;83;1.º ciclo ou inferior;Fitness
+122;Masculino;57;1.º ciclo ou inferior;BTT/Ciclismo
+123;Masculino;57;1.º ciclo ou inferior;BTT/Ciclismo
+124;Masculino;63;1.º ciclo ou inferior;Outra
+125;Feminino;59;1.º ciclo ou inferior;Fitness
+126;Masculino;79;1.º ciclo ou inferior;BTT/Ciclismo
+127;Feminino;71;1.º ciclo ou inferior;Caminhada
+128;Feminino;66;1.º ciclo ou inferior;Caminhada
+129;Feminino;66;1.º ciclo ou inferior;Caminhada
+130;Masculino;78;1.º ciclo ou inferior;Caminhada
+131;Feminino;66;1.º ciclo ou inferior;Caminhada
+132;Masculino;52;1.º ciclo ou inferior;Caminhada
+133;Feminino;65;1.º ciclo ou inferior;Caminhada
+134;Feminino;78;1.º ciclo ou inferior;Caminhada
+135;Feminino;56;1.º ciclo ou inferior;Caminhada
+136;Feminino;61;1.º ciclo ou inferior;Caminhada
+137;Masculino;59;1.º ciclo ou inferior;Caminhada
+138;Feminino;74;2.º ciclo;Caminhada
+139;Masculino;80;2.º ciclo;Caminhada
+140;Masculino;56;2.º ciclo;BTT/Ciclismo
+141;Feminino;63;2.º ciclo;Caminhada
+142;Masculino;62;2.º ciclo;Caminhada
+143;Feminino;69;2.º ciclo;Caminhada
+144;Feminino;64;2.º ciclo;Caminhada
+145;Masculino;58;3.º ciclo;Outra
+146;Feminino;65;3.º ciclo;Outra
+147;Feminino;63;3.º ciclo;Fitness
+148;Masculino;61;3.º ciclo;Caminhada
+149;Masculino;64;3.º ciclo;Caminhada
+150;Feminino;56;3.º ciclo;Fitness
+151;Feminino;71;3.º ciclo;Outra
+152;Feminino;79;3.º ciclo;Outra
+153;Masculino;61;3.º ciclo;Outra
+154;Masculino;73;3.º ciclo;Caminhada
+155;Feminino;50;3.º ciclo;Caminhada
+156;Feminino;67;3.º ciclo;Caminhada
+157;Feminino;63;3.º ciclo;Caminhada
+158;Masculino;54;3.º ciclo;Caminhada
+159;Masculino;60;3.º ciclo;Caminhada
+160;Masculino;60;Secundário;Outra
+161;Masculino;57;Secundário;Fitness
+162;Masculino;61;Secundário;Caminhada
+163;Feminino;74;Secundário;Caminhada
+164;Masculino;64;Secundário;BTT/Ciclismo
+165;Masculino;54;Secundário;BTT/Ciclismo
+166;Feminino;49;Secundário;Caminhada
+167;Feminino;57;Secundário;Caminhada
+168;Masculino;83;Secundário;Caminhada
+169;Masculino;56;Secundário;Caminhada
+170;Feminino;67;Secundário;Caminhada
+171;Feminino;65;Secundário;Caminhada
+172;Feminino;70;Superior;Outra
+173;Feminino;71;Superior;Outra
+174;Feminino;60;Superior;Outra
+175;Masculino;67;Superior;Caminhada
+176;Feminino;69;Superior;Caminhada
+177;Masculino;69;Superior;Caminhada
+178;Masculino;73;Superior;Caminhada
+179;Masculino;69;Superior;Outra
+180;Masculino;66;Superior;Fitness
+181;Masculino;61;Superior;Outra
+182;Feminino;56;Superior;Fitness
+183;Feminino;75;Superior;Caminhada
+184;Masculino;74;Superior;Caminhada
+185;Masculino;63;Superior;Caminhada
+186;Feminino;62;1.º ciclo ou inferior;Caminhada
+187;Feminino;60;1.º ciclo ou inferior;Caminhada
+188;Feminino;52;1.º ciclo ou inferior;Caminhada
+189;Feminino;41;1.º ciclo ou inferior;Caminhada
+190;Masculino;36;1.º ciclo ou inferior;Fitness
+191;Masculino;57;1.º ciclo ou inferior;Caminhada
+192;Feminino;49;1.º ciclo ou inferior;Caminhada
+193;Masculino;43;2.º ciclo;Outra
+194;Masculino;44;2.º ciclo;Outra
+195;Feminino;48;2.º ciclo;Caminhada
+196;Masculino;45;2.º ciclo;Caminhada
+197;Masculino;42;2.º ciclo;Outra
+198;Feminino;47;2.º ciclo;Caminhada
+199;Masculino;53;2.º ciclo;Caminhada
+200;Masculino;50;2.º ciclo;Caminhada
+201;Feminino;54;3.º ciclo;Outra
+202;Masculino;20;3.º ciclo;Outra
+203;Feminino;61;3.º ciclo;Caminhada
+204;Feminino;36;3.º ciclo;Caminhada
+205;Feminino;51;3.º ciclo;Caminhada
+206;Masculino;30;3.º ciclo;BTT/Ciclismo
+207;Masculino;35;3.º ciclo;BTT/Ciclismo
+208;Feminino;23;3.º ciclo;BTT/Ciclismo
+209;Masculino;38;3.º ciclo;BTT/Ciclismo
+210;Feminino;31;3.º ciclo;BTT/Ciclismo
+211;Masculino;30;3.º ciclo;Outra
+212;Masculino;46;3.º ciclo;BTT/Ciclismo
+213;Feminino;27;3.º ciclo;BTT/Ciclismo
+214;Masculino;39;3.º ciclo;BTT/Ciclismo
+215;Masculino;40;3.º ciclo;Outra
+216;Masculino;29;3.º ciclo;Outra
+217;Masculino;25;3.º ciclo;Outra
+218;Feminino;31;3.º ciclo;Caminhada
+219;Masculino;60;3.º ciclo;Caminhada
+220;Feminino;56;3.º ciclo;Caminhada
+221;Feminino;49;3.º ciclo;Caminhada
+222;Feminino;64;3.º ciclo;Caminhada
+223;Feminino;30;;Fitness
+224;Feminino;22;Secundário;Fitness
+225;Masculino;38;Secundário;Outra
+226;Masculino;32;Secundário;Outra
+227;Feminino;30;Secundário;Outra
+228;Masculino;34;Secundário;BTT/Ciclismo
+229;Feminino;33;Secundário;Fitness
+230;Masculino;21;Secundário;Outra
+231;Masculino;32;Secundário;Outra
+232;Masculino;23;Secundário;Outra
+233;Masculino;38;Secundário;Outra
+234;Feminino;33;Secundário;Outra
+235;Masculino;30;Secundário;Outra
+236;Masculino;29;Secundário;Outra
+237;Masculino;40;Secundário;Outra
+238;Masculino;43;Secundário;BTT/Ciclismo
+239;Masculino;43;Secundário;Outra
+240;Feminino;52;Secundário;Caminhada
+241;Masculino;22;Secundário;Caminhada
+242;Masculino;44;Secundário;Caminhada
+243;Feminino;43;Secundário;Caminhada
+244;Feminino;39;Secundário;Caminhada
+245;Feminino;40;Secundário;Caminhada
+246;Masculino;34;Secundário;Outra
+247;Masculino;35;Secundário;Outra
+248;Masculino;38;Secundário;BTT/Ciclismo
+249;Masculino;29;Secundário;BTT/Ciclismo
+250;Masculino;50;Secundário;Outra
+251;Feminino;32;Secundário;BTT/Ciclismo
+252;Masculino;47;Secundário;BTT/Ciclismo
+253;Feminino;54;Secundário;Outra
+254;Masculino;51;Secundário;Fitness
+255;Masculino;24;Secundário;Fitness
+256;Masculino;33;Secundário;BTT/Ciclismo
+257;Masculino;32;Secundário;Fitness
+258;Feminino;52;Secundário;Outra
+259;Masculino;50;Secundário;BTT/Ciclismo
+260;Masculino;22;Secundário;Outra
+261;Masculino;52;Secundário;BTT/Ciclismo
+262;Masculino;43;Secundário;Outra
+263;Feminino;36;Secundário;BTT/Ciclismo
+264;Feminino;36;Secundário;Fitness
+265;Masculino;37;Secundário;Outra
+266;Masculino;30;Secundário;Outra
+267;Masculino;31;Secundário;Fitness
+268;Feminino;48;Secundário;Caminhada
+269;Feminino;49;Secundário;Caminhada
+270;Feminino;47;Secundário;Caminhada
+271;Feminino;49;Secundário;Caminhada
+272;Masculino;40;Secundário;Caminhada
+273;Masculino;41;Secundário;Caminhada
+274;Masculino;31;Secundário;Caminhada
+275;Masculino;35;Secundário;Caminhada
+276;Feminino;27;Superior;Fitness
+277;Feminino;37;Superior;Fitness
+278;Feminino;42;Superior;Fitness
+279;Feminino;44;Superior;Fitness
+280;Masculino;51;Superior;Outra
+281;Masculino;35;Superior;Outra
+282;Feminino;43;Superior;Outra
+283;Masculino;35;Superior;Outra
+284;Feminino;34;Superior;Outra
+285;Feminino;32;Superior;Outra
+286;Masculino;37;Superior;Outra
+287;Masculino;30;Superior;Outra
+288;Masculino;52;Superior;BTT/Ciclismo
+289;Feminino;48;Superior;Fitness
+290;Feminino;56;Superior;Fitness
+291;Masculino;39;Superior;Fitness
+292;Feminino;33;Superior;Caminhada
+293;Feminino;30;Superior;Caminhada
+294;Feminino;37;Superior;Caminhada
+295;Feminino;39;Superior;BTT/Ciclismo
+296;Feminino;54;Superior;Fitness
+297;Masculino;36;Superior;Outra
+298;Feminino;46;Superior;Fitness
+299;Masculino;47;Superior;BTT/Ciclismo
+300;Feminino;55;Superior;Outra
+301;Feminino;42;Superior;Outra
+302;Masculino;25;Superior;Outra
+303;Feminino;35;Superior;Fitness
+304;Feminino;39;Superior;Fitness
+305;Feminino;30;Superior;BTT/Ciclismo
+306;Feminino;32;Superior;Fitness
+307;Feminino;34;Superior;Outra
+308;Feminino;32;Superior;BTT/Ciclismo
+309;Feminino;34;Superior;Fitness
+310;Masculino;56;Superior;BTT/Ciclismo
+311;Masculino;41;Superior;Outra
+312;Feminino;34;Superior;BTT/Ciclismo
+313;Masculino;61;Superior;Outra
+314;Masculino;51;Superior;BTT/Ciclismo
+315;Masculino;44;Superior;BTT/Ciclismo
+316;Feminino;34;Superior;Caminhada
+317;Feminino;54;Superior;Caminhada
+318;Feminino;40;Superior;Caminhada
+319;Feminino;54;Superior;Caminhada
+320;Masculino;64;Superior;Caminhada
+321;Feminino;34;Superior;Caminhada
+322;Feminino;36;Superior;Caminhada
+323;Masculino;28;Superior;Caminhada
+324;Feminino;28;Superior;Caminhada
+325;Feminino;47;Superior;Caminhada
+326;Feminino;47;Superior;Caminhada
+327;Feminino;48;Superior;Caminhada
+328;Masculino;51;Superior;Caminhada
+329;Feminino;47;Superior;Caminhada
+330;Feminino;39;Superior;Caminhada
+331;Masculino;60;1.º ciclo ou inferior;BTT/Ciclismo
+332;Feminino;63;1.º ciclo ou inferior;Caminhada
+333;Masculino;62;1.º ciclo ou inferior;Caminhada
+334;Masculino;39;2.º ciclo;Outra
+335;Feminino;48;3.º ciclo;Fitness
+336;Masculino;58;3.º ciclo;Caminhada
+337;Masculino;30;3.º ciclo;Outra
+338;Masculino;40;3.º ciclo;Fitness
+339;Masculino;45;3.º ciclo;BTT/Ciclismo
+340;Feminino;62;3.º ciclo;BTT/Ciclismo
+341;Masculino;47;3.º ciclo;Outra
+342;Masculino;50;3.º ciclo;Caminhada
+343;Feminino;59;3.º ciclo;Caminhada
+344;Masculino;28;Secundário;Outra
+345;Feminino;30;Secundário;BTT/Ciclismo
+346;Masculino;51;Secundário;Outra
+347;Feminino;38;Secundário;Outra
+348;Feminino;40;Secundário;Outra
+349;Masculino;27;Secundário;Outra
+350;Feminino;54;Secundário;BTT/Ciclismo
+351;Masculino;46;Secundário;Outra
+352;Masculino;42;Secundário;BTT/Ciclismo
+353;Masculino;70;Superior;Outra
+354;Feminino;26;Superior;Outra
+355;Feminino;23;Superior;Fitness
+356;Masculino;31;Superior;Outra
+357;Masculino;42;Superior;Caminhada
+358;Feminino;55;Superior;Outra
+359;Feminino;39;Superior;Fitness
+360;Feminino;31;Superior;Fitness
+361;Feminino;33;Superior;Fitness
+362;Feminino;30;Superior;Outra
+363;Masculino;38;Superior;Outra

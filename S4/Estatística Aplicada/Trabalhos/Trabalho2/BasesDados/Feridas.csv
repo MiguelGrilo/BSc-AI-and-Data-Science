@@ -1,0 +1,483 @@
+﻿resp;Sexo;Idade;Habilitações;Origem;Tipologia;Desnutrição;Obesidade;Local_Ferida
+Complexa;Masculino;58;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;79;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Feminino;57;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;53;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;44;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;40;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;55;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;54;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;58;3º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;68;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;45;Superior;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;38;Superior;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;32;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;43;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;71;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;93;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;55;Secundário;UCSP;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;61;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;64;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;77;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;67;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;66;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;66;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Outro Local
+Não Complexa;Feminino;73;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;51;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Masculino;52;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Feminino;81;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Masculino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;59;Até 1º Ciclo;Hospital;UP/LH/LPT;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;66;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;78;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;43;Secundário;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Masculino;90;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;61;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Não Complexa;Masculino;47;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;53;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;62;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;87;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;63;3º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;84;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;41;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;78;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;90;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Masculino;80;2º Ciclo;Hospital;UP/LH/LPT;Não;Não;Outro Local
+Não Complexa;Feminino;57;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;58;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;62;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;8;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Complexa;Masculino;67;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;65;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;56;Secundário;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;63;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;47;3º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;57;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Complexa;Masculino;43;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Feminino;78;2º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;74;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Feminino;70;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;62;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;62;Secundário;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;80;Até 1º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Feminino;89;Até 1º Ciclo;Outra;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;83;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;55;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;49;Até 1º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Masculino;90;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;85;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;72;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;53;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;83;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;37;Superior;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;74;Secundário;Domicílio;UP/LH/LPT;Não;Não;Outro Local
+Complexa;Masculino;89;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;16;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;73;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;80;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;72;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;80;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;82;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;90;Até 1º Ciclo;Outra;Ferida traumática;Não;Não;Membro Superior
+Complexa;Feminino;63;Secundário;Domicílio;UP/LH/LPT;Não;Não;Outro Local
+Complexa;Masculino;56;Secundário;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;94;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;78;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;66;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;50;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;62;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;86;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;64;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;43;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;65;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;83;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;61;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;74;Superior;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;69;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;47;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;77;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;81;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;33;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;61;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;82;Até 1º Ciclo;Hospital;Outra;Não;Não;Outro Local
+Complexa;Masculino;92;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;52;3º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;56;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;92;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;93;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;88;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;23;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;71;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;87;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Membro Superior
+Não Complexa;Feminino;79;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;75;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;54;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;38;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;67;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;70;Secundário;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Feminino;70;Até 1º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Masculino;69;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;83;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;44;Secundário;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;81;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;73;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;65;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;86;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;83;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;38;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;63;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;66;Até 1º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Feminino;81;2º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;60;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;71;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;59;3º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;55;3º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Masculino;19;Secundário;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Feminino;77;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;82;Superior;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Complexa;Feminino;25;Superior;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;42;Superior;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;67;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;68;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;53;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;56;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;30;Secundário;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Masculino;54;Secundário;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;75;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;67;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;18;Superior;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;47;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;79;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;22;Superior;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;71;2º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Feminino;81;2º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;32;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Masculino;24;Superior;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Masculino;57;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;80;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Sim;Outro Local
+Não Complexa;Masculino;20;Secundário;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;71;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;91;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;71;2º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Feminino;83;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;66;3º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;96;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;82;Superior;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Complexa;Masculino;48;3º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;70;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;70;3º Ciclo;UCSP;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;18;Superior;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Feminino;83;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;52;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;52;Superior;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;2;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Complexa;Masculino;47;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Masculino;57;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;42;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Outro Local
+Complexa;Masculino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;81;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;61;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;50;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;34;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;47;Superior;UCSP;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Masculino;72;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;85;Até 1º Ciclo;Outra;UP/LH/LPT;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;86;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;66;2º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Não Complexa;Masculino;74;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;81;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;61;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;77;Superior;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Masculino;57;2º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Masculino;56;Secundário;UCSP;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;75;Até 1º Ciclo;Domicílio;Ferida traumática;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;85;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;83;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;83;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;45;Secundário;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Feminino;51;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;31;Secundário;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Masculino;57;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;40;3º Ciclo;UCSP;Outra;Não;Não;Membro Superior
+Não Complexa;Feminino;65;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;94;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;95;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Sim;Outro Local
+Não Complexa;Masculino;31;3º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Masculino;36;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;63;3º Ciclo;UCSP;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;46;Secundário;Hospital;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;69;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;71;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;73;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;70;Superior;Outra;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;65;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;78;Até 1º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;64;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Outro Local
+Complexa;Feminino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;74;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;96;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;102;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;93;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;61;2º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;70;Até 1º Ciclo;Domicílio;Ferida traumática;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;81;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;40;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;63;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;87;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;55;3º Ciclo;Hospital;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;88;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;67;3º Ciclo;Hospital;Ferida cirúrgica;Não;Sim;Outro Local
+Complexa;Feminino;90;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;91;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;30;2º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Complexa;Feminino;74;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Outro Local
+Complexa;Feminino;48;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;58;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;56;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;78;Até 1º Ciclo;Outra;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;66;Até 1º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;81;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;84;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Membro Superior
+Não Complexa;Masculino;69;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;6;Até 1º Ciclo;Outra;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Feminino;52;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;93;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;85;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;90;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;59;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;70;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;73;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;65;3º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;64;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;59;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;59;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;21;Superior;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;39;Secundário;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;70;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;34;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;68;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;67;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;64;Até 1º Ciclo;Hospital;UP/LH/LPT;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;77;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;44;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;46;Até 1º Ciclo;UCSP;Outra;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Masculino;59;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;32;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;78;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;80;Até 1º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Complexa;Feminino;86;Secundário;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;17;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;63;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;54;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;71;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;63;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;55;3º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Membro Superior
+Complexa;Feminino;93;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;86;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;69;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Masculino;10;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;71;Até 1º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;57;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Masculino;77;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Não Complexa;Feminino;69;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;74;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;61;Secundário;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;55;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;86;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;83;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;86;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;71;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;75;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;73;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;81;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;60;Até 1º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;63;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;75;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;83;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;46;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;57;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;69;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;41;Secundário;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Feminino;89;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Complexa;Feminino;88;Até 1º Ciclo;Outra;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;52;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;58;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;50;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;59;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;50;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;90;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;98;Até 1º Ciclo;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;61;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;64;Superior;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;71;Secundário;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Não Complexa;Masculino;55;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;89;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Complexa;Feminino;63;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;52;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;43;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;73;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;83;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;86;Até 1º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Feminino;89;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;73;Até 1º Ciclo;Domicílio;Ferida traumática;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;74;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;65;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;67;3º Ciclo;Hospital;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;88;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;86;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;84;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;41;Secundário;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Feminino;82;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;88;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;62;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;57;2º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Outro Local
+Não Complexa;Feminino;50;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;72;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;79;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;80;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;87;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;78;2º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;62;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;91;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;79;Até 1º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;53;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;61;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;62;2º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;75;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;90;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;80;2º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;49;3º Ciclo;UCSP;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;73;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;93;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;53;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;89;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;71;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;49;Secundário;UCSP;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;80;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;89;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;91;Até 1º Ciclo;Hospital;Ferida cirúrgica;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;37;Secundário;UCSP;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;61;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Complexa;Feminino;90;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;83;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;58;2º Ciclo;UCSP;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;86;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;87;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;85;Até 1º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;80;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;68;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;49;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;90;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;87;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;52;Até 1º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;75;2º Ciclo;UCSP;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;74;Até 1º Ciclo;UCSP;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;92;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;55;Secundário;Domicílio;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;88;Até 1º Ciclo;Outra;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;53;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;61;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;87;Até 1º Ciclo;UCSP;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;79;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;77;Até 1º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Não Complexa;Masculino;74;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;48;Até 1º Ciclo;Hospital;UP/LH/LPT;Sim;Não;Membro Superior
+Complexa;Feminino;48;Secundário;Domicílio;Outra;Não;Não;Outro Local
+Complexa;Masculino;62;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;84;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;85;Até 1º Ciclo;Hospital;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;55;Até 1º Ciclo;Domicílio;Outra;Não;Não;Membro Superior
+Não Complexa;Feminino;75;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;64;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;1;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;90;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;63;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;59;2º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;54;Secundário;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;80;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;85;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;56;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;14;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;71;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;46;Secundário;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;79;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Masculino;87;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;58;Superior;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;77;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;28;Secundário;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Complexa;Masculino;61;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;48;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;49;Superior;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;84;Até 1º Ciclo;Domicílio;Outra;Sim;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;86;Até 1º Ciclo;Hospital;Ferida traumática;Não;Não;Membro Superior
+Complexa;Feminino;85;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;68;2º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;62;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;26;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;86;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;60;Secundário;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;85;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;83;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;64;3º Ciclo;Hospital;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;74;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;59;3º Ciclo;UCSP;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;71;2º Ciclo;UCSP;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;88;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;97;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Outro Local
+Complexa;Feminino;61;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;66;2º Ciclo;Domicílio;Outra;Não;Sim;Abdómen ou Membro Inferior
+Complexa;Feminino;79;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;47;Secundário;Hospital;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;80;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Feminino;90;Até 1º Ciclo;Domicílio;UP/LH/LPT;Sim;Não;Outro Local
+Não Complexa;Masculino;72;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;59;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;81;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;47;Superior;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Masculino;30;2º Ciclo;Hospital;Ferida cirúrgica;Não;Sim;Membro Superior
+Complexa;Masculino;50;Secundário;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;79;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Outro Local
+Não Complexa;Feminino;85;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;74;2º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;72;Até 1º Ciclo;Domicílio;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;66;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;89;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;91;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;66;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;48;Secundário;Domicílio;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;62;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Complexa;Masculino;81;Até 1º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;48;3º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Membro Superior
+Complexa;Feminino;73;Até 1º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;80;Até 1º Ciclo;Hospital;Outra;Não;Não;Outro Local
+Não Complexa;Feminino;54;3º Ciclo;Domicílio;Ferida traumática;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;63;2º Ciclo;Domicílio;Ferida traumática;Não;Não;Membro Superior
+Não Complexa;Feminino;78;Até 1º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;64;3º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;23;Superior;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Complexa;Masculino;67;2º Ciclo;Domicílio;Outra;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Feminino;51;Secundário;Hospital;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Masculino;78;2º Ciclo;Hospital;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
+Não Complexa;Masculino;87;Até 1º Ciclo;Hospital;UP/LH/LPT;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;44;Superior;Hospital;Outra;Não;Não;Abdómen ou Membro Inferior
+Complexa;Feminino;86;Até 1º Ciclo;Outra;Ferida cirúrgica;Não;Não;Outro Local
+Não Complexa;Feminino;61;3º Ciclo;Domicílio;Ferida cirúrgica;Não;Não;Abdómen ou Membro Inferior
