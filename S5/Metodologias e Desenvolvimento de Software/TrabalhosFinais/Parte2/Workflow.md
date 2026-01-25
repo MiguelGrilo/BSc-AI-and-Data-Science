@@ -34,12 +34,12 @@ gitGraph
    %% --- UC2: Gerir Evento ---
    branch feature/service-uc2
    checkout feature/service-uc2
-   commit id: "feat: uc2 (#4)"
-   commit id: "feat: teste (#4)"
+   commit id: "feat: uc2 (#5)"
+   commit id: "feat: teste (#5)"
    checkout develop
    merge feature/service-uc2 id: "PR&M - uc2 into dev"
    checkout main
-   merge develop id: "PR&M - dev into main (#4)"
+   merge develop id: "PR&M - dev into main (#5)"
    checkout develop
 
    %% --- UC3: Preços e Opções ---
@@ -116,7 +116,7 @@ O planeamento foi realizado através de GitHub Issues, categorizadas com a label
 | **#1** | Entidade | Implementar 'Utilizador, Admin, Participante' | Closed |
 | **#2** | Entidade | Implementar 'Pagamento, OpcaoAdicional e FaseInscricao' | Closed |
 | **#3** | Entidade | Implementar 'Inscrição, Estado e Evento' | Closed |
-| **#4** | Serviço | UC2: Implementar ‘Gerir Evento’ | Closed |
+| **#5** | Serviço | UC2: Implementar ‘Gerir Evento’ | Closed |
 | **#8** | Serviço | UC3: Implementar ‘Configurar Preços e Opções’ | Closed |
 | **#11** | Serviço | UC4: Implementar ‘Consultar Detalhes do Evento’ | Closed |
 | **#14** | Serviço | UC5: Implementar ‘Efetuar Inscrição’ | Closed |
