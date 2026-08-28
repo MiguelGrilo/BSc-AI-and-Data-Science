@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Used for Borders and Null size elements -->
+    <dimen name="dimen_0">0dp</dimen>
+    <dimen name="dimen_1">1dp</dimen>
+<!-- Multiples of 4 -->
+    <dimen name="dimen_4">4dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_12">12dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_24">24dp</dimen>
+<!-- Used for Icons or Images-->
+    <dimen name="dimen_64">64dp</dimen>
+    <dimen name="dimen_80">80dp</dimen>
+    <dimen name="dimen_220">220dp</dimen>
+    <dimen name="dimen_300">300dp</dimen>
+    <dimen name="dimen_350">350dp</dimen>
+</resources>

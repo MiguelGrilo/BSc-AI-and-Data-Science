@@ -1,0 +1,153 @@
+\documentclass[runningheads]{llncs}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+
+\begin{document}
+
+\title{A Interação Dinâmica entre Computação de Proximidade, Redes Sem Fios e Inteligência Artificial: Uma Análise do Estado da Arte e Projeções para a Era 6G}
+
+\titlerunning{Interação Dinâmica entre Computação de Proximidade, Redes Wireless e IA}
+
+\author{Miguel Grilo\inst{1} \and Tiago Ramalho\inst{2}}
+\authorrunning{M. Grilo \and T. Ramalho}
+\institute{Escola de Ciências e Tecnologias, Universidade de Évora, Portugal \\
+Nº 58387 e Nº 58514 (respetivamente)\\
+UC: Sistemas Móveis e Aplicações\\
+\email{\{l58387, l58514\}@alunos.uevora.pt}}
+
+\maketitle
+
+\begin{abstract}
+A convergência entre Edge Computing, redes 5G-Advanced/6G e Inteligência Artificial está a redefinir o processamento móvel. Este trabalho analisa o estado da arte das infraestruturas MEC, o papel das Unidades de Processamento Neural (NPUs) e os mecanismos de offloading computacional \cite{pmc2022}. Discute-se o papel do Federated Learning na preservação da privacidade e apresentam-se projeções lineares baseadas na Lei de Moore e nos roteiros da 3GPP.
+
+\keywords{Edge Computing \and 5G-Advanced \and On-device AI \and MEC \and Federated Learning.}
+\end{abstract}
+
+\section{Introdução}
+A evolução da computação distribuída atravessou, na última década, uma transformação paradigmática. Historicamente, a Computação em Nuvem estabeleceu-se como a infraestrutura dominante, dependendo de centros de dados centralizados para o treino e inferência de modelos de IA.
+No entanto, a proliferação exponencial de dispositivos IoT gerou um volume de tráfego que as arquiteturas centralizadas não conseguem gerir com eficiência \cite{Wang2020}.
+
+Esta saturação motivou a transição para a Edge Computing ou Computação de Proximidade --- um paradigma que desloca o processamento para a periferia da rede, aproximando os recursos computacionais da fonte de dados.
+A necessidade de respostas em tempo real para aplicações como a Realidade Estendida (XR) evidenciou a limitação da Latência. Através do Multi-access Edge Computing (MEC), as capacidades de computação são integradas na rede de acesso rádio (RAN), reduzindo o Round-Trip Time (RTT) e garantindo a Qualidade de Serviço (QoS) necessária para decisões em milissegundos \cite{cui2025}.
+
+\section{Estado da Arte: Redes 5G-Advanced e Hardware Móvel}
+O panorama tecnológico atual é sustentado pela maturidade das redes 5G e pela emergência do 5G-Advanced \cite{ieee2022}.
+
+\subsection{Infraestrutura de Rede e Capacidades}
+As especificações do 5G-Advanced introduziram o mecanismo LTM (Layer 1/Layer 2-triggered mobility), desenhado para reduzir a latência de handover e interrupções de sinal, essencial para sessões contínuas de IA \cite{ieee2022}. A Release 19 atua como ponte para o 6G, focando-se na integração nativa de IA na interface aérea para otimização de recursos e gestão de feixes (beam management) \cite{3gpp_r19, eand2025}.
+
+\begin{table}[h]
+    \centering
+    \caption{Evolução das Características de Rede (4G, 5G e 6G) \cite{researchgate2025}}
+    \label{tab1}
+    \begin{tabular}{lccc}
+        \toprule
+        \textbf{Parâmetro} & \textbf{4G} & \textbf{5G} & \textbf{6G} \\ 
+        \midrule
+        Latência & $\sim$50 ms & <1 ms (URLLC) & <0.1 ms \\
+        Largura de Banda & Up to 1 Gbps & Up to 10 Gbps & Up to 1 Tbps \\
+        AI Integration & Minimal & Integrated & Native AI-driven \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Processadores Móveis e Unidades de Processamento Neural (NPUs)}
+As NPUs (Neural Processing Units) tornaram-se o coração dos terminais móveis (telemóvel), sendo otimizadas especificamente para operações de álgebra linear e tensores com alta eficiência energética. Ao contrário dos CPUs de uso geral, as NPUs utilizam arquiteturas de Matrizes Sistólicas --- uma rede de processadores ligados que permitem que os dados fluam através de múltiplos passos de computação sem regressar constantemente à memória principal --- e SRAM local de alta largura de banda para minimizar o consumo energético. O desempenho destas unidades é quantificado em TOPS (Trillions of Operations Per Second).
+
+Os processadores de 2025, como o Snapdragon 8 Elite (Gen 5), apresentam uma NPU Hexagon com desempenho 37\% superior à geração anterior \cite{qualcomm2025}. A eficácia desta NPU depende da Quantização, o processo de reduzir a precisão dos pesos para acelerar a computação. O Snapdragon 8 Elite suporta nativamente uma vasta gama de precisões, incluindo INT2, INT4, INT8, INT16, FP8 e FP16, permitindo uma execução eficiente de modelos de IA generativa com uma melhoria de 16\% na performance por watt \cite{qualcomm2025}. Esta arquitetura, que inclui aceleração de matriz por hardware, viabiliza a utilização de assistentes de IA agentes diretamente no dispositivo.
+
+Estudos recentes \cite{grapeup2024} demonstram que o Snapdragon 8 Elite, equipado com a NPU Hexagon e suporte nativo para precisão mista (INT4 e INT8), consegue executar o modelo Llama 3.2 3B Instruct a aproximadamente 10 tokens por segundo (o número de unidades básicas de texto geradas por segundo pela IA).
+
+\section{Interação e Decisão: On-device AI vs. Edge Offloading}
+O Offloading Computacional consiste em delegar tarefas para servidores MEC para mitigar limitações de bateria ou hardware \cite{pmc2022}. A decisão baseia-se em:
+
+\begin{enumerate}
+    \item \textbf{Estado da Bateria:} A execução local na NPU é eficiente, mas a transmissão via 5G mmWave pode ser mais onerosa se o volume de dados for elevado.
+    \item \textbf{Qualidade do Canal:} Se a largura de banda for reduzida, o tempo de transmissão anula os benefícios de processamento do servidor potente.
+    \item \textbf{Complexidade da Tarefa:} Definida pelos ciclos de CPU e pelo tamanho dos bits de entrada.
+\end{enumerate}
+
+\section{Privacidade e Federated Learning em Redes periféricas}
+O Federated Learning (FL) ou Aprendizagem Federada permite o treino colaborativo de modelos de IA sem a necessidade de centralizar dados sensíveis, mantendo-os nos dispositivos dos utilizadores \cite{pmc2022}.
+
+\subsection{O Ciclo de Vida do Treino Federado}
+Em ambientes móveis e periféricos, o processo de treino segue cinco etapas cíclicas iterativas:
+
+\begin{enumerate}
+    \item \textbf{Inicialização:} O servidor central (MEC ou Cloud) define o modelo global inicial $w_0$.
+    \item \textbf{Seleção de Clientes:} Utiliza-se o algoritmo FedCS (Federated Client Selection) para selecionar um subconjunto de telemóveis disponíveis, com base no estado da bateria e qualidade da ligação à rede.
+    \item \textbf{Distribuição (Multicast):} O servidor transmite os parâmetros do modelo para os dispositivos selecionados.
+    \item \textbf{Treino Local:} Cada telemóvel utiliza os seus dados locais para atualizar o modelo, gerando gradientes ou pesos locais $w_i^t$.
+    \item \textbf{Agregação:} Os dispositivos enviam apenas as atualizações para o servidor MEC. O algoritmo FedAvg (Federated Averaging) \cite{pmc2022} combina estas atualizações para formar o novo modelo global: $w_{t+1} = \sum_{k=1}^K \frac{|D_i|}{|D|} w_i^t$. 
+\end{enumerate}
+
+\subsection{Mecanismos Avançados de Privacidade e Segurança}
+Embora o FL evite o envio de dados brutos, ataques de inversão de gradiente podem tentar reconstruir dados originais a partir das atualizações do modelo. Para mitigar este risco, aplicam-se camadas adicionais de segurança:
+
+\begin{itemize}
+    \item \textbf{Privacidade Diferencial (DP):} Adiciona-se ruído estatístico aos gradientes antes da transmissão, garantindo que a contribuição de um utilizador individual não possa ser isolada.
+    \item \textbf{Secure Multi-party Computation (SMC):} Protocolos criptográficos que permitem ao servidor agregar dados cifrados sem nunca visualizar os valores individuais.
+    \item \textbf{Criptografia Homomórfica:} Permite realizar operações matemáticas (como a soma de gradientes) diretamente em dados cifrados.
+\end{itemize}
+
+\subsection{Otimização de Tráfego e Recursos de Rede}
+A integração do FL com a computação de proximidade otimiza drasticamente os recursos da rede 5G/6G \cite{pmc2022}. Como apenas os parâmetros do modelo (frequentemente comprimidos através de técnicas de sparsification ou redução de esparsidade) são transmitidos, o consumo de largura de banda no uplink é reduzido em até 90\% comparado com o envio de dados brutos. Além disso, ao realizar a agregação no nó MEC local, evita-se a latência de propagação até à nuvem, permitindo atualizações de modelo mais frequentes e precisas.
+
+\section{Previsões Futuras: Projeções Lineares Rumo ao 6G}
+As projeções para o final da década baseiam-se em tendências estabelecidas pela Lei de Moore e pelos roteiros técnicos da ITU (IMT-2030).
+
+\subsection{O Ecossistema 6G: Metas e Novos Cenários de Uso}
+O roteiro IMT-2030 da ITU-R define que o 6G não será apenas uma evolução da velocidade, mas uma rede com inteligência intrínseca e capacidades sensoriais \cite{itu2026}.
+O 6G introduzirá cenários de uso disruptivos definidos pela Recomendação ITU-R M.2160 \cite{itu2026}: 
+
+\begin{itemize}
+    \item \textbf{Integrated Sensing and Communication (ISAC):} A rede funcionará como um sensor/radar gigante, detetando objetos, velocidade e imagem do ambiente sem necessidade de sensores externos dedicados \cite{eand2025}.
+    \item \textbf{AI and Communication (AIAC):} O 6G terá uma arquitetura "AI-native", onde a inteligência não é apenas uma aplicação (bolted-on), mas parte integrante da interface aérea e da gestão de recursos da rede.
+    \item \textbf{Holographic-Type Communication (HTC):} Transmissão de conteúdos volumétricos 3D em tempo real, exigindo sincronização sub-milissegundo entre múltiplas modalidades sensoriais.
+\end{itemize}
+
+\newpage
+
+\section{Conclusão}
+A convergência analisada demonstra que a eficiência da IA móvel depende da orquestração inteligente entre NPUs locais e infraestruturas MEC. O Federated Learning estabelece-se como o pilar da privacidade \cite{pmc2022}, enquanto os avanços lineares nos nós garantem o poder computacional necessário. Com a chegada do 6G, a fusão entre comunicações e sensoriamento (ISAC) criará um sistema nervoso digital global, onde a distinção entre dispositivo e rede será virtualmente inexistente.
+
+\vspace{13cm}
+\section*{Nota}
+Tal como solicitada a menção, reconhecemos a utilização de Inteligência Artificial neste trabalho como auxiliar de pesquisa e estruturação de conteúdos, auxiliando na identificação de fontes relevantes e na clarificação de conceitos técnicos.
+
+\newpage
+
+\begin{thebibliography}{}
+    \bibitem{Wang2020} Wang, Xubin, et al. “Empowering Edge Intelligence: A Comprehensive Survey on On-Device AI Models.” ACM Computing Surveys, vol. 57, no. 9, Apr. 2025, pp. 1–39. Crossref, \url{https://doi.org/10.1145/3724420}
+    
+    \bibitem{cui2025} Luo, H., et al.: AI Reasoning for Wireless Communications and Networking: A Survey and Perspectives. 2025, \url{https://arxiv.org/abs/2509.09193}
+
+    \bibitem{pmc2022} Abreha HG, Hayajneh M, Serhani MA. Federated Learning in Edge Computing: A Systematic Survey. Sensors (Basel). 2022 Jan 7;22(2):450. doi: 10.3390/s22020450. PMID: 35062410; PMCID: PMC8780479.
+    
+    \bibitem{ieee2022} Lin, X. (2022). An Overview of 5G Advanced Evolution in 3GPP Release 18. IEEE Communications Standards Magazine, 6, 77-83.
+    
+    \bibitem{3gpp_r19} 3GPP. "Release 19." 3GPP, 2025, \url{https://www.3gpp.org/specifications-technologies/releases/release-19}
+    
+    \bibitem{qualcomm2025} Snapdragon 8 Elite Gen 5 Product Brief. Qualcomm, 2025, \url{https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Gen-5-product-brief.pdf}
+    
+    \bibitem{grapeup2024} Jaskurzyński, Michał. "Running LLMs On-Device with Qualcomm Snapdragon 8 Elite." Grape Up, 2024, \url{https://grapeup.com/blog/running-llms-on-device-with-qualcomm-snapdragon-8-elite}
+    
+    \bibitem{eand2025} e\&. ISAC 6G Whitepaper: Integrated Sensing and Communication. 2025, \url{https://eand.ae/content/dam/eand/assets/docs/general/isac-6g-whitepaper.pdf}
+    
+    \bibitem{intel2025} Christa, Manuel. "14A Should Herald Intel's Return to the Foundry Top." All About Industries, 5 May 2025, \href{https://all-about-industries.com/14a-should-introduce-intels-return-to-the-top-of-foundry-a-61ae4406c3a0993db5ebe0a19d6b7e8f/}{https://all-about-industries.com/14a-should-introduce-intels-return-to-the-top-of-foundry-a-61ae4406c3a0993db5ebe0a19d6b7e8f/}
+
+    \bibitem{tsmc2025} "TSMC's 2nm Chips: The Results Are Out." 36Kr, 30 Dec. 2025, \url{https://eu.36kr.com/en/p/3617863779501317}
+    
+    \bibitem{itu2026} International Telecommunication Union. "IMT-2030: Technical Requirements for the 6G Future." ITU, Mar. 2026, \url{https://www.itu.int/hub/2026/03/imt-2030-technical--requirements-for-the-6g-future}
+
+    \bibitem{researchgate2025} Tsegaye, et al. (2025). Deep Neural Networks in Smart Grid Digital Twins: Evolution, Challenges, and Future Outlooks. IEEE Access. 13. 114845 - 114864. 10.1109/ACCESS.2025.3585967.
+\end{thebibliography}
+
+\end{document}

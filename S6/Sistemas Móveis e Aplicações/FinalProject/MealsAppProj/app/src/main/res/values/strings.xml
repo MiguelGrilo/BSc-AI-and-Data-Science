@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Meals App</string>
+<!-- MealComponents -->
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
+    <string name="join_to_string">   •   </string>
+    <string name="required_ingredients">Requires %1$s ingredients. Tap to view full recipe.</string>
+    <string name="full_info">Tap to view full recipe and ingredients.</string>
+<!-- DetailScreen -->
+    <string name="recipe_details">Recipe Details</string>
+    <string name="instructions">Instructions</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="video">Video</string>
+    <string name="back">Back</string>
+    <string name="meal_image">Meal image</string>
+    <string name="no_inst_avail">No instructions available.</string>
+    <string name="view_source">View Original Source: %1$s</string>
+    <string name="no_ingredients">No ingredients available.</string>
+    <string name="no_video">No video tutorial available for this recipe.</string>
+    <string name="watch_youtube">Watch recipe on YouTube.</string>
+<!-- HomeScreen -->
+    <string name="popular">Popular Meals</string>
+    <string name="failed_to_load">Failed to load meals..</string>
+    <string name="retry">Retry</string>
+    <string name="mock_id">ID Placeholder</string>
+<!-- Previews -->
+    <string name="mock_name">Name Placeholder</string>
+    <string name="mock_ingredient">Ingredient Placeholder</string>
+    <string name="mock_measure">Measure Placeholder</string>
+    <string name="mock_category">Category Placeholder</string>
+    <string name="mock_country">Country Placeholder</string>
+    <string name="mock_instructions">Instructions Placeholder</string>
+    <string name="mock_image">Image URL Placeholder</string>
+    <string name="mock_video">Video URL Placeholder</string>
+    <string name="mock_source">Source URL Placeholder</string>
+    <string name="cat_beef">Beef</string>
+    <string name="cat_chicken">Chicken</string>
+    <string name="cat_vegan">Vegan</string>
+<!-- SearchScreen -->
+    <string name="search_meal">Search for a meal</string>
+    <string name="search">Search</string>
+    <string name="clear">Clear</string>
+    <string name="search_or_select">Search for a meal or select a category.</string>
+<!-- SettingsScreen -->
+    <string name="developed">Developed by</string>
+    <string name="avatar">Avatar</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="github">GitHub</string>
+    <string name="view_github">View GitHub</string>
+    <string name="view_repo">View Repository</string>
+    <string name="repo_url">https://github.com/tiagomanuelvr/MealsApp</string>
+    <string name="miguel_name">Miguel Grilo</string>
+    <string name="miguel_number">58387</string>
+    <string name="miguel_url">https://github.com/MiguelGrilo</string>
+    <string name="tiago_name">Tiago Ramalho</string>
+    <string name="tiago_number">58514</string>
+    <string name="tiago_url">https://github.com/tiagomanuelvr</string>
+    <string name="uni">"University Of Évora"</string>
+    <string name="documentation">Documentation</string>
+    <string name="view_docs">View README</string>
+    <string name="docs_url">https://github.com/tiagomanuelvr/MealsApp/blob/main/README.md</string>
+    <!-- MealsApp -->
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+</resources>
